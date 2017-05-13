@@ -1,5 +1,8 @@
+
 [Índice](../README.md)
+
 [Siguiente](../Cap02/capitulo02.md)
+
 ----
 
 # 1.1 Símbolos, datos, procesos de datos e información
