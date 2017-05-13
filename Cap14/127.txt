@@ -1,0 +1,63 @@
+														1-115
+---------------------------------------------------------------------------------------------------------------------
+	Esta mejora sustancial en la cantidad de intrucciones que se procesan por segundo se basa en las líneas de
+	producción en serie de las fábricas dde autos.. En ellas se divide el proceso de fabricación en una serie de
+	subprocesos que se pueden realizar en forma independiente. En una cadena de este tipo, cuando se termina
+	un subproceso de fabricación de una unidad (como ser el de pintura), la misma es desplazada al lugar donde
+	se realiza siguienta subproceso de la cadena, a la par que otra unidad -también en proceso de fabricación- 
+	ocupa el lugar de la primera, para ser sometida al mismo subproceso realizado sobra la unidad anterior.
+	De esta forma _se realizan simultáneamente todos los subprocesos_ independientes que requiere el  
+	armado de un auto, *pero aplicados a distintos autos* en curso de fabricación. Cuando se termina de 
+	producir un automóvil, los que fueron entrando a la cadena estarán parcialmente contruidos.
+	Para plantear didácticamente la mejora habida apelaremos a un proceso conocido: el lavado de autos.
+	Un lavadero simple tiene una persona a cargo de todas las estapas del lavado. Entra un auto por
+	vez, y después de un tiempo, en el cual se sucedieron dichas etapas, el auto sale limpio. Luego 
+	entra el auto siguiente a lavar, y así de seguido.
+	Esto es semejante al procesamiento de cada instrucción en el modelo original de Von Neumann
+	(figura 1.85 izquierda), siendo que la siguiente instrucción recién se peude comenzar a ejecutar 
+	luego de transcurrido el número de pulsos que requiere la ejecución de la anterior. 
+
+	En un lavadero semiautomático en el cual el proceso se hace en 4 etapas de 5 minutos (entrada y pago
+	del ticket --> cepillado automático --> limpieza de ruedas e interior --> limpieza de vidrios y secado final[^nota1])
+	se pueden ir procesando 4 autos simultáneamente. Cada auto tardaría 20 minutos en salir, pero puede
+ 	salir __un__ auto terminado cada 5 minutos. Esto es, aumenta la cantidad de autos lavados por hora, lo cual
+	redunda en un menor precio de lavado, pero _cada cliente debe esperar_ las 4 etapas (20 minutos).
+
+	Si al modelo de Von Neumann se le agrega "piperlining", la UCP mantiene su esquema básico, pero se le 
+	debe agregar circuitería adicional, del mismo modo que un lavadero automático requiere más personal, 
+	marquinaria y espacio interno para espera, en comparación con un lavadero manual unipersonal.
+	Así, se necesita un buffer para almacenar por orden de llegada los códigos de varias instrucciones (como
+	ser __4__ ó 5) pedidas a la memoria (o al caché), y los otros buffers intermedios entre etapas. Estos sirven para que 
+	no se pierda el código de una instrucción en curso de ejecución, o datos y resultados relacionados con ella.[^nota2]
+
+	La figura 1.85 (derecha) ilustra cómo un "pipe line" permite procesar simultáneamente diversas etapas 
+	de distintas instrucciones, completándose en cada etapa una parte de la ejecución de cada instrucción.
+	Se ha supuesto a los fines comparativos que el "pipe line" se realiza con las 4 etapas y tiempos 
+	(dados por pulsos reloj, designados __t1__, __t2__,. ...) de la figura 1.84 ó 1.30, y que todas las intrucciones 
+	requieren para su ejecución 4 pulsos). Entonces la UC ordenará:
+	
+	En __t1__, la primera de estas instrucciones que corresponde ejecutar (__I1__), pasa del butter al registro RI.
+	En __t2__ el código de __Isub1__ es decodificado, y al registro RI pasa a contener el código de __I2__.
+	En __t3__ se trae[^nota3] el dato a operar para __Isub1__, se decodifica __I2__, y a RI llega desde el buffer el código de __I3__. 
+	En __t4__ termina de ejecutarse __I1__, se trae el dato a operar para __I2__, se decodifica __I3__ y llega RI el código de __L4__
+
+	Así de seguido se llevan a cabo en paralelo los procesos indicados en diagonal en la figura citada, cada uno
+	independiente del otro. De esta forma, al cabo de 8 pulsos se habrán terminado de ejecutar 4 instrucciones, o
+	sea, 4 veces más que con el modelo sin "pipe line" que aparece a la izquierda de la misma figura.
+	En general, si se tiene un "pipe line" de __n__ etapas, teóricamente[^nota4] se puede procesar hasta __n__ veces más
+	instrucciones por segundo que sin "pipe line", suponiendo que todas las intrucciones requieran __n__ etapas.
+	Esto implica también una situación ideal, con todas las instrucciones de igual complejidad, ejecutándose
+	en 4 pulsos reloj. Así, _con cada pulso entra una instrucción al "pipe line", y se termina de ejecutar otra_.
+	Resulta, que si bien _no se reduce el tiempo de ejecución de una instruccion_ (cada una requiere __4__ pulsos reloj), 
+	en cada pulso __reloj__ se está ejecutando una etapa de 4 instrucciones distintas, lo cual permite ejecutar varias
+	veces más rapido (4 en este caso) las instrucciones de un programa que en un modelo sin "pipe line".
+
+	-------------------------------------
+	[^nota]  > Suponiendo que esta última etapa sea la que dura 5 minutos y otras mucho menos, ella determina el ritmo de lavado.
+	[^nota]  > Del mismo modo, en el lavadero citado puede requerirse un lugar entre dos subprocesos, donde un automóvil que sale de un sub-proceso
+	> permanezca en él demorado, antes de pasar al siguiente, so pena de llevarse por delante el auto que aún está en este subproceso.
+	[^nota]  > Desde la memoria caché, si está en ella (sino habrá que pedirlo a la memoria principal) o desde un registro de la UCP.
+	[^nota]  > Un "pipe line" sin circuitos para "predicción de saltos condicionados" puede cortarse, si por ejemplo __I1__ es una instrucción de salto
+	> condicionado (figura 1.35), que obligue que la siguiente que corresponda ejecutar no sea __I2__; o si tiene lugar de interrupción por
+	> hardware. O demorarse un pulso reloj por que el dato a operar no está el caché y hay que pedirlo a memoria. Asimismo, la circuitería
+	> extra para el "pipe line" hace que cada instrucción se ejecute con pulsos de mayor duración en relación con un modelo sin "pipe line"

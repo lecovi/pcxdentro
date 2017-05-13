@@ -1,0 +1,32 @@
+													1-117
+-------------------------------------------------------------------------------------------------------------
+	. La _Unidad de caché_ de 8 KB guarda las instrucciones y datos que seguramente serán requeridos próx-
+	  mamente. Por una parte, a través de un bus de 128 líneas,se pueden leer del caché 128/8 = 16 bytes que
+	  pasan a un buffer de la Unidad de pre-carga de instrucciones. Corresponden en promedio a unas 5
+	  instrucciones a ejecutar, que así llegan juntas para entrar al "pipe line".Por otra, el caché puede ser leído
+	  para que se envíen 32 biys de datos a la UAL, o un registro de la UCP ó 64 bits de datos a la Unidad de 
+	  Punto Flotante(FPU en inglés). En una escritura van hacia el caché 32 ó 64 bits, respectivamente 
+
+	. La _Unidad de Pre-Carga_ proporciona las direcciones de las próximas instrucciones a ejecturar, y
+	  guarda las mismas en orden en dos buffers de 16 bytes, para que luego cada una sea decodificada
+
+	. La _Unidad de Decodificación_ realiza dos decodificaciones de cada instrucción, según se verá.
+
+	. La _Unidad de Control_ (UC) mediante líneas que salen de ella(dibujadas en figuras 1.87 a 1.89), activa las
+	  operaciones que con cada pulso reloj deben realizar los distintos bloques de la UCP (U. de pre-carga,
+	 U.Decodificadora, UAL UPF y UC), Conforme lo establecen microcódigoa de la ROM de Control.
+
+	. La _Unidad de segmentación, paginación y protección de memoria_, conocida como "Unidad de 
+	  manejo de memoria" (__MMU__ en inglés) se encarga de proporcionar las direcciones físicas de
+	  memoria que utiliza un programa Para tal fin esta unidad convierte la referencia a la dirección del
+	  dato -que viene con la instrucción- en la correspondiente dirección física. Puesto que la memoria
+	  de una PC se divide en segmentos, y éstos -de ser necesario- pueden subdividirse en páginas
+	  (por ejemplo si se usa el sistema operativo Unix). Esta unidad se encarga de ello, así como de la 
+	  protección contra escrituras no permitidas en zonas reservadas de memoria. Conviene aclarar que 
+	  el nombre de esta unidad no tiene mucho que ver con la traducción castellana de "pipe line" como
+	  "segmentación", razón por la cual se prefirió usar dicha palabra inglesa.
+
+					INSERTAR FIGURA 1.86
+	
+	Todas estas unidades participan en el "pipe line" de instrucciones, que en el 486 consta de 5 etapas, 
+	que progresan con cada pulso reloj, al compás de sus millones de ciclos por segundo:

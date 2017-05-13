@@ -1,0 +1,24 @@
+Figura 1.94
+
+Existe 4 **UE**, siendo que las dos que contienen una **UAL** operan al doble de la frecuencia del procesador, o sea
+que en medio ciclo completa una operacion, siendo por ello posibles hasta 6 operaciones por ciclo. Ellas son:
+**UE0** dedicaca a µops-R "store", y **UE1** para µops-R "load", a razón de una µop-R por ciclo.
+**UE2**: en la primer mitad de un ciclo puede operar enteros en una **UAL**, o una instrucción de transferencia en
+punto flotatnte; y en la segunda mitad de un ciclo puede operar nuevamente enteros en la **UAL** de dicha **UE**.
+
+Para µops-R load/store existe un Bufer Conversor compartido en "HT" por los dos "threads", que es una memoria
+totalmente asociada (definida al tratar cachés), que convierte direcciones a direcciones fisicas de memoria.
+Después de haberse realizado la operación ordenada por cada µop-R en la **UE** correspondiente, las µops-R
+pasan a un buffer de reordenamiento, que hace de intermediario entre la **UPRE** y la **UR**. este buffer se parte en
+mitades si hay dos "threads".
+
+La **UR** retira las µops-R en orden en forma alternada para cuando "thread".
+Luego que las µops-R ejecutadas se retiran, los resultados pasan desde registros hacia el caaché de datos **L1**.
+Este es un caché asociativo de 4 vias con líneas de 64 bytes, que siempre escribe "write-through" en el caché
+asociativo **L2** de 8 vías con líneas de 64 bytes, con 128 bytes por línea. Este Xeon tiene un caché similar al *L3*
+Los cachés **L2** y **L3** operan con direcciones físicas y el **L1** con virtuales, pero con tags físicos.
+
+De la descripción anterior reslta, que dos "threads" que se están ejecutando en paralelo comparten (en principio
+por partes iguales) la mayoría de los recursos físicos de un único procesador, ya sea por partición de los mismos o 
+por alternancia (en un ciclo reloj uno y en el siguiente el otro) y no se trata simplemente que se ejecuta un "thread" 
+y cuando éste se detiene por algún motivo se pasa a ejecutar el otro.           

@@ -1,0 +1,40 @@
+1-116
+---------------------------------------------------------------------------------------------------------------
+
+
+	INSERTAR FIGURA 1.85
+
+###¿Qué es el multiprocesamiento o procesamiento en paralelo?
+---------------------------------------------------------------------------------------------------------------
+	Los requerimientos actuales de velocidad de procesamiento hicieron necesario el desarrollo de 
+	máquinas designadas "__no Von Neumann__", en el sentido de que existen __varios procesadores__ operando 
+	juntos, __en paralelo__. Así se puden ejecutar ejecutar, en forma independiente, varias instrucciones de un
+	mismo programa, o varios programas independientes, u operar con diversos datos a un mismo tiempo.
+	Esto se conoce como "__multiprocesamiento__", contrapuesto al "uniprocesamiento" de Von Neumann.
+	De existir varios lavaderos que trabajen "en paralelo" sería factible que varios autos salgan
+	terminados simultáneamente y que además se ayuden mutuamente. En las arquitecturas "no Von
+	Neumann", varias UCP pueden terminar de ejecutar juntas varias instrucciones por pulso reloj.
+
+	~~~
+	No debe confudirse _multiprocesamiento_ con "__multiprogramacion__" ("_multitasking_", también traduci-
+	ble como "_multitarea_"), consistente en la ejecución alternada por un UCP de varios programas que
+	están en memoria principal. Dada la velocidad de procesamiento, _puede parecerle al usuario como 
+	simultánea la ejecución de dos o más programas cuya ejecución en realidad se alterna muy rápidamente_.
+	~~~
+
+
+###¿Cómo funciona básicamente un micropocesador 486?
+----------------------------------------------------------------------------------------------------------------
+	A continuación describiremos los principales bloques que están en el interior de un procesador 486 (figura
+	1.86), y las funciones que cumplen. Luego se concretará de que modo los mismos parcipan, paso a paso,
+	en la ejecución de la conocida secuencia de instrucciones __I1, I2, I3, I4__ desarrollada en las figuras 1.23 a 1.26.
+	Este procesamiento, que fue realizado en dichas figuras conforme al modelo "original" de Von Neumannm 
+	fue acelerado ya en procesadores de Intel anteriores al 486, como se desarrolló en una respuesta anterior.
+	En la figura 1.86 aparecen los siguientes sub-bloques y bloques:
+
+	+ Los registros de direcciones (RDI) y de datos (RDA), pertenecientes a la "_Unidad de Interconexión con
+	  el Bus_" (__BIU__ en inglés), encargada de la comunicación con el exterior a través de las 32 líneas de datos y
+	  32 líneas de direcciones del bus, conectadas a las correspondientes patas del procesador ("local bus"). En
+	  Relación con éste, los registros RDI y RDA cumplen las mismas funciones que en la figura 1.23, siendo 
+	  que ahora intrucciones y datos leídos en memoria pasan al caché interno de 8 KB del procesador 
+	

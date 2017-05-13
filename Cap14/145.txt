@@ -1,0 +1,31 @@
+1-132
+----------------------------------------------------------------------------------------
+				
+				INSERTAR FIGURA 1.94
+	
+	Existen 4 __UE__, siendo que las dos que contienen una UAL operan al doble de la frecuencia del procesador, o sea
+	que en medio ciclo completan la operacíon, siendo por ello posibles hasta 6 operaciones por ciclo. Ellas son:
+	__UE0__ dedicada a uops-R "store", y __UE__1 para uops-R "load", a razón de una uop-R por ciclo.
+	__UE2__: en la primer mitad de un ciclo puede operar enteros en una UAL, o una instrucción de transferencia en 
+	punto flotante; y en la segunda mitad de dicho ciclo puede operar otra vez enteros en la UAL de dicha __UE__.
+	__UE3__: en la primer mitad de un ciclo puede operar enteros en una UAL, u operar (en el coprocesador) todas las
+	operaciones aritméticas en un punto flotante, pero no las de transferencia, o cualquier operación SIMD, o llevar a cabo
+	una uop-R de salto; y en la segunda mitad de un ciclo puede operar nuevamente enteros en la UAL de dicha __UE__.
+
+	Para uops-R load/store existe un Buffer Conversor compartido en "HT" por los dos "threads", que es una memoria
+	totalmente asociativa (definida al trata cachés), que convierte direcciones a direcciones físicas de memoria.
+	Después de haberse realizado la operación ordenada por cada uop-R en la __UE__ correspondiente, las uops-R
+	pasan a un buffer de reordenamiento, que hace de intermediario entre la __UPRE__ y la __UR__. Este buffer se parte en 
+	mitades si hay dos "threads".
+	La __UR__ retira las uops-R en orden en forma alternada para cada "thread".
+	Luego que las uops-R ejecutadas se retiran, los resultados pasan desde registros hacia el caché de datos L1. 
+	Este es un caché asociativo de 4 vías con líneas de 64 bytes, que siempre escribe "write-through" en el caché
+	asociativo L2 de 8 vías con líneas de 64 bytes, con 128 bytes por línea. Este Xeon tiene un caché similar L3.
+	Los cachés L2 y L3 operan con direcciones físicas y el L1 con virtuales , pero con tags físicos.
+
+	~~~
+	De la descripción anterior resulta, que dos "thread" que se están ejecutando en paralelo comparten (en principio
+	por partes iguales) la mayoría de los recursos físicos de un único procesador, ya sea por partición de los mismos o
+	por alternancia (en un ciclo reloj uno y en el siguiente el otro)'y no se trata simplemente que se ejecuta un "thread"
+	y cuando éste se detiene por algún motivo se pasa a ejecutar el otro.
+	~~~

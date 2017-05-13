@@ -1,0 +1,328 @@
+pag 142
+
+debajo del 16. Los 14 que falta equilibrar se consiguen con 14d = Eh pesas de valor uno, debiéndose escribir **E** debajo del 1
+
+En definitiva resulta 2574d = A0Eh.
+
+**Verificación**:
+
+**256**  **16**  **1**
+     
+..A.. 0...Eh =(10x256 + 0x16 + 14x1)d = 2574d         Se verifica que la conversión fue bien hecha.
+
+**Ejercicio**:   convertir 45056d a hexadecimal >>>>>>>>>  Respuesta: B000h 
+
+#Otros métodos para convertir de base 10 a otra base cualquiera
+
+##*Método de las divisiones sucesivas por la base a la que se quiere pasar:*
+
+**1.** Dividir por el valor decimal de la base el número decimal a convertir.
+
+Idem el cociente asi obtenido.
+
+Idem hasta obtener un cociente menor que divisor
+
+
+**2.** Este último cociente y los restos de las divisiones efectuadas, constituyenª, en ese orden, el número buscado.
+
+
+##Ejemplos                 
+(la justificación de este método se da en la Unidad 4 de la presente obra)
+
+**a.** Convertir a binario los números decimales 13 y 12 
+
+      13 | 2__                            
+          
+        1   6 |2__ 
+             
+             0   3|2__
+                 
+                 1  1     =  1101(base 2) = 13(base 10)
+
+
+
+      12| 2__
+       
+        0   6 |2__
+             
+             0   3|2__
+                 
+                 1  1     =  1100(base 2) = 12(base 10)
+
+
+
+**b.** Convertir a hexadecimal el número decimal 16140
+
+
+
+      16140 |16__
+         
+       0140   1008  |16__
+                     
+        12=C   48      63  |16__
+                           
+                0=0    15=F  3=3      = 3F0C(base 16)= 16140(base 10)
+
+
+**EJERCICIO** : Usando el presente método pasar el número 109d a binario y hexadecimal
+
+
+#*¿Cómo se pasa directamente de binario a hexa, y viceversa?*
+Como se anticipó al tratar el sistema hexadecimal, éste se usa para pasar de una forma sencilla de binario a hexa y viceversa **usando en pantalla o en el papel la cuarta parte de los símbolos de los que se utilizan en binario**, siendo que en el interior de un computador sólo se puede representar el sistema binario.
+
+###*Regla para pasar de binario a hexadecimal:*
+
+1. A partir del bit extremo derecho del número binario, dividirlo en cuartetos, agregando ceros a la izquierda si se necesita.
+
+2. Asignar a cada cuarteto los pesos 8-4-2-1 en forma escrita o mentalmente.
+
+3. Sumar en base diez los pesos de cada cuarteto correspondientes a los bits de valor 1, o sea hallar su valor en base diez.
+
+4. El número resultante de cada suma así efectuada en cada cuarteto según el paso anterior, será el digito hexadecimal correspondiente a ese cuarteto, siendo que si dicho número es del 0 al 9 será el mismo en hexa; y si el mismo es 10 el digito hexadecimal será A, si es 11 será B. si es 12 será C, si es 13 será D, si es 14 será E, si es 15 será F.
+
+
+##Ejemplo: 
+
+convertir a hexadecimal el número binario 110011100
+
+Pasos 1. y 2.    ........   **8421** .... **8421**...... **8421**
+
+   ................................0001.......1001........1100
+
+............................... ----- .... ----- ... ------ =  19Ch
+
+pasos 3. y 4. ............. **1**.......8+1=9.....8+4=12=C
+
+
+**Ejercicio**: 
+
+Convertir a hexa 1010000011110111   y    1100011101     ( respuesta: A0F7h y 31Dh)
+
+Con un método semejante y formando tríos, pasar 1101101b a octal (Respuesta: 155o)
+
+___
+ª      En caso que los restos decimales superen el valor 9, (como puede ocurrir cuando se pasa de decimal a hexa) se debe convertir dichos restos al símbolo equivalente de la base en cuestión( por ejemplo 10=A; 11=B; etc.)
+
+
+
+pag 143
+
+
+**REGLA PARA PASAR DE HEXADECIMAL A BINARIO:**
+
+1. Separarlos dígitos hexadecimales de modo de poder formar debajo de uno de ellos un cuarteto binario a determinar de pesos 8-4-2-1. Estos números pueden escribirse o ser imaginados mentalmente. 
+2. Convertir cada dígito hexadecimal de 0 a F a decimal (serán iguales del 0 al 9), y éste número a su vez en un cuarteto de pesos 8-4-2-1 por el método de las pesas ya visto.
+3. El conjunto de cuartetos así formados constituirán el número binario buscado.
+
+
+**EJEMPLO:** Convertir a binario el número hexadecimal A07
+
+paso 1   ..............A...............0................7h
+
+ ............... ......**8421**...........**8421**..........**8421**d
+
+paso 2 ...........1010..........0000...........0111b        ............O sea A07h = 101000000111b
+
+.....................A=10=8+2................7=4+2+1
+
+**Ejercicio:**  Convertir a binario 10h .........................................................Respuesta: 00010000b
+
+
+#A1.4|| OPERACIONES ARITMÉTICAS CON NÚMEROS BINARIOS NATURALES
+
+
+##*De qué forma la UAL suma dos números?*
+
+>En cualquier base numérica pueden definirse las distintas clases de números (naturales, negativos, imaginarios, reales, etc.), y todas las operaciones que empleamos en base diez. Estas presentan las mismas propiedades conocidas en base diez, pueden aplicarse los mismos algoritmos que conocemos para realizarlas con números de varios dígitos.
+
+>Comenzaremos con la suma de binarios
+
+>Si bien pueden sumarse manualmente varios números binarios ordenados uno debajo del otro, interesa especialmente operar dos números binarios por vez, como lo hacen las unidades aritméticas de los microprocesadores y las calculadoras de bolsillo.
+
+>Para sumar en binario se debe tener presente que en la sucesión de los números naturales: 0, 1, 10, 11, ....; si se suma cero a un numero debe resultar el mismo, y si se suma uno debe obtenerse el siguiente.
+
+>Esto se verifica en las siguientes sumas elementales, que son las variantes que tienen lugar en la suma de dos números binarios:
+
+0+0=0  
+
+1+0=1   
+
+0+1=1  
+
+1+1=10 
+
+10+1=11
+
+
+Efectuar    110110100 + 11010110
+
+...................................................................1 1 1 1....1
+
+...................................................................1 1 0 1 1 0 1 0 0
+
+................................................................+... 1 1 0 1 0 1 1 0
+
+
+........................................................... -----------------------------
+
+
+................................................................ 1 0 1 0 0 0 1 0 1 0
+
+.....................................................................i h g f e d c b a
+
+
+La suma se ha realizado, posición por posición, como se detalla:
+
+**a.**.. 0 + 0 = 0
+
+**b.**.. 0 + 1 = 1
+
+**c.**.. 1 + 1 = 10 --------------> se escribe el 0 y "me llevo 1" de acarreo ("carry") a la posición siguiente   
+
+**d.**.. 1 + 0 + 0 = 1 + 0 = 1
+
+**e.**.. 1 + 1 = 10 --------------> (ídem c.)
+
+**f.**.. 1 + 1 + 0 = 10 + 0 = 10 ----(ídem c.)
+
+**g.**.. 1 + 0 +1  = 10 -------------(ídem c.)
+
+**h.**.. 1 + 1 + 1 = 10 + 1 = 11 ----se escribe 1 y "me llevo 1" a la posición siguiente. 
+
+**i.**.. 1 + 1 = 10
+
+página 144
+
+En la resta indicadaª, toda vez que se "pide 1" si la siguiente posición del minuendo vale 1,
+éste pasará a ser 0, dado que (1-1=0) como indica el reglón superior.Si la siguiente es 0 pasará 
+a ser 1(10-1=1), debiéndose nuevamente "pedir 1" a la subsiguiente, que también pasará a ser 1 si es 0, 
+y así sucesivamente. Si hay ceros en el minuendo se transformarán en unos, hasta llegar a un 1 que pasará a ser 0.
+
+El procedimiento de "pedir prestado" no se emplea en los circuitos de un computador, por la complejidad y lentitud que ocasionaría.
+En su reemplazo se usa el método de **sumar al minuendo el complemento al módulo del sustraendo,** cuyos pasos se indica a continuación,
+y cuya justificación se trata en detalle en el **Complemento para Enteros y Punto Flotante"** que está al final de esta Unidad.
+
+
+##*¿De qué forma se realiza manualmente una resta de binarios?*
+
+La tabla de restar binaria es sencilla:
+
+0 - 0 = 0
+
+1 - 0 = 1
+
+1 - 1 = 0
+
+0 - 1 = 1  -----> y se "pide 1" a la siguiente; o sea se hace 10 - 1 = 1
+
+
+..............001 ..01..0
+
+..........10~~1~~~~1~~~~0~~0~~1~~~~0~~010
+
+-- ............11100101
+
+.. -----------------
+
+ ...........10010101101
+
+##*¿Cómo efectúa la UAL una resta sin pedir prestado, mediante una suma?*
+
+Realizaremos la misma resta anterior sin pedir prestado, mediante **una sola suma** que hace la UAL
+
+
+
+
+..........10110010010
+
+-- ......00011100101
+
+.. -----------------
+
+........111......1....1
+
+..........10110010010
+
+. + ....11100011010
+
+.. -----------------
+
+ .......1 **10010101101**
+ 
+ (El primer 1 se descarta)
+
+ (El resultado está en negrita recuadrado)
+ 
+ **Regla**
+
+ 1. El minuendo se sumará sin modificación.
+
+ 2. Se invierten cada uno de los bits del sustraendo, y el número así formado es el segundo operando.
+
+ 3. Se escribe un uno para ser sumado en la posición de las unidades.
+
+ 4. Sumar los tres números indicados en 1, 2 y 3 , y descartar el 1 que está fuera del formato de los n bits que se restan.
+ 
+ Los bits restantes a la derecha del bit descartado constituyen el resultado de la resta.
+ 
+ ##*¿Cócomo se multiplican y dividen manualmente números binarios naturales?*
+ 
+ La tabla de multiplicar es muy sencilla, al igual que la operatoria manual (que no se usa en cálculos automáticos): se repite el multiplicando desplazado a la izquierda, conforme a la posición que ocupen los unos del multiplicador. Luego se realiza la suma de los sumandos así ordenados.
+ 
+ 0x0=0
+
+ 0x1=0
+
+ 1x0=0
+
+ 1x1=1
+ 
+ 
+..........11011
+
+X ...........101
+
+.. ----------
+
+..........11011
+
+.....11011
+
+.. -----------
+
+...1 0000111
+
+
+ 
+     111011 | 110_____                           
+    -110         1001
+	 ____
+     0010
+    - 000
+	 _____
+       0101
+	-    110
+	     _____
+		  101
+		  
+La división se ha realizado con el método de las diferencias sucesivas, siendo que cada sustraendo se obtiene: multiplicando por 1 al divisor si este último es menor o igual que el resto parcial en cuestión, o por 0 si el mismo es mayor que dicho resto.
+
+
+Es imporatente señalar que cada vez que se multiplica o divide un número entero binario  **por la base 10b = 2d al igual que en base diez se agrega o se quita un cero**, respectivamente:
+
+
+(1011x10)b = 10110b           ...........................................................(10x10)b = 100b
+
+(10110 x 10 x 10 = 10110 x 100)b = 1011000b(1110 : 10)b = 111b
+
+(101011000 0 : 1000)b = 1010110b
+
+
+
+
+---------------
+ª Es conveniente comparar las similitudes de la resta efectuada con restas en base diez, como : 880010010 - 5349809)D 
+
+
+
+

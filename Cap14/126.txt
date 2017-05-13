@@ -1,0 +1,49 @@
+1-114
+------------------------------------------------------------------------------------------------------------------
+1.14|#PARA ENTENDER LOS 
+    |#PENTIUMr I, II, III, 4, XEONr 
+    |#Y LOS PROCESADORES RISC
+
+###¿Qué es el "modelo de Von Neumann", y en qué medida los
+###procesadores actuales lo cumplen?
+ -----------------------------------------------------------------------------------------------------------------
+	si bien con importante mejoras en la velocidad de procesamiento, _la mayoría de los procesadores actuales
+	procesan en base al esquema de la figura_ 1.7, denominado "__modelo de Von Neumann"__[^nota1], que supone:
+
+	~~~
+	+ Existe una sola UCP, que procesa en secuencia una instrucción tran otra.
+	  Ejecuta una sola intrucción por vez mediante una serie de paso
+
+	+ Las instrucciones a ejecutar y los datos a procesar, codificados en binario, deben almacenarse en una 
+	  rapida memoria interna (memoria principal) antes de realizar el procesamiento de los mismos.
+
+	+ Existen instrucciones de "salto", (figura 1.35) que ordenen a la UC discontinuar o no (según se
+	  alcance o no un resultado interno) la secuencia de intrucciones que viene ejecutando, para 
+	  pasar a ejecutar otra secuencia, cuya primer intrucción se debe poder localizar. 
+	~~~
+
+	En la figura 1.27 se endicaban cinco pasos o etapas básicas para ejecutar una instrucción.
+	Una de las primeras mejoras en velocidad para el modelo, fue ejecutar el paso 5 mientras se espera el
+	dato a operar (paso 3), quedando asi 4 subprocesas típicos por lo que pasa la ejecución de cada intruc
+	ción: los cuales progresan con cada pulso reloj, según se ha visto (figura 1.30, que se repite en la 1.84).
+
+					INSERTAR FIGURA 1.84
+	
+	La figura 1.85 (izquierda) es similar a la 1.84, salvo la dirección (diagonal) en que avanza el proceso, 
+	para poder comparar el procesamiento según el modelo original de Von Neumann con otro más eficaz. 
+	La ejecución de una instrucción progresa de un renglón al siguiente con cada pulso reloj, por lo
+	cual los pulsos se han dibujado en sentido vertical. 
+	Primero se termina de ejecutar totalmente una intrucción (__I1__), y luego la siguiente (__I2__), insumiendo 
+	ejecución de ambas intrucciones 8 pulsos reloj.
+
+###¿Qué mejora en la velocidad presentan los procesadores actuales con "pipe line"?
+-----------------------------------------------------------------------------------------------------------------------
+	Hoy día, para aumentar la velocidad de procesamiento se ha mejorado el modelo original, dando 
+	lugar a otro que podemos denominar modelo de Von Neumann con "solapamiento de procesos", o
+	con "__pipe line__" o "__segmentado__" -como quiera llamarse- que se pasa a exponer conceptualmente.
+	Intel en 1978 ya adoptó el "pipe line"°° en el procesador 8086.
+
+	-------------------------------------
+	[^nota1]  > En el presente tambén se denomina "escalar o "secuencial", generalizable a cualquier computador que opera en forma secuencial
+	> sobre los datos. 
+	[^nota2]  > Tracucible "como un tubo"), término originado en el proceso de fabricación en serie de autos, adoptado por Ford en 1919.

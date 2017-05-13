@@ -1,0 +1,63 @@
+﻿*cuentas vueltas hexadecimal y binario* nos permintiran hallar facilmente el numero que sigue a otro dado.
+en hexadecimal cada rueda tiene desiseis simbolos (0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f), y cuando cambia de f a 9 hace cambiar la
+rueda qye esta a su izquierda salco que hay 16 simbolos en cada rueda en vez de diez, todo es igual al cuenta vueltas anterioro.
+asumiendo que el cuenta vuelta hexadecimal indica 3899. si la rueda de las unidades avanza un simbolo pasara de 9 a A, sin
+hacer cambio en la rueda la  que esta a su izquierda, por lo que el numero hexadecimal siguiente es 389A. Luego cada vez que las 
+unidades aumentan en uno, sucesivamente se iran formando 389B, 289C, 289E, 389F. con el siguiente cambio de la
+rueda de las unidades, esta pasara de F a 0, con lo siguiente avance en uno de la rueda delas unidades esta pasara de F a
+0, forzando que la rueda que esta a su izquierda rambien cambie de f a 0, lo que a su vez tambien hace que su rueda vecina izquierda
+pase de f a 0, lo que a su vez hara que la rueda que esta a su izquierda cambe de 3 a 4, en  fefinitiva 3FFF se paso a 4000.
+
+Podemos imaginar un **cuenta vueltas binario** constituido por ruedas que solo tienen dos simbolos **0** y **1**, cada uno ocupando una
+mitad de cada rueda. cuando una rueda pasa de 1 a 0 obliga a la que esta a su izquierda que gire media vuelta para que pase a 1
+si estaba en 0, o que pase a 0 si estaba en 1.
+suponiendo que este cuenta vueltas indique 1010, si la rueda extrema derecha de las unidades avanza uno pasara de 0 a 1, sin afectar
+a la rueda que esta a su izquierda, por lo que el numero binario que sigue sera 1011. cuando la rueda de las unidades vuelva a
+cambiar, esta vez de 1 a 0, hara que la rueda vecina izquierda que estaba en 1 pase a 0, esto a su vez obliga a que la rueda vecina 
+izquierda que estaba en 0 cambie a uno, lo cual no afectara a la rueda vecina izquierda de la misma. entonces 1011 sigue 1100, etc,
+en la figura 1.4 puede verificarse con este metodo la generacion de la sucesion de binarios del 0000 a 1111.
+
+##**¿Cuantos bits se necesita por cada digito decimal a representar?**
+El numero decimal 109 de 3 digitos, resultan aproximadamente 7/2=2,5 bits por cada digito decimal.
+512d=1000000000b o sea 10bits para representar 3 digitos decimales :10/3=3,3 bits por cada digito decimal.
+con 2 bits se forma 4=2^2 combinaciones binarios (00 11 10 11). con 3 bits se forman 8=2^ combinando binarios (000 001
+010 011 100 101 110 111). en la figura 1.4 de la seccion 1.2 aparecen las 16=2^4 combinaciones binarios que se forman con 4 bits.
+O sea, que el exponente de dos indica la cantidad de bits que se necesita en uno, el numero de combinaciones se duplica.
+
+es importante recordar siempre que 2^10=1024, numero cercano a 1000 = 10^3 (1K)
+EL exponente diez de dos indica que con 10 bits puede formarse 1024 numeros o combinaciones binarias distintas
+(de 0000000000 a 1111111111b=1023d), numero cercano a 1000d que es el numero o combinaciones
+que en base diez pue en el platillo derecho den formarse con 3 digitos decimales (de 000 a 999), siendo 3 el
+exponente de diez.
+
+por lo tanto, un numero aproximadamente igual de combinaciones distintas se forma con 10  bits en binario, y con 3
+digitos decimal. osea unos 10 bits por cada 3 digitos decimales, lo que da 10/3 =3,33 bits por cada digito decimal.
+ejercicio: cuantos bits se necesita para fotmar 10^6(1mega)numeros distintos.     respuesta 6x3,3 3=19,98 - 20bits
+otra forma de hacerlo: dado que 2^10 , se tiene 10^3x10^3 ~ 2^10x2^10=2^20   Eo exponente indica que hacen falta 20bits
+
+#**1.3 CONVERSION ENTRE BASES**
+##**Conversion de una base cualquiera a base diez** 
+se trata de una metodologia que de hevho hemos realizado anteriormente cuando evaluamos en base diez
+los valores de las pesas con las cuales formamos numeros en otras bases. Asi, hemos realizado
+
+64  8  1
+1   5  5=[1x64 + 5x8 + 5x1]d=109d
+
+
+64 32 16 8 4 2 1 d
+1   1  0 1 1 0 1 b=[1x64 + 1x32 + 0x16 + 1x8+ 1x4 + 0x2 + 1x1]d=109d
+
+16 1
+6  Dh=[6x16 + 13x1]d =109d 
+
+
+
+
+
+
+
+
+
+
+
+

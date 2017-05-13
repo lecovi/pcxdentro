@@ -1,0 +1,64 @@
+ 1-131
+	Las *µops-R generadas por instrucciones complejas son aportadas por la ROM* vinculada al TC (fig.194),por
+	ser las mismas infrecuentes de aparecer en un programa.
+	También debe suponerse que cuando se direcciona al __TC__ para localizar en una línea del mismo una próxima
+	secuencia de 3 µops-R a ejecutar, éstas deben aparecer en las salidas del __TC__. Dichas µops-R (de igual 
+	longitud) irán a la etapa de Renombramiento de Registros ( __RR__ ) de donde pasan según el orden originario a
+	la "Cola de µops-R", junto con la dirección de la instrucción que los originó. Lo mismo ocurre con las µops-R
+	generadas por la ROM. Esta cola oficia de buffer intermediario entre los subsistemas que operan en orden y desorden.
+	Para la "HT" este buffer se comparte mitad para cada "thread", pudiéndose identificar en esta cola las µops-R
+	de cada "thread". Si para la "HT" se debe acceder simultáneamente al __TC__ para obtener líneas con µops-R de 
+	ambos "threads", durante un ciclo pedirá una línea cada uno de ellos, y en el siguiente una línea del otro.
+	Mientras uno de ellos esta detenido se podrá acceder durante ciclos sucesivos al __TC__ para obtener líneas 
+	del otro.Por lo tanto el __TC__ es un recurso compartido en "HT", puediendo un "thread" tener más líneas que otro.
+	También es compartida la ROM de µops-R. Cuando el caché L2 llega una instrucción compleja, el __TC__ le envía a la ROM
+	el número que genera la __UPD__ el cual es como la dirección de la ROM donde está la primera de una secuencia de
+	µops-R, en que se traduce una instrucción compleja que llegó a la __UPD__. Para "HT" el hardware permite identificar
+	a que "thread" corresponde dicha sencuencia.
+	Si al direccionar el __TC__ *hay un fallo* ("miss") se debe acceder a la jerarquía de memorias (en primer lugar al caché
+	L2) para obtener dos líneas de instrucciones (64 bytes), las cuales serán traducidas por la __UPD__ (de a una por
+	vez) y enviadas como µops-R a la __UT__ y también a la "Cola de µops-R".
+	>Obsérvese que en esta arquitectura sólo se pierde tiempo en las traducciones cuando hay un fallo en el __TC__ 
+
+Antes de ir a la __UPD__ los 64 bytes citados  provenientes del caché L2, temporariamente se guardan en el Buffer L2
+	( __BL2__ ) hasta que puedan ser decodificadas las instrucciones. Para "HT" existen dos __BL2__, uno para cada "thread".
+	También existen dos __CRS__ y dos buffers para instrucciones de retorno (de subrutina, por ejemplo).
+	>En definitiva el __TC__ mayormente provee las µops-R que se van ejecutar próximamente, y cada vez que en el __TC__
+	hay un fallo, la __UPD__ traducirá en µops-R las instrucciones __BL2__ ( *a razón de una por vez* ) que irán al __TC__
+	y también a la cola de µops-R, salvo que aparezca alguna instrucción compleja. Esto es como en una UCP con caché: si
+	hay fallo, las instrucciones a ejecutar van al caché y la UCP (en este caso dicha cola).
+	
+Si en "HT" hace falta decodificar instrucciones de los dos "threads", se sacan alternadamente secuencias de cada __BL2__
+	
+En Proceso de ejecución de µops-R se inicia con una asignación ("allocation") en la etapa __RR__ que renombra los
+	registro de 80x86 indicados en la µops-R, que están en la "Cola de µops-R" en otros registros "alias". Para tal fin
+	existen 128 registros para enteros y 128 para punto flotante, más buffers para reordenamiento y para operaciones
+	load/store., que para "HT" son particionados en mitades, una para cada "thread", siempre identificables por el 
+	hardware del procesador, como en todos los casos.
+	En "HT" en la "Cola de µops-R" Hay µops-R de los dos "threads",y con cada pulso reloj se alterna la asignación de 
+	recursos de la __RR__ . Si en un "thread" usa todos los recursos que tiene reservados, la asignación sigue para el otro.	
+	Junto con la asignación se realiza el renombramiento de registros. Para ello existen dos "Tabalas de Registros Alias",	
+	que indican para cada nueva µops-R que se va a ejecutar de cada "thread" en que registro "alias" estarán sus operandos
+	(que pueden ser resultados de µops-R ejecutadas antes),y en que registro "alias" irá el resultado.
+	Las secuencias de µops-R con sus registros nombrados pasan a dos colas": una para provenientes de instrucciones 
+	load/store (que deben acceder a memoria), y otra para las que se tradujeron de las instrucciones que no ordenan acceder 
+	a memoria. Estas dos colas también pueden ser particionadas con la mitad de entradas para cada "thread". De estas colas
+	salen µops-R hacia la __UPRE__ , en forma alternada -una por "thread" y con cada pulso reloj.
+	
+En la __UPRE__ existen 5 "Lógicas planificadoras" (__LP__) que determinan cúando µops-R se puede ejecutar. Cada __LP__
+	tiene su propia cola de 8 a 12 µops-R que debe seleccionar para enviar a las __UE__. *Las __LP__ no distiguen entre µops-R
+	de dos "threads"*. Las µops-R se seleccionan en función de la dependencia de datos y disponibilidad de __UE__. Para evitar
+	problemas está limitado el número de entradas en uso que puede tener en cada cola un "thread".	
+	
+>Puesto que para cada µops-R se efectúa en una __UE__ la operación que ordena con los datos apropiados y se deja el
+	resultado en el destino indicado por ella: y dado que dichos datos están fisicamente en registros que están definidos
+	desde la etapa __RR__, al igual que el destino del resultado, y que para "HT" dichos recursos están separados para cada 
+	"thread", no hay problemas en encontrar los resultados que usarán las µops-R que se ejecutarán luego.
+	Asimismo las µops-R se pueden identificar, pues tienen asociado (incluso en la __UT__) un número que es la dirección
+	en memoria de la instrucción originaria de la cual fueron traducidas.
+	
+Si bien cada ciclo reloj de las __LP__ pueden hacer que las __UE__ efectúen las operaciones de hasta 6 µops-R, como el 
+	máximo de µops-R que genera la __UT__ es 3, *queda limitado a este número la cantidad de µops-R ejecutables por ciclo*.
+	
+	
+	

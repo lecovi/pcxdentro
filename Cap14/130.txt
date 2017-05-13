@@ -1,0 +1,62 @@
+1-118
+-------------------------------------------------------------------------------------------------------------------
+	1. __Pre-carga__ ("pre-fetch") consiste en la llegada de los códigos de las próximas instrucciones que entrarán
+	   al "pipe line" a dos buffers(de 16 bytes cada uno) de la Unidad de Pre-carga, ,para formar una "cola".
+	   En la figura 1.86 se ha supuesto que a uno de estos buffers han llegado desde el caché 5 instrucciones
+	   (promedio de instrucciones que entran en los 16 bytes de este buffer) en forma simultánea. Los códigos
+	   de ellas son los mismos que hemos usado en la figura 1.15 para __I1, I2, I3, I4,__ que en hexa son A10050,
+	   30600500, B0600650, y A31050, respectivamente. La instrucción __I5__, aparece con un código XXXX. De no 
+	   haber estado estas intrucciones en el caché, primero se hubiera pedido __I1__ a la memoria principal[nota1], y 
+	   llegaría una copia de su código al buffer de pre-carga para que entre al "pipe line", y otra copia del mis
+	   mo al chaché. Inmediatamente legarán luego al caché desde memoria, uno tras otro, los códigos de __I2, 
+	   I3, I4__[^nota2], que pasarán a la cola del buffer. De esta forma, sólo se pierde tiempo en obtener del exterior a __I1__
+	
+	2. __Primera Decodificación:__ a la Unidad de Decodificación llegan los primeros 3 bytes de cada 
+	   instrucción, para separar -entre todos los bytes que forman su código de máquina- su código
+	   de operación, del número que hace referencia a la dirección del dato (Los códigos de operación
+	   pueden tener de 1 a 3 bytes). Así, en la figura 1.86, al primer decodificador llegan los bytes
+	   A10050H, que en este caso son todos los bytes de la instrucción __I1__, identificándose __A1__ como el
+	   código de operación, y __0050__ como la referencia a la dirección del operando, número que pasará
+	   a la Unidad de segmentación y paginación, que formará la dirección del dato a operar, de modo
+	   que pueda ser leído del caché (si está en éste).
+
+	3. __Segunda Decodificación:__ en la figura 1.87, el código de operación __A1__ identificado en el paso
+	   anterior es ahora decodificado. Esto permite determinar la secuencia de microcódigo contenida en la 
+	   ROM de Control. Merced a esta secuencia la UC generará las señales de control, que enviará por las 
+	   líneas (insinuadas con flechas) que salen de ella, para que cada unidad que controla, ejecute una
+	   parte de la instrucción con cada pulsos reloj (como en la figuras 1.31 y 1.32), Si la instrucción es
+	   simple se ejecuta en un solo pulso. Al mismo tiempo que __I1__ pasa por esta etapa del "pipe line", tres
+	   bytes (030600H) del código de __I2__ (03060050H) entran a la etapa de primera codificación, siendo que 
+	   0050 -dirección traspuesta del dato- pasará a la U.de segmentación, para leer luego el dato del caché.
+
+	4. __Ejecución:__ en la figura 1.88 el dato que debe transferirse al registro AX -como ordena __I1__- hay que
+	   leerlo en la dirección (500H) que la U. de Segmentación dejó en el registro RDI, la cual permite leer el
+	   dato a operar en el caché. Suponiendo que el dato está en la U de caché, el mismo llegará al registro
+	   RDA[^nota3]. Paralelamente con la acción recién descripta para __I1__, el código 0306 de __I2__ pasa a la segunda
+	   decodificación, a la par que los bytes 2B0606 del código 2B060650 de __I3__ van a la primera decodificación.
+
+	5. __Almacenamiento de resultados:__ a esta etapa final del "pipe line" llega __I1__, completándose su 
+	   ejecución, para lo cual el dato (1020H) pasará al registro AX (paso incluido en la figura 1.88).
+	   Al mismo tiempo se tiene que: __I2__ entra en la etapa de ejecución obteniéndose del caché el dato
+	   1020H, que pasa al RDA. Este dato se suma en la UAL con el contenido (1020H) de AX (figura
+	   1.88), conforme ordena el código de dicha instrucción.
+	   El código 2B06 de la instrucción __I3__ entra a la segunda decodificación, y los bytes A31050, o sea
+	   todos los que conforman el código A31050 de __Isub4__ son sometidos a la primer decodificación.
+	
+	En la figura 1.89 se ha incluido cómo progresa el "pipe line" con otro pulso reloj, a fin de terminar 
+	de ejecutar __I2__, que pasa a la quinta etapa. En ésta, el resultado de la UAL (2040H) debe guardarse
+	en AX, así como los "flags" SZVC que ella también genera, resultantes de la operación, en el regis-
+	tro de estado (no dibujado). Paralelamente, __I3, I4__ e __I5__, pasan por las etapas 4, 3 y 2 del "pipe line".
+
+
+
+
+
+
+
+	----------------------------------
+	[^nota3]  > Si como es corriente, existe un segundo nivel de caché exterior (por ejemplo de 256 __KB__), se buscaría __Isub1__ primero en este caché
+	> rápido, y de no encontrarse en el mismo, se obtendría __I1__ de memoria principal.
+	[^nota3]  > Cuando no hay un contenido en un caché, su controlador solicita a la memoria el mismo y los que están en las direcciones siguientes
+	[^nota3]  > Por razones didácticas se ha buscado continuidad con el modelo de Von Neumann (figuras 1.23 a 1.26), aunque la ejecución de __I1__
+	> pueda realizarse en un paso menos en el 486. Esta simplicación puede traer alguna inconsistencias en el paso 5.  
