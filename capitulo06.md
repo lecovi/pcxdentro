@@ -131,7 +131,7 @@ Conforme a lo anticipado mas arriba, mediante el Debug cargaremos en el IP la di
 IP 0100  (el Debug informa que actualmente el IP contine 0100)										
 : 0200 ![Enter](./img/f6-1.png) (al lado de los dos puntos se deja el Debug escribimos 0200, nuevo valor que debe tener IP)										
 
-![Debug2](f6-3.png)
+![Debug2](./img/f6-3.png)
 
 Teniendo en el IP la dirección de L, ya se puede ejecutar la secuencia de instrucciones escritas, como sigue.
 
@@ -150,7 +150,7 @@ DS=309D	ES=309D	SS=309D		CS=309D	> IP=0200	NV	UP    EI	PL	NZ    NA	PE    NC
 	
 309D:0200			MOV AC.[5000] [^3] 					DS:5000=1020	
 -										
-   ![Debug3](f6-4.png)				
+   ![Debug3](./img/f6-4.png)				
 
 ---
 [^1] El Dubug simula un 80286, pero como éste es compatible con el 386, 486 y el Pentium (que tienen registros de 32 bits) puede
