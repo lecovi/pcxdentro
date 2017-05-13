@@ -84,7 +84,7 @@ A diferencia de las interrupciones por hardware, una interrupción por software 
 Por ejemplo, cuando un programa necesita hacer una operación corriente relacionada con los recursos que maneja el sistema operativo: típicamente abrir/cerrar un archivo, acceder a un disco, imprimir, visualizar información en pantalla, etc.  
 En todos los casos se trata, pues, de un llamado a subrutinas que los programas de usuario requieren en su auxilio, cuando  se necesita realizar operaciones típicas, como las citadas.
 
-![Figura 1.74](f1-74.jpg)  
+![Figura 1.74](./img/f1-74.jpg)  
 
 La figura 1.74 -en esencia similar a la 1.73- da cuenta del mecanismo de una interrupción por software, que podemos esquematizar en los siguientes pasos:
 
