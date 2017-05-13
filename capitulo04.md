@@ -19,7 +19,7 @@ Es costumbre representar las celdas de una memoria, o una porción de ella, medi
 Estos números binarios se escriben en papel o en pantalla al lado de cada celda, en su equivalente hexadecimal, como muestra la figura 1.8, a fin de no tener que vizualizar largas cadenas de unos y ceros.
 En la figura 1.8 (pag 1-16) se supone que en las líneas del bus de direcciones (ampliado con la "lupa") se envía la dirección 0000 0010 0000 0111 = 0207H, en la cual está almacenado el byte 01100001 = 61 H.
 
-![figura 1.9]
+![figura 1.9](./img/f1-9.jpg)
 
 Puede ayudar a entender mejor el concepto de byte almacenado, si se piensa que en cada casillero existen 8 llaves del tipo "si-no" (figura 1.9), como las comunes de pared para encender la luz, cada una para retener un uno ("si") o un cero ("no") ^1. Entonces, para una celda dada, como la que contiene 01100001, la combinación de unos y ceros que están formando las 8 llaves es la información contenida en dicha celda. La información que almacena cada grupo de 8 llaves puede referirse a instrucciones o datos. 
 El modelo de las llaves también es útil para tener presente que en cada posición de MP siempre existe una cierta combinación de unos y ceros, o sea no es posible que ella no contenga "nada", pues las 8 llaves siempre están presentes, cada una en "si" o en "no".
@@ -33,7 +33,7 @@ Un cierto número de éstas (2, 4, u 8 bytes) suele denominarse **palabra** ("**
 
 Tecnológicamente la MP reside en microcircuitos electrónicos, que pueden guardar un cierto número de bits, construidos sobre una fina capa de silicio (*semiconductor*), conformando un "*chip*" (figura 8.12). Este se protege con un encapsulado de plástico o cerámica en forma de pastilla con "patas" metálicas para conexionado. Se requieren varias pastillas para lograr el total de memoria necesaria (figura 1.8, a la izquierda).
 
-![figura 1.8]
+![figura 1.8](./img/f1-8.jpg)
 
 A un subconjunto de "patas" de esas pastillas se le envía cada dirección, en otro subconjunto aparecen los contenidos, etc. Como aparece en la figura 1.8, en una PC varios chips de memoria están insertos en una pequeña plaqueta que constituye un módulo o banco de memoria. Este se inerta en un zócalo ("slot").
 Esta tecnología de conexionado puede ser del tipo SIMM (Single in line Memory Module) o DIMM (Dual in line Memory Module, siendo que zócalos DIMM aparecen en la motherboard de la figura 1.5).
@@ -57,68 +57,9 @@ Más en detalle (figura 1.10), una operación de lectura de un word comprende lo
 3. Luego de un tiempo, una copia del contenido de la posición direccionada (61H) y del contenido de la siguiente (15H), aparecen juntas (6115H) en las líneas de datos del bus, a disposición de la UCP.
 
 
-![figura 1.10]
+![figura 1.10](./img/f1-10.jpg)
 
-![figura 1.11]
-
-
-Con el modelo de las 8 llaves por celda propuesto, una lectura consiste en determinar en qué estado ("si" o "no") está cada llave, y luego transmitirlo al bus de datos.
-
-**Operación de escritura de una palabra de dos bytes en un acceso a memoria** (fig. 1.11):
-Consiste en cambiar la combinación de unos y ceros contenida en las celdas que conforman la palabra de memoria direccionada, para lo cual:
-
-1. En las líneas de dirección del bus la UCP coloca la dirección de la primer celda que se quiere escribir.
-2. La combinación binaria a almacenar en las celdas (por ejemplo 25B3 en hexa) es colocada por la UCP en las líneas de datos del bus.
-3. La UCP ordena escritura mediante la línea de control L/E la cual queda brevemente en cero.
-4. Luego de un tiempo, una copia de la combinación enviada a MP queda almacenada en la celda direccionada y en la siguiente (en cada una cambia la combinación de unos y ceros qe forman las 8 llaves).
-
-Se ha supuesto que las mismas celdas que antes fueron leídas, ahora son escritas con otro contenido distinto. Con la idea de las 8 llaves por celda, algunas o todas cambian su estado (de "si" a "no" o viceversa) para almacenar el nuevo contenido de unos y ceros. De esto se deduce que *una escritura es destructiva*, en el sentido que se pierde, desaparece, el contenido anterior, pues la llaves que cambian de estado no pueden volver al que tenían antes de la escritura. En el ejemplo, los contenidos 61 y 15 fueron reemplazados por 25 y B3.
-
-***¿Qué es tiempo de acceso a memoria y su medida en nanosegundos?***
-
-**Tiempo de acceso**: es el que transcurre entre que se direcciona una memoria, hasta que aparece en sus salidas (conectadas a las líneas de datos del bus) el contenido de la celda direccionada.
-
-![figura 1.12]
-
-Este tiempo suele indicarse en un chip de memoria al final de su código (figura 1.12), como ser el número 70. Esto significa que es tan corto como 70 nanosegundos.
-
-El **nanosegundo** es una unidad de tiempo que significa una *mil millonésima de segundo* (0,000000001 seg. = 10^-9 segundo), o sea mil veces menor que una millonésima de segundo.
-
-En el presente los procesadores operan internamente en el orden del nanosegundo.
-
-***¿Qué significa que el acceso a la memoria principal es al azar (random)?***
-
-En los televisores que tenian un dial rotatorio, para pasar, por ejemplo, del canal 2 al 7 el dial debía recorrer la secuencia de números que están entre 2 y 7. Del mismo modo, en una memoria de cinta magnética
-
---------
-[1] Esto significa que dicha línea de control está en 5 volts. Si L/E = 0, esa línea está en 0 volts. Los procesadores 80x86 pueden leer también un byte de memoria, lo cual implica que debe existir otra línea de control (no dibujada) para indicar leer un word o byte.
---------
-
-![figura 1.8]
-
-A un subconjunto de "patas" de esas pastillas se le envía cada dirección, en otro subconjunto aparecen los contenidos, etc. Como aparece en la figura 1.8, en una PC varios chips de memoria están insertos en una pequeña plaqueta que constituye un módulo o banco de memoria. Este se inerta en un zócalo ("slot").
-Esta tecnología de conexionado puede ser del tipo SIMM (Single in line Memory Module) o DIMM (Dual in line Memory Module, siendo que zócalos DIMM aparecen en la motherboard de la figura 1.5).
-
-***¿Cómo se direcciona, se lee y se escribe la memoria principal?***
-
-En relación con la MP sólo son posibles dos operaciones que puede ordenar la UCP: la *lectura* o la *escritura*, pero antes de realizar cualquiera de ellas, la UCP debe direccionar la MP.
-
-La accion de **direccionar** (**direccionamiento**) consiste (fig 1.8) en colocar en las líneas de direcciones del bus que llegan a MP, la dirección de la celda a la que se quiere acceder, para leerla o escribirla.
-
-A continuación (figuras 1.10 y 1.11) se repetirá el esquema de la derecha de la figura 1.8 para ilustrar cómo se lee y escribe la memoria principal. Los números binarios contenidos en las celdas de memoria de esas figuras han sido convertidos a hexadecimal, y se supone que el procesador puede leer o escribir en memoria un word de 2 bytes, o sea dos posiciones consecutivas, con sólo dar la dirección de la primera.
-
-**Operación de lectura de una palabra en un acceso a memoria** (figura 1.10):
-La UCP *"no sabe" que combinación de unos y ceros existe en cada celda*. Para conocerla debe indicar su dirección, y la MP le proporcionará la combinación que guarda la celda direccionada por la UCP.
-Si pide leer un word, la MP le enviará dicha combinación junto con la contenida en la posición siguiente.Más en detalle (figura 1.10), una operación de lectura de un word comprende los siguientes pasos básicos:
-
-1. La UCP ordena lectura mediante la linea de Lectura/Escritura (L/E = 1)[1], que va de la UCP a MP.
-2. En las líneas de dirección, la UCP coloca la dirección de la primer celda que se quiere leer (0207H).
-3. Luego de un tiempo, una copia del contenido de la posición direccionada (61H) y del contenido de la siguiente (15H), aparecen juntas (6115H) en las líneas de datos del bus, a disposición de la UCP.
-
-
-![figura 1.10]
-
-![figura 1.11]
+![figura 1.11](./img/f1-11.jpg)
 
 
 Con el modelo de las 8 llaves por celda propuesto, una lectura consiste en determinar en qué estado ("si" o "no") está cada llave, y luego transmitirlo al bus de datos.
@@ -137,7 +78,7 @@ Se ha supuesto que las mismas celdas que antes fueron leídas, ahora son escrita
 
 **Tiempo de acceso**: es el que transcurre entre que se direcciona una memoria, hasta que aparece en sus salidas (conectadas a las líneas de datos del bus) el contenido de la celda direccionada.
 
-![figura 1.12]
+![figura 1.12](./img/f1-12.jpg)
 
 Este tiempo suele indicarse en un chip de memoria al final de su código (figura 1.12), como ser el número 70. Esto significa que es tan corto como 70 nanosegundos.
 
@@ -158,7 +99,7 @@ En cambio en una TV con control remoto, mediante la botonera, forma el número d
 Esta forma directa de acceder, seleccionar o ubicar algo, se denomina "**random**" (*al azar* en el sentido de que con la botonera de un control remoto puede formarse cualquier número de canal al azar, y éste aparecerá en *igual tiempo* que cualquier otro número de canal seleccionado, sin importar el número del mismo y sin busqueda alguna. Un sistema de este tipo requiere una mayor complejidad, tanto en el selector como en el televisor. Igualmente, acceso directo o "**random access**" en una memoria implica que *cualquier* posición *puede encontrarse en igual tiempo* (para ser leída o escrita), *sin búsqueda alguna*.
 Vale decir, *que el tiempo de acceso es el mismo para cualquier dirección sin importar su número*.
 
-![figura 1.12.a]
+![figura 1.12.a](./img/f1-12a.jpg)
 
 A continuación veremos que en la UCP existen funciones que se quiere son análogas a las del control remoto de TV citado. Para tal fin, se requiere añadir en el modelo propuesto de UCP dos registros: RDI y RDA que ahora se definen, y que aparecen en el esquema de la figura 1.12a.
 En el **registro de direcciones (RDI)** de la UCP *se forma cada dirección que será enviada a MP por las líneas de dirección* por lo cual está en contacto con éstas. Si bien en la UCP no existe ninguna botonera para formar números correspondientes a direcciones, la UC se encarga de indicar cómo se generará una dirección en RDI, sea porque ella ya existe en otro registro de la UCP, o porque debe ser resultado de un cálculo a realizar. Lo que importa es que *antes que una dirección llegue a MP la misma se forma en RD*, registro del cual salen las líneas de dirección del bus local.
@@ -186,7 +127,7 @@ El decodificador de una memoria de 2^n celdas (figura 1.12.a) *sólo permite acc
 A fin de poder acceder en un solo tiempo de acceso a 2^k celdas consecutivas se debe disponer en principio de 2^k módulos (bancos) de memria independientes. Para las DRAM existe la variante "interleaving". 
 Acceder por ejemplo a 2 celdas consecutivas (figura 1.10) supone 2 módulos (figura 1.12.a.2) cada uno con su decodificador y 16 líneas para datos en el bus que va a la UCP. La idea básica es la siguiente:
 
-![figura 1.12.a.2]
+![figura 1.12.a.2](./img/f1-12a2.jpg)
 
 Si bien la UCP direcciona una memoria de 8 celdas (000 a 111), ésta en realidad consta de dos módulos separados de 4 celdas (00 a 11). Si la UCP necesita direccionar 2 bytes, como ser los de las celdas 000 y 001, enviará la dirección (par) de la primera (000) por el bus de direcciones. A los dos decodificadores de los dos módulos no les llega el bit extremo derecho de la dirección emitida por la UCP, sino que a ambos les llega la dirección 00, y cada módulo en una lectura enviará el contenido de 8 bits correspondiente a esa dirección al bus de datos, como se indica. Así la UCP recibirá juntos los dos bytes de las direcciones 000 y 001, en el tiempo que dura un acceso, siendo que se realizaron dos accesos de igual duración simultaneamente. El módulo izquierdo aportará las direcciones pares (000, 010, 100 y 110) y el derecho las impares restantes, o sea que el valor 0 ó 1 del último bit derecho de cada dirección selecciona el módulo donde está su contenido. La dirección del primero de los dos bytes a acceder debe ser siempre par. Caso contrario se requieren dos accesos.
 En caso de que se necesite leer el byte par o el impar en forma individual, la UCP seleccionará el que sea entre los dos bytes que proveyó la memoria. La línea que ordena lectura llega a los dos módulos, siendo que ambos son leídos juntos, y la UCP toma los dos bytes o uno de ellos, según necesite.
@@ -243,7 +184,7 @@ También la ROM BIOS contiene tablas, por ejemplo relativas a características d
 
 En el siguiente cuadro se clasifican las memorias a que hace mención la pregunta en tres grupos, en relación con la facilidad y rapidez con que se puede ser re-escrito cada byte de la mismas.
 
-![figura cuadro de memorias]
+![figura cuadro de memorias](./img/cuadro_memorias.jpg)
 
 
 ---------------
@@ -254,7 +195,7 @@ Las memorias **DRAM[1]** tienen en cada celda un transistor y un capacitor micro
 En cambio, cada celda de las memorias **SRAM** (*"Static RAM"*) consta de 4 ó 6 transistores, que forman un circuito con memoria, conocido como "flip-flop". Este permanece *"estáticamente"* en un estado eléctrico (0) ó en otro estado (1) mientras no se apague el computador (o se ordene pasar de un estado al otro en una escritura de la celda). Al no guardar la SRAM los bits en capacitores, no requiere circulación periódica de corrientes en su interior, como sucede en la DRAM.
 Dado que un flip-flop tarda varias veces menos en cambiar de estado que un capacitor, *una SRAM es más rápida que una DRAM*. Pero debido a que es varias veces más cara que una DRAM (por su menor capacidad por chip) no se utilizan chips SRAM en memoria principal, sino en la memoria caché (a tratar). Por ejemplo , si una DRAM tiene 60 nanoseg de acceso, una SRAM tiene 20 nanoseg, o menos.
 
-![figura 1.12.b]
+![figura 1.12.b](./img/f1-12b.jpg)
 
 El esquema de la figura 1.12.b con sólo 16 celdas de 8 bits con 16 direcciones que van de 0000 a 1111, servirá para entender más en detalle una DRAM. Cada celda se localiza en la intersección de una línea horizontal (LH) con otra vertical (LV), y cada línea se selecciona con la *mitad* de los bits de cada dirección. Si por el bus de direcciones se envía una dirección como 1101, ésta se parte en dos mitades: 11 y 01. Primero los bits 11 seleccionan la LH 11, y luego los bits 01 la LV 01. Así queda seleccionada la celda que suponemos contiene 01011000. Si es una lectura, una copia de 01011000 pasa al registro de salida, y de éste al bus de datos. Igualmente, como ser, direcciones de 20 bits se parten en dos grupos de 10 bits.
 
@@ -287,7 +228,7 @@ Los chips de memoria de vídeo **VRAM** (Video RAM) forman parte de la memoria p
 También existen **EDOVRAM**, semejantes a las subclases DRAM antes citadas.
 Otras RAM para las plaquetas de video son: la **WRAM** (WIndow RAM) que acelera la generación de gráficos, dado que ha sido pensada para anticipar las operaciones típicas que se realizan en vídeo; y la **3D RAM**, especialmente creadas para manejar gráficos en tres dimensiones. Contienen varias UAL en su interior.
 
-![figura 1.13]
+![figura 1.13](./img/f1-13.jpg)
 
 Los primeros chips ROM (hoy denominados **ROM** *"fabricados a medida"* se encargaban a los fabricantes de chips, indicándole el contenido que debía tener cada celda. Entonces, cuando se fabricaba cada chip, se grababan los contenidos que siempre tendría. La adquisición de estos chips hoy sólo se justifica económicamente si se encargan decenas de miles de chips iguales.
 A diferencia, los chips **PROM** ("Programmable ROM") se fabrican en serie, pero el interior de cada chip está preparado para que -en una segunda etapa- quién utilice uno o miles de estos chips pueda escribir una sola vez los contenidos que tendrán sus celdas. Estos se realiza en un dispositivo electrónico que se vende para tal fin. Una vez así grabada ("programada"), una PROM no puede ser re-escrita.
@@ -325,7 +266,7 @@ Se debe tener presente que para pasar de bytes a KB se debe dividir por 1024. Si
 Exactamente son: 8000/1024 = 7,8 KB. 
 En una PC cuando se habla de una memoria de por ejemplo 8 MB de capacidad, se asume que se trata de la porción DRAM de la misma, que está en los módulos de tecnología SIMM o DIMM. 
 
-![figura 1.14]
+![figura 1.14](./img/f1-14.jpg)
 
 ***¿Qué relación existe entre la capacidad de una memoria, la cantidad de bits que tienen sus direcciones y el número de líneas de dirección?***
 
