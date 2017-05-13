@@ -1,7 +1,5 @@
 
-[Índice](../README.md)
-
-[Siguiente](../Cap02/capitulo02.md)
+[^ Índice](../README.md) | [Siguiente >](../Cap02/capitulo02.md)
 
 ----
 
@@ -67,8 +65,10 @@ La persona en cuestión podría proceder así:
 ![Figura 1.1](./2.jpg)
 
 Los valores así hallados a partir de los datos primarios conocidos serán nuevos datos elaborados (información). Al realizar los cálculos anteriores también se establecieron relaciones de orden, al suponer que se hace primero y que después. A continuación relacionaría el pronóstico del tiempo con la ropa más adecuada y lista para usar en esas condiciones climáticas y establecería relaciones de equivalencia, entre vestimentas que tienen propiedades de abrigo similares. Eso también supone que debió realizar una clasificación. Luego podría usar su memoria, para extraer el dato estimativo de cuánto tiempo lleva vestirse de una manera o de otra, etc. 
+
 * c)Conforme al resultado del procesamiento de datos efectuado en el paso anterior, poseerá la siguiente **información**, que en forma escrita podría expresarse así: “Dispongo de más de media hora hasta salir, tiempo suficiente para bañarme rápido y vestirme con tal o tales prendas que están listas para usar. Como máximo debo salir a las 19.45 HS”. Ha resultado así un nuevo conjunto de representaciones simbólicas significativas, obtenidas a partir de aquella correspondiente a los datos primarios, se han obtenido **símbolos** a partir de otros **símbolos**.
-d) El resultado alcanzado (información “interna”) puede ser exteriorizada como información externa, ya que en forma verbal o escrita, si el cerebro ordena a los músculos relacionados con el habla que actúen, o a los músculos de la mano que escriban, respectivamente. Así exteriorizada, esta información por ejemplo podría comunicarse con otra persona, para que lo ayude a decidir correctamente. Si queda en la memoria de la persona que la elaboro, ella tomara luego las decisiones pertinentes.
+
+* d) El resultado alcanzado (información “interna”) puede ser exteriorizada como información externa, ya que en forma verbal o escrita, si el cerebro ordena a los músculos relacionados con el habla que actúen, o a los músculos de la mano que escriban, respectivamente. Así exteriorizada, esta información por ejemplo podría comunicarse con otra persona, para que lo ayude a decidir correctamente. Si queda en la memoria de la persona que la elaboro, ella tomara luego las decisiones pertinentes.
 
 Como punto de partida para comprender el funcionamiento de un computador, describiremos un proceso de datos manual auxiliado por calculadora. Este proceso, también puede desglosarse en cuatro subprocesos: entrada, memorización, procesamiento y salida, esquematizados en la figura 1.2
 Antes de la aparición de computadoras, una supuesta oficina de cálculos de ingeniería funcionaba de la siguiente forma. Una persona idónea en el manejo de una calculadora común, se dedicaba a realizar operaciones con esta. Calculistas programaban la serie de operaciones a realizar por el “idóneo” con la calculadora, y otra persona “auxiliar” las escribía ordenadamente en una planilla con renglones numerados, y también en ella los datos a procesar. La última orden de la secuencia puede indicar escribir en otra planilla una copia de resultado obtenido.
@@ -105,5 +105,5 @@ Existen 8 acciones primarias (“**primitivas**”) que pueden encontrarse en di
 * **Dar salida:** exteriorizar, obtener del sistema datos resultantes. 
 
 ----
-[Índice](../README.md)
-[Siguiente](../Cap02/capitulo02.md)
+
+[^ Índice](../README.md) | [Siguiente >](../Cap02/capitulo02.md)
