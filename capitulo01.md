@@ -29,7 +29,7 @@ Más concretamente, realizamos operaciones sobre representaciones simbólicas de
 Estas representaciones simbólicas son **datos** que seleccionamos, reunimos, y sobre los cuales operamos.
 La operatoria realizada con símbolos que seleccionamos y reunimos, da por resultado información, que también son símbolos de propiedades de entes y sucesos, que antes desconocíamos. Si bien datos e información pueden ser sinónimos en el lenguaje común, en informática son “input”, “output” de un proceso
 
-![imagen1](./1.jpg)
+![imagen1](./img/1.jpg)
 
 ----
 > La información sirve para *tomar* **decisiones**, con vistas a un accionar concreto (presente o futuro) y se obtiene realizando operaciones sobre datos. Su elaboración permite tomar conocimiento de algún aspecto de la realizar desconocido, lo cual disminuye la incertidumbre existente antes de tomar una decisión.
@@ -62,7 +62,7 @@ La persona en cuestión podría proceder así:
   * Tiempo que tarda en bañarse: 15 Minutos (dato en su memoria)
   * Tiempo de viaje normal: 15 Minutos (dato en su memoria)
 
-![Figura 1.1](./2.jpg)
+![Figura 1.1](./img/2.jpg)
 
 Los valores así hallados a partir de los datos primarios conocidos serán nuevos datos elaborados (información). Al realizar los cálculos anteriores también se establecieron relaciones de orden, al suponer que se hace primero y que después. A continuación relacionaría el pronóstico del tiempo con la ropa más adecuada y lista para usar en esas condiciones climáticas y establecería relaciones de equivalencia, entre vestimentas que tienen propiedades de abrigo similares. Eso también supone que debió realizar una clasificación. Luego podría usar su memoria, para extraer el dato estimativo de cuánto tiempo lleva vestirse de una manera o de otra, etc. 
 
@@ -84,7 +84,7 @@ Por ejemplo, una secuencia sencilla de operaciones ordenadas, que denominaremos 
 > Es importante seguir en detalle esta secuencia de instrucciones, pues más adelante se repiten como instrucciones de máquina que se ejecutaran en una PC.
 ---
 
-![Figura 1.2](./3.jpg)
+![Figura 1.2](./img/3.jpg)
 
 El primer bloque del esquema de la figura 1.2 da cuenta de la entrada de datos e instrucciones a la planilla, merced o a la acción de la persona que programo las operaciones a efectuar. El “idóneo” **leerá en el orden dado** cada instrucción, y digitara en la calculadora la tecla correspondiente a la operación, el cual será introducido a la calculadora por medio del teclado.
 La operación ordenada se llevara a cabo al pulsar la tecla (=). Un resultado parcial o total que está en el visor de la computadora podrá registrarse (escribirse) en un renglón indicado de la planilla, cada vez que una instrucción (como **I4**) así lo ordene.
