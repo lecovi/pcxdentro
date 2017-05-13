@@ -20,7 +20,7 @@ Vale decir, que del conjunto de todos los archivos almacenados en el disco rigid
 Los programas constan de secuencias de instrucciones que estan en direcciones consecutivas de memoria, siendo frecuente que secuencias se vuelvan a ejecutar n veces, dando lugar a los "ciclos". Lo primero implica que es muy probable que las direcciones de dos intrucciones que se ejecutan una tras otra sean muy cercanas.  
 A su vez, los datos que estas instrucciones procesan, si contituyen elementos ordenados de un vector o una matriz, o los cercanos a la cima de una pila, se encuentran vecinos en una zona acotada de memoria, y los programas ordenan operar una y otra vez sobre estos datos.  
 
-![Figura 1.77.a]
+![Figura 1.77.a](./img/f1-77a.png)
 
 Por lo tanto, la ejecucion de un programa se va realizando en secuencias de instrucciones relativamente cortas, que mayormente se ejecutan muchas veces, siendo que tambien los datos que cada secuencia procesa estan en direcciones proximas, los cuales asimismo en general son accedidas repetidamente. En este caso tambien resulta para un conjunto de instrucciones y datos a procesar almacenados en memoria, que sus elementos no son accedidos con igual probabilidad;sino que durante cada lapso del proceso de datos \(que ellas operan\), localizados en dos zonas reducidas de memoria principal \(cuyos espacios de direcciones varian a medida que se ejecuta el programa\). En especial se accede a bloques de datos de gran longuitud en el procesamiento de textos,planillas y multimedia.
 
@@ -36,7 +36,7 @@ c. Implementa la forma en que los resultados obtenidos por la UCP se guardaran e
 
 ###¿Cómo es la estructura de un caché de correspondencia directa?
 
-![Figura 1.77.b]
+![Figura 1.77.b](./img/f1-77b.png)
 
 Mientras que un chip de memoria está organizado como una sucesión de celdas independientes que pueden guardar un byte, identificable cada una por su dirección \(fig. 1.77.a\), un caché se organiza en un conjunto de líneas que típicamente guardan un bloque de 16 ó 32 bytes cada una. Cada línea se identifica y localiza en el caché por su número de "entrada" o "índice", _que viene a ser como su dirección para localizarla_ en la SRAM. El número de líneas es una potencia de dos.  
 A los fines didácticos supondremos \(fig. 1.77.b\) una memoria de 2^6^ bytes \(direcciones 000000 a 111111\), y un caché con capacidad para 8 bytes estructurado en 2^k^=4 líneas que guardan 2^p^=2 bytes \(2^k^x2^p^=2^2^x2^1^=8\) con 2^k^=4 entradas numeradas _00, 01, 10, 11_ \(números de k=2 bits\).  
@@ -97,14 +97,14 @@ La *correspondencia asociativa por conjunto* \(de 2k lineas\) *con*  **c** *conj
 
 Reformaremos \(fig.1.77.c\) el cache de 4 lineas de la fig.1.77.b de modo de tener para cada número de linea 2 lineas que guardan un bloque de 2 bytes cada una. Así se forman c=2 conjuntos de lineas designados vía 0 y vía 1. En cada vía la posición de cada bytes se identifican con 0 y 1. Todas las direcciones del tipo *xxxx* **0** irán ala línea *0*, y las del tipo _xxxx_**1**_x_ a la linea **1**, siendo que el útimo bit de la derecha indica si irá a la posición 0 ó 1 de la línea. Ahora cada tag tendrá 4 bits.
 
-![Figura 1.77.c]
+![Figura 1.77.c](./img/f1-77c.png)
 
 Así, el bloque de direcciones 0110*0*1 \(tag 0110\) irá siempre a la linea **0**, y el controlador decidirá si se será la linea **0** de la vía 0 ó la línea **0** de la via 1. Para tal fin además del tag, cada linea de cada vía, junto con su bit de validez V, tiene un bit "LRU" \(least reciently used, o sea usada menos recientemente\). Cada vez que una línea de una vía es accedida, el controlador pone en 1 su bit LRU, y 0 el bit LRU de igual número de línea de la otra vía.  
 En la fg.1.77.c para un cáche de igual tamaño que el de la fig. 1.77.b, apararecen reubicados los mismos bloques de esta última como se indica, con un valor supuesto para el bit LRU de cada uno.  
 Supongamos que hubo un fallo al querer asignar el bloque de direcciones 0100*0*0 y 0100*0*1 \(de contenidos 10000101 y 11110000, no dibujados en la fig. 1.77.b\). El mismo deberá ir a número de línea **0**, y se asignará a la vía cuyo bit LRU vale 0, pues ello implica que el bloque que está en dicha vía\(0 en este caso\) ha sido accedido antes que el bloque de la otra vía, dado que éste con LRU=1 es más probable que sea accedido próximamente. Asimismo se colocará el tag \(0100\) en lugar del tag del bloque reeplazado. La nueva situación del caché y del controlador aparece el la fig.1.77.d.  
 Si luego la UCP quiere acceder otra vez a la dirección 0100*0*0, el controlador comparará el tag 0100 con los dos tags de los dos bloques de número de línea *0* para determinar en que vía está el bloque. En cada acierto, un multiplexor -ubicado en las salidas del caché- seleccionará por su tag el bloque accedido entre los dos posibles para un número de líneas, el cuál aparacerá en dichas salidas.
 
-![Figura 1.77.d]
+![Figura 1.77.d](./img/f1-77d.png)
 
 Con este esquema se evita el conflicto antes citado en la correspondencia directa, cuando dos bloques que iban a un mismo número de linea eran accedidos en forma alternada. Ahora estarian en igual número de línea, pero cada bloque en una vía distinta. La alternancia en el acceso sólo produciría el cambio de valor de los bits LRU de los dos bloques de igual número de línea.  
 Si bien estos cachés necesitan más comparadores que lo de correspondencia directa y en concecuencia un mayor tiempo de acceso, son menos coplejos y más rápido que los de correspondencia totalmente asociativa, por lo que resultan una buena solución de compromiso entre ambos.  
@@ -118,7 +118,10 @@ Una forma denominada "*write through" \("a través" del caché\) consiste en esc
 En caso que la dirección a actualizar no se encuentre en el caché, solo se escribe la memoria.  
 Otra forma, "*write back"*, o "post\-escritura" consiste en marcar en el caché las líneas que la UC escribió en él, de forma que cuando la línea así marcada sea reemplazada, el bloque que contiene sea escrito en memoria principal. Esto último supone que durante un lapso de tiempo, el cachó y la memoria tendrían información diferente, situación conocida como "*incoherencia*". puede ocurrir entonces que una porción de memoria tengan informcación desactualizada. Para hacer por ejemplo una lectura de esa porción hacia el disco rígido se debe acceder al caché, lo cual hace más complejo el hardware.
 
-##¿Que es una jerarquía de memorias?  
+##¿Que es una jerarquía de memorias?
+
+![Figura 1.78](./img/f1-78.png)
+
 A los fines de que la UPC tenga un tiempo de acceso a la cantidad de información que necesita leer o escribir lo más bajo posibley a un costo razonable; y como la memoria más lenta es mas barata, la memoria de un computador está organizada \(fig. 1.78\) según una *jerarquí a de niveles de memorias*. Ella combina la localidad temporal y espacial con lo que la tecnología de memorias brinda en cuanto a velocidades de acceso, costo y capacidad de almacenamiento. Así se tiene:  
 
 - En el nivel superior \(fig. 1.78\), dentro del procesador, está la memoria más rápida \(cachés internos L1 y registros\). Le siguen el caché externo L2 y la memoria principal, cercanos a la UPC y comunicados directamente con la UPC a través de buses internos. 
