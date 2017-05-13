@@ -1,5 +1,8 @@
-# 1.1 Símbolos, datos, procesos de datos e información
+[Índice](../README.md)
+[Siguiente](../Cap02/capitulo02.md)
+----
 
+# 1.1 Símbolos, datos, procesos de datos e información
 
 ### ¿Qué significa que un computador realiza automáticamente procesos de datos que constan de entrada, memorización, procesamiento y salida?
 
@@ -97,3 +100,7 @@ Existen 8 acciones primarias (“**primitivas**”) que pueden encontrarse en di
 * **Calcular:** generar, un nuevo valor aplicando una función matemática o textual
 * **Borrar** datos archivados
 * **Dar salida:** exteriorizar, obtener del sistema datos resultantes. 
+
+----
+[Índice](../README.md)
+[Siguiente](../Cap02/capitulo02.md)
