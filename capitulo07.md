@@ -38,7 +38,7 @@ Durante la obtención y ejecución de una instrucción, ocurren en definitiva la
  *a.> La UC pne en **1** la línea L/E (lectura), y ordena enviar al registro RDI una copia de la dirección 0200 H= 0000 0010 0000 0000 que indica el IP. De este modo dicho número, de 16 bits, llegará a través de 16 líneas de direccion del bus (una línea para cada bit).
  *b.> La MP envía juntos los contenidos de la posición direccionada y de la siguiente (0200 y 0201), o sea en caso el número Al 00, que en binario sería 10100001 00000000. Estos 16 bits van por las 16 lineas de datos del bus, hacia el registro RDA[^1], y de éste al RI, Luego siguen la misma ruta los contenidos 50 y 03 de las direcciones 0202 y 0203, como se planteó más arriba. . En consecuencia, al cabo de estos movimientos, en RI existirá en binario la combinacion que en hexa A100503, que corresponde al código de máquina a la instrucción pedida (**I^1**,en este caso).
 
-![imagen1](/Figura 1.23.jpg) ![imagen2](/Figura 1.24.jpg)
+![imagen1](./img/f1-23.jpg) ![imagen2](./img/f1-24.jpg)
 
 ---
 [^1] Es importante notar * **que en una lectura de MP,los datos de las posiciones leídas permanecen intactos, y una copia de los mismos reemplaza alos que existían en el registro de destino, los cuales se pierden.** *
@@ -74,7 +74,7 @@ Puesto que la operación ordenada en esencia es una escritura de memoria, el pas
 [^3]En general, *en una operación de escritura en MP (o en cualquier registro), se destruye el contenido que tenía antes la posición escrita, la cual pasa a almacenar el nuevo valor escrito. Los datos leídos en el registro de origen, cuya copia fue escrita en MP (destino), permanecen intactos.* Asimismo, *una escritura de MP supone una lectura de un registro de la UCP.*|
 :-|
 
-![imagen1](/Figura 1.25.png) ![imagen2](/Figura 1.26.png)
+![imagen1](./img/f1-25.png) ![imagen2](./img/f1-26.png)
 
 
 ## **¿Qué secuencia de pasos ordena la UC para ejecutar cada instrucción?**
@@ -101,7 +101,7 @@ Según lo ordenado, puede tener lugar una operación en la UAL y almacenar el re
 Las etapas o pasos citados sintetizados en la figura 1.27 describen, al igual que las figuras 1.23 y 1,24, el **ciclo de una instrucción**,  que puede dividirse temporalmente en una fase de *obtención de la instrucción* seguida de otra fase de ejecución. (Figura 1.27)
 
 
-![imagen1](/Figura 1.27.jpg)
+![imagen1](./img/f1-27.jpg)
 
 
 ##**¿Cómo hace la UC para no equivocarse con tantos números contenidos en memoria que pueden ser instrucciones, datos o direcciones?**
@@ -128,7 +128,7 @@ En caso que la UC decodifique en el R1 un código que no reconoce, está previst
 Si observamos  los movimientos indicados en las figuras 1.23 a 1.26 podernos establecer ciertas similitudes con los que *un sistema de control automático de vías de trenes* (figura 1.28) realizaría entre un galpón con trenes estacionados (simil de memoria), y los andenes de una estación de tren (símiles de registros de la UCP vinculados por *una* única vía bidireccional (similar al bus de datos), para que cada tren vaya al destino que corresponda, según una cierta planificación establecida.
 Desde el centro de control se comandaría, por ejemplo, que un tren que está estacionado en un lugar del galpón, se dirija un andén, y que luego otro tren estacionado en otro lugar  se dirija a otra andén. Estos  movimientos tendrían  correlato en el movimiento **1b** y **3b** de las figuras. 1.23 y 1.24. También es factible imaginar un lugar de transformación enganche y desenganche de vagones) para formar nuevos convoyes (símil de la UAL), Por ejemplo, un tren que estaba en un andén sería conducido a ese lugar para ser acoplado, total o parcialmente, con otro que viene del galpón formándose un nuevo tren que luego iría al andén de donde partió el primero de los trenes citados. Algo semejante,  cuando durante la ejecución de un programa procesador de texto se unen los caracteres de dos párrafos para formar uno nuevo.
 
-![imagen1](/Figura 1.28.jpg)
+![imagen1](./img/f1-28.jpg)
 
 La función de la UC de encaminar datos hacia un registro de destino, puede apreciarse en este modelo "ferroviario", en el. cambio de vía que debe realizarse, para que un tren que viene desde el galpón de estacionamiento por la única vía de comunicación con la estación- vaya hacia el andén de destino.
 
@@ -160,7 +160,7 @@ Del mismo modo,en el modelo "ferroviario", la oficina de control de vías no tie
 
 Anteriormente afirmamos que los movimientos que componen la ejecución de cada instrucción se realizan en *sincronismo* con impulsos eléctricos que se suceden *regularmente* a razón de millones de ellos por segundo,generados por un cristal pieza-eléctrico de cuarzo, denominado *"clock"* ("reloj") Profundizaremos más este tema, suponiendo que se generan 50 millones de impulsos por segundo.
 
-![Imagen1](/Figura 1.29.jpg)
+![Imagen1](./img/f1-29.jpg)
 
 **50 millones de pulsos por segundo (50 MHz)
 
@@ -221,7 +221,7 @@ Segun el valor (1 6 0) de estas lineas la UC ordena la operaciOn que hace la UAL
 se pasara la informaciOn, y si Ia memoria sera leida o escrita.|
 :-|
 
-![imagen](/Figura 131.jpg)     
+![imagen](./img/f1-31.jpg)     
 
 ---
 *De esta forma se realiza la accion de control de la UC mediante las lineas que salen de ellas, a fin de lograr los movimientos y operaciones necesarios para ejecutar cada paso de una instruccion. Es como un "director de orquesta" que ordena en cada momento que instrumentos deben ponerse en juego.* |
@@ -254,7 +254,7 @@ En la figura 1.31 se supone que durante un cierto Ck los valores de las 7 LC sup
 Con xxxx se indican otros **µcod** en la **RC**, que como todos los **µcod** constan de unos y ceros. 
 Cuando el **µcod** 1000101 está en las **LC** permite realizar los movimientos de la figura 1.31.
 
-![imagen](/Figura 1.33.jpg)
+![imagen](./img/f1-33.jpg)
 
 **El esquema siguiente generaliza la fig. 1.33 e intenta acercarse conceptualmente a cómo se localizan los µcod en una ROM de Control**. Sobre la base de la fig 1.33, y suponiendo que cada una de las instrucciones de la fig 1.15 se ejecute en 4 pasos indicados en la figura 1.30 en concordancia con 4 pulsos, hacen falta **4 µcod** (**µcodl, µcod2, µcod3** y **µcod4**) que deberán aparecer en las **LC** con cada pulso, para indicarle a la UC qué hacer en cada uno de los 4 pasos de una instrucción. Con **Ck1, Ck2, Ck3, Ck4**, designamos a cada uno de los 4 pulsos necesarios para que avance un paso la ejecución de cada instrucción, ya sea **I^1, ó I^2 , ó I^3 ó I^4** (fig. 1.15). 
 En las celdas de la **RC** de una UCP CISC se guardan los **µcod** para pedir y ejecutar cada instrucción de su repertorio.
@@ -270,7 +270,7 @@ Como se tratará,* dado que en la **RC** existen miles de **ucod** para ejecutar
 
 :-|
 
-![imagen1](/Figura 1.34.png) 
+![imagen1](./img/f1-34.png) 
 
 Supondremos que después de los pulsos **Ck1** y **Ck2**, en las **LC** han aparecido **ucod**1 y luego **ucod**2, con lo cual llega a **RI** (fig. 1.34) en la 2B06; y que en la decodificación decho cod-op 2B06 que esta en RI permite localizar la  dirección del 
 "**ucod**3 de 2B06" en la **RC**. Osea que cuando llegue Ck los **0s y 1s ** del **ucod**3 del 2B06 al aparecer sobre las **LC** abrirán y cerrarán los caminosque corresponda mediante las llaves que los gobiernan, para que  se lleve a cabo el paso 3 de 2B06: direccionar el dato y llavarlo a RDA.
@@ -284,7 +284,7 @@ instrucción que llegó a RI, como los señalan las dos simbollizaciones del reg
 Los dosprimeros pasos (obtener instrucción en RI y decodifcarla -fig1.31) como se trató, **son comunes a todas las instrucciones**,por lo que los**ucod**1 y **ucod**2 serán compartidos por todas las instrucciones.
 Tanto **ucod**3 de XX como **ucod**4 de XX hacen referencia a **ucod** de otra instrucción que puede ejecutar la UCP.
 
-[imagen2](/Figura pag58.png)
+[imagen2](./img/f1-34a.png)
 
 Cada sentencia (por ej. R = P + P -Q) de un programa de alto nivel se traduce en una secuencia de instrucciones (I1, I2, I3, I4 en este caso) y cada instrucción se ejecuta mediante una secuencia de **ucódigos** que en uns CISC etán en una ROM de Control, y que aparecen en las lineas de control al ritmo de los pulsos reloj. Ellos determinan las acciones que deben realizar la UC en cada paso de la ejecución de una instrucción.|
 
