@@ -2,6 +2,8 @@
 
 ---
 
+# 1.2 Bases previas para el estudio del interior de una computadora.
+
 ## TODO
 
 ---

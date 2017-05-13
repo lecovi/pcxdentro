@@ -2,7 +2,7 @@
 
 ----
 
-# **Apéndice 1 de I**
+# Apéndice 1
 
 # REPRESENTACIÓN DE NÚMEROS BINARIOS NATURALES Y OPERACIONES CON ELLOS
 

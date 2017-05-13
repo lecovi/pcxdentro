@@ -2,7 +2,7 @@
 
 ----
 
-# El Software, los datos y su codificación
+# 1.5 El Software, los datos y su codificación
 
 ### *¿Qué es el software o "logical"?*
 ---

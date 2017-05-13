@@ -2,6 +2,8 @@
 
 ----
 
+# 1.9 Entradas y Salidas: Señales, periféricos, buses y ports en el camino que realizan los datos.
+
 # Utilidad de las intrucciones de salto
 
 ### Como operan las instrucciones de salto condicionado y por que son esenciales?

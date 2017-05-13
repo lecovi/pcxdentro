@@ -2,7 +2,8 @@
 
 ----
 
-#**1\.12\:MEMORIA CACHE Y JERARQUIAS DE MEMORIA EN UN COMPUTADOR**
+# 1.12 MEMORIA CACHE Y JERARQUIAS DE MEMORIA EN UN COMPUTADOR
+
 ##*¿Que es una memoria cache?*
 Este tipo de memorias, junto con el pipeline y el advenimiento de las arquitecturas RISC constituyen una de las mejoras sucesivas al modelo de Von Neumann \(Seccion 1\.14\).
 El bajo costo y crecimiento vertiginoso en la velocidad de los procesadores en relacion con los Mhz de sus pulsos reloj, no ha sido acompañado historicamente en igual medida por las memorias a las que ellos acceden. Asi en el periodo en que los Mhz de las UCP pasaron de 100 a 50, las DRAMS solo mejoraron de 100 a 70 nseg. Se necesita que las memorias a las que las UCP acceden sean baratas, de gran capacidad de almacenamiento,y que puedan suministrar instrucciones y datos tan prontamente como las UCP pueda procesarlos \(en el tiempo de un ciclo de reloj de una cpu\). Tambien deben permitir gran "ancho de banda" \(bytes transmitidos por segundo\).

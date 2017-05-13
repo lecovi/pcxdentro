@@ -1,6 +1,7 @@
 [^ Índice](README.md) | [Siguiente >](capitulo08.md)
 
-# **1.7 PAPEL DE LA UC Y DE LOS MHz DEL RELOJ EN LA EJECUCION DE LAS INSTRUCCIONES**
+# 1.7 PAPEL DE LA UC Y DE LOS MHz DEL RELOJ EN LA EJECUCION DE LAS INSTRUCCIONES
+
 ### **¿Cómo se ejecutan las instrucciones I^1 a I^4 mediante movimientos simples entre memoria y registros de la UCP ordenados por la UC ?**
 
 ---

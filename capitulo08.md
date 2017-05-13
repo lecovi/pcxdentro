@@ -2,7 +2,7 @@
 
 ----
 
-#1.8 UAL: OPERACIONES LOGICAS, DE COMPARACION Y "FLAGS" EL COPROCESADOR MATEMATICO#
+# 1.8 UAL: OPERACIONES LOGICAS, DE COMPARACION Y "FLAGS" EL COPROCESADOR MATEMATICO
 
 
 ##**¿Cuáles son las operaciones lógicas que realiza la UAL, y cómo se comparan números en un computador por medio de ella?**##

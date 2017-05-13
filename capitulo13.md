@@ -2,7 +2,8 @@
 
 ----
 
-# 1.13 DETALLES DE LOS BUSES #
+# 1.13 DETALLES DE LOS BUSES
+
 ## ¿Qué características tienen los buses compartidos? ##
 
 Un **bus** es un camino eléctrico constituido por líneas conductoras, que permiten intercambiar información binaria entre dos o más dispositivos. Si es compartido (fig. 1.79.b) por más de dos, éstos pueden comunicarse entre sí a través del bus a razón de dos por vez, siendo que en un instante dado uno solo puede transmitir. Cualquier señal que éste trasmite puede ser recibida por cualquier otro dispositivo del bus, pero sólo responderá el que fue seleccionado.| 

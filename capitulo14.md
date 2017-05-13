@@ -2,11 +2,7 @@
 
 ----
 
-1-114
-------------------------------------------------------------------------------------------------------------------
-1.14|#PARA ENTENDER LOS 
-    |#PENTIUMr I, II, III, 4, XEONr 
-    |#Y LOS PROCESADORES RISC
+# 1.14 PARA ENTENDER LOS PENTIUM Y LOS PROCESADORES RISC
 
 ###¿Qué es el "modelo de Von Neumann", y en qué medida los
 ###procesadores actuales lo cumplen?

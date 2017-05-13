@@ -2,7 +2,7 @@
 
 ----
 
-**LA MEMORIA PRINCIPAL O CENTRAL**
+# 1.4 LA MEMORIA PRINCIPAL O CENTRAL
 
 ***¿Que son las direcciones y los contenidos de la memoria principal?***
 
