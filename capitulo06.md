@@ -8,21 +8,21 @@
 ---
 
 A continuación se indican los pasos a dar para llamar al programa Debug desde el DOS (que tambien está en Windows 98 y NT), y luego poder leer y escribir los datos e instrucciones como se plantea en la figura 1.15. El procedimiento sirve en general para leer o escribir la memoria principal de una PC.
-En negrita aparece aquello que escribe el DOSQ (y que interesa a los fines didácticos), y en cursiva mayúscula lo que debe escribir el usuario (con la tipografía que sea). El símbolo ![Enter](f6-1.png) indica la tecla `Enter`.
+En negrita aparece aquello que escribe el DOSQ (y que interesa a los fines didácticos), y en cursiva mayúscula lo que debe escribir el usuario (con la tipografía que sea). El símbolo ![Enter](./img/f6-1.png) indica la tecla `Enter`.
 Los números que se tipean y los que aparecen en pantalla son hexadecimales, aunque como sabemos en el interior de un computador solo puede haber unos y ceros.
 
-> C:\> DEBUG ![Enter](f6-1.png)
+> C:\> DEBUG ![Enter](./img/f6-1.png)
 _
 
-Un guión que aparece titilante debajo de la C, indica que el Debug está listo para que a continuación del guión se escriba un comando. Para leer o escribir la memoria se tipea la letra E (examinar) seguida de la primer dirección que se quiere leer o escribir. Por ejemplo, si se quiere conocer el contenido de posiciones de memoria a partir de la  5000 H, primero se tipea el comando E 5000 seguido de un Enter (![Enter](f6-1.png)), con lo cual en la pantalla se verá, por ejemplo, lo siguiente:
+Un guión que aparece titilante debajo de la C, indica que el Debug está listo para que a continuación del guión se escriba un comando. Para leer o escribir la memoria se tipea la letra E (examinar) seguida de la primer dirección que se quiere leer o escribir. Por ejemplo, si se quiere conocer el contenido de posiciones de memoria a partir de la  5000 H, primero se tipea el comando E 5000 seguido de un Enter (![Enter](./img/f6-1.png)), con lo cual en la pantalla se verá, por ejemplo, lo siguiente:
 
-- E 5000 ![Enter](f6-1.png)	(tipeado por el usuario para examinar memoria)
+- E 5000 ![Enter](./img/f6-1.png)	(tipeado por el usuario para examinar memoria)
 > 309D:5000 1F.					(mostrado por el Debug)
 
 
 Esto nos dice que la direccion 5000H(0101 0000 0000 0000) de memoria [^1] tiene por contenido la combinación 1F H = 00011111. Esta combinación es la que estaba almacenadaenla dirección 5000H en la PC que hemos utilizado, pero que otro dia, o en otra PC será distinta [^2]. Lo mismo vale para 309D si luego de leer la 5000H se quiere leer el contenido de la posición siguiente 5001H, no hace falta repetir el comando E. Basta con pulsar la barra de espaciado luego del ultimo valor leido -en este caso 1F- para que en pantalla aparezca el número que guarda la posición 5001 (06 en est caso como aparece a continuación).
 
--E 5000 ![Enter](f6-1.png) (Examinar memoria)
+-E 5000 ![Enter](./img/f6-1.png) (Examinar memoria)
 ![Debug1](f6-2.png)
 
 Del mísmo modo si se vuelve a pulsar la barra se conocerá el contenido de la posición 5002H, y asi de seguido para determinar contenidos de posiciones consecutivas de memoria. Por razones de claridad, aparecen hasta 8 lecturas de posiciones por renglón, y para no llenar la pantalla con numero, solo se muestra
@@ -36,37 +36,37 @@ Este es el tamaño de memoria que "ve" el DOS. desde la dirección 0000000000000
 
 una dirección a la izquierda de cada renglón. Así, luego de la 5000 no aparecerán en pantalla 5001 a 5007 (que debe determirarse visualmente, como señalan las flechas dibujadas con los valores), y luego aparece 5008
 Entonces, si a partir de la indicación anterior pulsamos repetidamente la barra de espaciado, se obtendría un vuelco de memoria del tipo siguiente (distinto para cada oportunidad y computador):
-Cuando se quiere dejar de leer se pulsa Enter ![Enter](f6-1.png) como se indica en el último renglón, con lo cual vuelve a aparecer el guión titilante del Debug, esperando un nuevo comando. En general se debe pulsar Enter luego de escribir un comando o cuando se quiere que aparezca el guión titilante, para indicarle un nuevo comando al Debug. Los valores que aparecen varían de un computador a otro, y en un mismo computador. Con el Debug es factible leer cualquier zona de memoria, sea RAM o ROM.
+Cuando se quiere dejar de leer se pulsa Enter ![Enter](./img/f6-1.png) como se indica en el último renglón, con lo cual vuelve a aparecer el guión titilante del Debug, esperando un nuevo comando. En general se debe pulsar Enter luego de escribir un comando o cuando se quiere que aparezca el guión titilante, para indicarle un nuevo comando al Debug. Los valores que aparecen varían de un computador a otro, y en un mismo computador. Con el Debug es factible leer cualquier zona de memoria, sea RAM o ROM.
 
 > Escritura de los datos en memoria mediante el Debug:
 
 El ejemplo anterior mostró la lectura de posiciones consecutivas de memoria. También es posible luego de leer una posición cambiar su contenido, o sea escribirle un número de dos dígitos en hexa (equivalente a un byte binario). Este número se debe escribir a continuación del punto que acompaña a cada valor leído, en el espacio que para tal fin se ha reservado. Luego de escribir el nuevo contenido que tendrá una posición, se puede leer la siguiente pulsando la barra de la forma vista. Si también se desea cambiar el contenido de esta posición, debe escribirse el nuevo valor después del punto del contenido anterior, y así de seguido.
 Volviendo al proceso de datos de la figura 1.15 escribiremos en 5000 y 5001 los contenidos 20 y 10 (que corresponden al dato P =1020 H, y en 5006 y 5007, los contenidos 40 y 20, correspondientes a Q = 2040 H
 
--E 5000 ![Enter](f6-1.png)	(Examinar memoria y escribir en ella)
-> 309D:5000		1F.20		06.10		50.		8D.		46.		B0.		A0.40		6A.20 ![Enter](f6-1.png)
+-E 5000 ![Enter](./img/f6-1.png)	(Examinar memoria y escribir en ella)
+> 309D:5000		1F.20		06.10		50.		8D.		46.		B0.		A0.40		6A.20 ![Enter](./img/f6-1.png)
 _
 
    Figura 1.16[^1]
 
 Si se quiere corroborar que los valores recién escritos son los nuevos contenidos de las posiciones modificadas, nuevamente se ordena examinar, debiendo resultar:
 
--E 5000 ![Enter](f6-1.png) (Examinar memoria)
-> 309D:5000 20. 10.   50.   8D.   46.   BO.   40.   20. ![Enter](f6-1.png)
+-E 5000 ![Enter](./img/f6-1.png) (Examinar memoria)
+> 309D:5000 20. 10.   50.   8D.   46.   BO.   40.   20. ![Enter](./img/f6-1.png)
 _
 
 De esta manera se han escrito en las posiciones 5000, 5001, 5006 y 5007 los datos que en la figura 1.15 aparecen escritos en la "escalera" (que representa las posiciones de memoria). En las posiciones 5010 y 5011 deberá ir el resultado de la operación a realizar, en reemplazo de los contenidos que existan (en este caso FD y 11, como surge de la primer lectura realizada), por lo que no interesa estos valores (FD y 11)
 > Con el mismo procedimiento se escriben en memoria los códigos de máquina de las instrucciones, a partir de la dirección elegida 0200H
 
--E 200 ![Enter](f6-1.png) (Examinar memoria y escribir en ella)
+-E 200 ![Enter](./img/f6-1.png) (Examinar memoria y escribir en ella)
 > 309D:0200 25.A1 F3.00 AA.S0 DD.03 09.06 56.00 00.50 AB.2B
-> 309D:0208 49.06 FF.06 00.50 12.A3 FF.10 FA.50 ![Enter](f6-1.png)
+> 309D:0208 49.06 FF.06 00.50 12.A3 FF.10 FA.50 ![Enter](./img/f6-1.png)
 _
 
 
 Verificando luego si la escritura anterior es correcta, resulta:
 
--E 200 ![Enter](f6-1.png) (Examinar memoria)
+-E 200 ![Enter](./img/f6-1.png) (Examinar memoria)
 > 309D:0200 Al. 00.   50.   03.   06.   OO.   50.   2B.
 > 309D:0208 06. 06.   50.   A3    10    50 -/
 _
@@ -74,7 +74,7 @@ _
 
 De esta forma hemos realizado la escritura en memoria de las instrucciones.
 Suponiendo que se quiera salir del Debug, se debe tipear Q (Quit) para volver al DOS:
--Q ![Enter](f6-1.png) (para salir del Debug)
+-Q ![Enter](./img/f6-1.png) (para salir del Debug)
 C:\>   (el DOS espera comando)
 
 ---
@@ -127,9 +127,9 @@ Las instrucciones de salto, son pues las que permiten cambiar automáticamente e
 ---
 Conforme a lo anticipado mas arriba, mediante el Debug cargaremos en el IP la dirección de la primera instrucción a ejecutar, que como hemos establecido es 0200H. Para realizar esto, una vez que mediante el Debug hemos escrito los datos y las instrucciones, le damos la orden:
 
--R IP ![Enter](f6-1.png)  (comando al debug para examinar el valor del Registro IP y cambiarlo si se desea)										
+-R IP ![Enter](./img/f6-1.png)  (comando al debug para examinar el valor del Registro IP y cambiarlo si se desea)										
 IP 0100  (el Debug informa que actualmente el IP contine 0100)										
-: 0200 ![Enter](f6-1.png) (al lado de los dos puntos se deja el Debug escribimos 0200, nuevo valor que debe tener IP)										
+: 0200 ![Enter](./img/f6-1.png) (al lado de los dos puntos se deja el Debug escribimos 0200, nuevo valor que debe tener IP)										
 
 ![Debug2](f6-3.png)
 
@@ -144,7 +144,7 @@ Hemos usado el comando R IP - para conocer el valor de un registro particular[^2
 Si se usa el comando R a secas, se visualiza el valor de registros de la UCP sin poder modificarlos:
 
 
-- R	![Enter](f6-1.png) (Examinar registros)									
+- R	![Enter](./img/f6-1.png) (Examinar registros)									
 > AX=0000	BX=0000	CX=0000		DX=0000	SP=FFEE		BP=0000		SI=0000	DI=0000
 DS=309D	ES=309D	SS=309D		CS=309D	> IP=0200	NV	UP    EI	PL	NZ    NA	PE    NC
 	
@@ -168,7 +168,7 @@ Como primer medida verificamos qué IP está con el valor 0200 que le habíamos 
 El tercer renglón se refiere a la memoria principal. El valor 0200 (igual al de IP) corrobora la dirección donde empieza la próxima instrucción a ejecutar, y al lado del mismo el código A10050, que es el que habíamos escrito en memoria para I¹, como puede verificarse (que será el valor que tendrá el registro RI) O sea que es la instrucción que queremos ejecutar en primer lugar. 
 En la parte derecha indica que en la dirección 5000 (involucrada en la instrucción) se tiene el valor 1020 (dato antes escrito) Puesto que IP=0200, el dato 1020 y el código A10050 de la instrucción son correctos, podemos ejecutar ésta. Para ello simplemente se da el comando T, y luego el Debug visualiza la misma información que la figura 1.18, pero con los cambios habidos luego de la ejecución de la instrucción:
 
-T ![Enter](f6-1.png) + (Ejecución de la instrucción I¹) 
+T ![Enter](./img/f6-1.png) + (Ejecución de la instrucción I¹) 
 > AX=1020   BX=0000  CX=0000   DX=0000   SP=FFEE	 BP=0000    SI=0000    DI=0000
 DS=309D   ES=309D  SS=309D   CS=309D    > IP=0203      NV  UP EI  PL NZ   NA   PO   NC
 309D: 0203    > 03060050		 ADD    AX, [5000]² 		             > DS: 000=1020
@@ -182,7 +182,7 @@ Si observamos el tercer renglón vemos que en 5000 sigue estando 1020. También 
 como habíamos previsto al hablar de IP. Asimismo vemos que 
 el código 03060050 de I2 es el correcto, por lo que podemos ejecutar I(2)[^2]:
 
-T ![Enter](f6-1.png)  + (Ejecución de la instrucción I2)
+T ![Enter](./img/f6-1.png)  + (Ejecución de la instrucción I2)
 > AX=2040	BX=0000	CX=0000     DX=0000     SP=FFEE       BP=0000      S1=0000        DI=0000
 DS=309D	ES=309D	SS=309D     CS=309D      > IP=0207         NV UP El  PL NZ NA PO NC
 309D: > 0207     2B060650        SUB    AX. [5006]2 	                DS: > 5006=2040
@@ -195,7 +195,7 @@ Se ha realizado lo que ordenaba I(2): sumar al valor 1020 de AX el contenido de 
 y el resultado (2040) escribirlo en lugar de 1020. 
 También se verifica que el dato es 2040, y que 2B060650 es el código de I3, instrucción de resta que pasaremos a ejecutar:
 
-T ![Enter](f6-1.png)  + (Ejecución de la instrucción I(3))
+T ![Enter](./img/f6-1.png)  + (Ejecución de la instrucción I(3))
 > AX=0000	BX=0000       CX=0000     DX=0000       SP=FFEE        BP=0000      S1=0000          DI=0000
 DS=309D	ES=309D       SS=309D     CS=309D       IP=020B     NV   UP   El   PL   ZR   NA   PE    NC
 309D: > 020B     > A31050                 MOV [15010], AXD                     DS: > 5010=FD11
@@ -206,7 +206,7 @@ _
 
 I(3) ordenaba restar a AX el contenido de 5006, que es 2040H, o sea que se ha efectuado 2040H - 2040H = = 000H, como aparece en AX.
 
-T ![Enter](f6-1.png)   + (Ejecución de la instrucción I4)
+T ![Enter](./img/f6-1.png)   + (Ejecución de la instrucción I4)
 > AX=0000	BX=0000	CX=0000	DX=0000	SP=FFEE BP=0000    SI=0000        DI=0000
 DS=309D	ES=309D	SS=309D	CS=309D	> IP=020E	NV UP El	PL ZR NA PE NC
 309D: 020B	BB1026	MOV BX, 2610
@@ -233,8 +233,8 @@ El registro IP pasó a 020E H. En esa posición y en las dos siguientes quedaron
 Si queremos verificar que en las direcciones 5010 y 5011 se escribió el 
 resultado que está en AX. Hacemos:
 
--E5010 ![Enter](f6-1.png) (Examinar memoria)
-309D- > 5010  00.	00. ![Enter](f6-1.png)
+-E5010 ![Enter](./img/f6-1.png) (Examinar memoria)
+309D- > 5010  00.	00. ![Enter](./img/f6-1.png)
 
 con lo cual constatamos que efectivamente se cumplió lo que ordena I(4)
 
@@ -243,7 +243,7 @@ con lo cual constatamos que efectivamente se cumplió lo que ordena I(4)
 ---
 
 Por razones didácticas se ha ejecutado instrucción por instrucción, para ver luego de cada ejecución coa cambiaba el interior del computador. 
-Fue necesario antes de ejecutar cada instrucción la intervención humana para pulsar T ![Enter](f6-1.png) entre otras cosas. Esto se parece al manejo de una calculadora cada vez que apretamos una tecla = . Si las computadoras funcionaran de esa manera, no tendría mucho sentido su existencia, puesto qf justamente su velocidad de procesamiento de datos es quizás el mayor de sus atributos.
+Fue necesario antes de ejecutar cada instrucción la intervención humana para pulsar T ![Enter](./img/f6-1.png) entre otras cosas. Esto se parece al manejo de una calculadora cada vez que apretamos una tecla = . Si las computadoras funcionaran de esa manera, no tendría mucho sentido su existencia, puesto qf justamente su velocidad de procesamiento de datos es quizás el mayor de sus atributos.
 Con el Debug también es factible hacer que se ejecuten, una tras otra, a la velocidad del computador, fc instrucciones escritas en memoria, y así obtener casi instantáneamente los resultados requeridos.
 
 > Así puede corroborarse que una vez que datos e instrucciones están en memoria, la UCP realiza u proceso de datos en forma automática, sin intervención humana, merced a la acción de circuitos electrónicos que responden a las órdenes que portan las instrucciones.
@@ -251,14 +251,14 @@ Con el Debug también es factible hacer que se ejecuten, una tras otra, a la vel
 
 Luego de haber ejecutado las instrucciones una por una, puesto que los datos e instrucciones permanecen a memoria sin cambios, y que I(1) no requiere que AX esté en cero, si se ejecutan nuevamente dichas instrucciones se obtendrán los mismos resultados. Esto es lo que haremos, pero en vez de ejecutarlas una por una, daremos la orden de ejecutar una tras otra, I(1), I(2), I(3) e I(4) Antes de dar el comando debemos hacer que I -que quedó en 020B pase a tener el valor 0200 H, para apuntar a la dirección donde comienza I(1), para lo cual debemos ordenar R IP de la forma vista. Después, como paso previo a la ejecución, para constatar que todo está en orden podemos hacer como antes:
 
--R ![Enter](f6-1.png) (Examinar registros)
+-R ![Enter](./img/f6-1.png) (Examinar registros)
 > AX=0000	BX=0000	CX=0000	DX=0000	SP=FFEE	BP=0000	S1=0000	DI=0000
 DS=309D	ES=309D	SS=309D	CS=309D	> IP=0200	NV	UP El	PL	NZ NA	
 PO NC
 309D:> 0200	> AI0050	MOV AX,[5000j	DS:> 5000=I020
 El comando para ejecutar las instrucciones que van de la dirección 200 a la 20F [^1] es
 
--G =0200 020E ![Enter](f6-1.png)
+-G =0200 020E ![Enter](./img/f6-1.png)
 > AX=0000	BX=0000	CX=0000	DX=0000	SP=FFEE	BP=0000	SI=0000	DI=0000	L
 DS=309D	ES=309D	SS=309D	CS=309D	> IP=020E	NV	UP El	PL	ZR NA	PE NC
 309D:020B	BB1026 MOV BX.2610
