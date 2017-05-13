@@ -35,7 +35,9 @@ Obsérvese que tal como se la ha definido, la palabra "interrupción" designa la
 
 ## *¿Cómo opera una interrupción por hardware externa?* ##
 ---
-![con titulo] (figura173.jpg "figura1.73")  
+
+![Figura 1.73](./img/f1-73.jpg)  
+
 Anteriormente se planteó, que otra función muy importante de una plaqueta interfaz es *generar la señal IRQ que se envía por un cable* hacia un subsistema ligado a la UCP, para solicitarle a ésta la *interrupción del programa en curso de ejecución.*  
 Se trata claramente de una interrupción *que tiene su origen en el hardware:* la activación de un cable de control del bus.  
 Esta activación tiene lugar en principio cuando en el periférico conectado a una plaqueta interfaz  se concretó algo en el teclado se apretó una tecla, una impresora está lista para recibir más datos, una unidad de disquetes terminó de leer o escribir, etc.
@@ -80,8 +82,10 @@ En las dos primeras generaciones de computadoras este mecanismo de interrupcione
 Este tipo de instrucción en el lenguaje assembler de una PC se simboliza **INT xx**[2] donde el número **xx**, identifica la subrutina llamada y también permite localizarla en memoria principal).  
 A diferencia de las interrupciones por hardware, una interrupción por software queda establecido en qué momento de la ejecución de un programa sucederá, pues *se trata de una instrucción que está en determinado lugar de un programa, que llama a dichas subrutinas.*  
 Por ejemplo, cuando un programa necesita hacer una operación corriente relacionada con los recursos que maneja el sistema operativo: típicamente abrir/cerrar un archivo, acceder a un disco, imprimir, visualizar información en pantalla, etc.  
-En todos los casos se trata, pues, de un llamado a subrutinas que los programas de usuario requieren en su auxilio, cuando  se necesita realizar operaciones típicas, como las citadas.  
-![con titulo] (figura174.jpg "figura1.74")  
+En todos los casos se trata, pues, de un llamado a subrutinas que los programas de usuario requieren en su auxilio, cuando  se necesita realizar operaciones típicas, como las citadas.
+
+![Figura 1.74](f1-74.jpg)  
+
 La figura 1.74 -en esencia similar a la 1.73- da cuenta del mecanismo de una interrupción por software, que podemos esquematizar en los siguientes pasos:
 
 **1.** Un programa que se venía ejecutando, luego de su instrucción **I5** necesita llamar a una subrutina del sistema operativo (SO), por ejemplo para leer un archivo en disco.  
@@ -114,7 +118,7 @@ La dirección de retomo mencionada en la respuesta anterior se guarda en una  zo
 >La pila es necesaria, porque es común que la subrutina llamada por una interrupción *a su vez sea interrumpida* para llamar a otra subrutina, y esta segunda también puede sufrir interrupciones, y así sucesivamente.
 
 ---
-![con titulo] (figura175.jpg "figura1.75")  
+![Figura 1.75](./img/f1-75.jpg)  
 
 Para entender esto utilizaremos un libro de cocina. Suponiendo que se elabora una receta de su página 14, que en el renglón 8 remite a la elaboración de la página 4, y que en el renglón 9 de ésta a su vez se requiere hacer otro sub-procedimiento indicado en la página 54. Se podría cuidar el orden de elaboración como sigue.  
 Una vez que se llegó al renglón 8 de la página 14 se anotaría en un papel estos números, el cual se insertaría en un pincha-papeles. Luego se elaboraría el procedimiento de la página 4 hasta llegar al renglón 9 en el cual se interrumpe. Estos números se anotan en otro papel que se apila en el pincha-papeles sobre el papel anterior, y se pasa a realizar el subprocedimiento de la página 54. Terminado el mismo, para retornar a terminar el anterior, se leen en el papel que está más arriba del pincha-papeles los números 4 y 9, que permiten reanudar la receta de esa página. Realizada ésta, se leen en la hoja apilada debajo de la anterior en el pincha-papeles, los números 14 y 8, que permiten encontrar la receta principal, para terminar la receta.  
@@ -127,8 +131,10 @@ En la figura 1.76 se supone una pila definida a partir de la dirección de memor
 No bien la UCP acepta la solicitud de interrupción, guarda automáticamente en la pila (en este caso a partir de la dirección 0436H) dicha dirección 0207H.  
 Sobre este valor se supone que guarda otro valor, indicado XXXX, que debe ser del Registro de Estado.
 
-Debe mencionarse que en la UCP existe un registro "**puntero de pila**" ("*stack pointer*"-**SP**), que contiene la dirección de la pila que en el presente corresponde a su cima, siendo el mismo actualizado también *en forma automática* por la UC cada vez que se lee o escribe la pila.  
-![con titulo] (figura176.jpg "figura1.76")  
+Debe mencionarse que en la UCP existe un registro "**puntero de pila**" ("*stack pointer*"-**SP**), que contiene la dirección de la pila que en el presente corresponde a su cima, siendo el mismo actualizado también *en forma automática* por la UC cada vez que se lee o escribe la pila.
+
+![Figura 1.76](./img/f1-76.jpg)  
+
 En el ejemplo de la figura 1.76, se ha supuesto que al sobrevenir la interrupción se podía apilar a partir del comienzo de la-pila (dirección 0436H), o sea que en la pila no había nada apilado anteriormente. Entones, el SP en una PC estaría con el valor 0437H antes de la interrupción, para alcanzar el valor 0433H luego que ella tiene lugar, indicando así el SP la nueva dirección de la cima de la pila.  
 De sobrevenir otra interrupción o llamado a subrutina, situación no planteada en la figura 1.76, los valores a resguardar se apilarían en la dirección 0432H de la pila, sobre XX, variando en correspondencia el SP.  
 Cuando se termina de ejecutar la subrutina que atiende la interrupción por hardware, solicitada por la interfaz, se retoma al programa interrumpido leyendo 0207H de la pila, y luego SP vuelve automáticamente al valor 0437H.
