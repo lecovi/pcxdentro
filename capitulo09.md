@@ -8,6 +8,8 @@
 
 ### Como operan las instrucciones de salto condicionado y por que son esenciales?
 
+![Figura 1.35](./img/f1-35.jpg)
+
 ---
 > Las operaciones de salto condicionado son esenciales, pues permiten pasar en forma automatica de un programa (proceso) a otro, en funcion de ciertos resultados alcanzados en el primero, determinables mediante los indicadores.
 ---
@@ -244,6 +246,8 @@ Cuando la resta resulte cero, no se cumple la condicion e Is ordena seguir con l
 ----------------
 (1) En esta se ha supuesto, por simplicidad, que las instrucciones ocupan un byte
 ----------------
+
+![Figura 1.45](./img/f1-45.jpg)
 
 ----
 
