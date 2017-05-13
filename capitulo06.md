@@ -23,7 +23,7 @@ Un guión que aparece titilante debajo de la C, indica que el Debug está listo 
 Esto nos dice que la direccion 5000H(0101 0000 0000 0000) de memoria [^1] tiene por contenido la combinación 1F H = 00011111. Esta combinación es la que estaba almacenadaenla dirección 5000H en la PC que hemos utilizado, pero que otro dia, o en otra PC será distinta [^2]. Lo mismo vale para 309D si luego de leer la 5000H se quiere leer el contenido de la posición siguiente 5001H, no hace falta repetir el comando E. Basta con pulsar la barra de espaciado luego del ultimo valor leido -en este caso 1F- para que en pantalla aparezca el número que guarda la posición 5001 (06 en est caso como aparece a continuación).
 
 -E 5000 ![Enter](./img/f6-1.png) (Examinar memoria)
-![Debug1](f6-2.png)
+![Debug1](./img/f6-2.png)
 
 Del mísmo modo si se vuelve a pulsar la barra se conocerá el contenido de la posición 5002H, y asi de seguido para determinar contenidos de posiciones consecutivas de memoria. Por razones de claridad, aparecen hasta 8 lecturas de posiciones por renglón, y para no llenar la pantalla con numero, solo se muestra
 
