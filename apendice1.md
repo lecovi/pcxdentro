@@ -601,7 +601,7 @@ Así mismo, si a la plaqueta de video le llegan en orden esas 3 combinaciones bi
 Cuando se tipea Alt64 para que aparezca @, dado que 64d = 01000000b este será el código ASCII de @.
 
 
-![Figura A1.11](./img/apendice1/FiguraA1-11.png)
+![Figura A1.11](./img/apendice1/FiguraA1-11.jpg)
 
 
 [^] Una tecla como **SHIFT** es una orden interna para el teclado a fin de que genere una mayúscula o el simbolo superior de los que
@@ -822,7 +822,7 @@ Recordar para las codificaciones que para Intel una dirección o datos XXYY se e
 Hasta acá se describió el proceso de datos que es una traducción. Ahora se supone que se ejecutará la secuencia traducida.
 
 
-![Figura A1.15](./img/apendice1/FiguraA1-15.png)
+![Figura A1.15](./img/apendice1/FiguraA1-15.jpg)
 
 ### **2d. ASIGNACIÓN DE VALOR DE LOS DATOS ANTES DE LA EJECUCIÓN DE LAS INSTRUCCIONES:**
 
