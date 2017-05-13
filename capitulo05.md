@@ -141,7 +141,7 @@ El formato de las instrucciones usadas es:
 |CODIGO DE OPERACIÓN | DIRECCIÓN DEL DÁTO |
 |---|---|
 
-![Figura 1.15 - Memoria Principal DRAM](/figura-1-15.jpg "Figura 1.15 - Memoria Principal DRAM")
+![Figura 1.15](/f1-15.jpg "Figura 1.15 - Memoria Principal DRAM")
 
 Teniendo presente el proceso de datos con calculadora de la figura 1.2, la instrucción **I^1** del mismo, adaptada para una PC, ordenarla la operación de 'transferir (mover) hacia el registro **AX** (de **2 bytes**) una copia de un número de 2 bytes localizable en la dirección de memoria que indican los dos últimos bytes de la instrucción" ( en este caso es 5000H). O sea escribir en **AX** una copia del número 1020H, que es el que se encuentra en dicha dirección[^12] en este ejemplo, lo cual implica que se destruirá el número que antes estaba en **AX**.
 
