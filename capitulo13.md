@@ -12,7 +12,7 @@ Un **bus** es un camino eléctrico constituido por líneas conductoras, que perm
 En general se trata de que un bus permita económicamente que se conecten a él dispositivos de distinto tipo con tal que cumplan con especificaciones mecánico-eléctricas y de señalización temporal.
 El hecho de compartir líneas implica una gran economía de cableado y espacio, en relación con los mismos dispositivos conectados de a dos, "punto a punto", con un bus independiente *dedicado* entre cada par.
 
-![imagen 1.79.a.b](1.79.a.b.jpg)
+![Figura 1.79.a.b](./img/f1-79ab.jpg)
 
 Un bus compartido tiene la limitación que dispositivos conectados al mismo deben esperar para recibir o transmitir datos, pues ello se realiza *sólo* entre dos dispositivos a la vez; y que se necesita circuitería adicional de *control del bus*, que asegure esto último, para evitar interferencias.
 Lo dicho puede equipararse a teléfonos internos que comparten una misma línea. Antes de comunicarse uno con otro debe constatarse que el indicador luminoso de que 2 están hablando no esté encendido.
@@ -26,7 +26,7 @@ En un bus paralelo la selección se realiza mediante *líneas de dirección*, y 
 La fig. 1.79.c ilustra estas líneas en un bus ISA que interconecta una UCP 8088, su memoria SLOT para tarjetas de interfaces para periféricos.
 
 
-![imagen 1.79.c](1.79.c.jpg)
+![Figura 1.79.c](./img/f1-79c.jpg)
 
 Las líneas de dirección y datos se indican como caminos grisados. Se supone que el 8088 envía una dirección (que llega a todos los dispositivos) para seleccionar una celda de memoria con orden de lectura (línea de control L/E=1). Sólo responde la memoria enviando un byte por las líneas de datos. Es factible que un mismo conjunto de líneas primero se use para direccionar y luego para transmitir.  
 Las *líneas de control* transmiten señales SI/NO para: peticiones (por ejemplo la línea IRQ solicita interrupción), órdenes (por ejemplo línea L/E para leer/escribir), avisos, confirmaciones y tipo de información enviada. Así controlan el acceso y la ocupación de las líneas de dirección y datos, y de hecho *indican cuando son válidos los valores* presentes en esas líneas.  
@@ -35,7 +35,9 @@ En un bus *asincrónico* a partir de la activación de una línea por un "master
 Así la activación de una línea depende de la activación de otra, pero no del clock: cada nuevo evento sólo es respuesta del evento anterior al mismo. Este bus (como el SCSI) es más complejo de implementar, pues los dispositivos deben ser auto-temporizados.  
 Una *transacción* en un bus presenta dos fases: envío de una dirección seguida del envío de datos.   
 La velocidad de transmisión (Mbytes/seg) *"ancho de banda"* de un bus está limitada por su longitud y por el número de dispositivos conectados al mismo. Su causa es la inercia en la velocidad de cambio de las señales eléctricas digitales debido en esencia al tiempo de carga/descarga de capacitadores parásitos distribuidos a lo largo de las líneas de un bus, cuyo efecto aumenta con cada dispositivo conectado. Por tal motivo el bus local vinculado al procesador es de corta longitud frente a buses de E/S como el ISA, el SCSI o el USB, que por lentos permiten longitudes mayores y más dispositivos conectados.
+
 ### Jerarquía de buses ###
+
 Muchos computadores se hicieron con un único bus, como ilustran las figs 1.79.c, 1.67 y 1.72 para ser convertidos por los dispositivos arriba indicados y los controladores de ADM. Pero a medida que crece el número de dispositivos conectados aumenta la puja de los mismos por usar el bus, produciéndose "cuellos de botella". Si bien puede mejorarse la velocidad de transferencia (como ser con más líneas para datos, realizando transferencias de datos mediante grandes bloques de bytes sucesivos, arbitrajes rápidos y utilización de buffers) para disminuir el tiempo de ocupación por dispositivo, dicha velocidad se ve limitada entre cosas por la capacidad parásita que agrega cada dispositivo. Ello no se condice con las cada vez mayores exigencias de velocidad de dispositivos para gráficos y videos.  
 A los efectos de descongestionar el tráfico que tiene lugar si se usa un solo bus, hoy día los computadores presentan una *jerarquía de buses* de distinta velocidad y longitud, que por un lado minimiza la competencia por el acceso a memoria. Por otro permite conectar muchos periféricos reduciendo conflictos y tenerlos fuera del gabinete. Así (fig.1.80) el bus que une el caché L2 (sección 1.12) con la UCP concentra todo el tráfico, que cuan el mismo no existía iba de memoria principal a la UCP por el bus que los une. Este ahora queda más despejado para transferir por ADM (sección 1.10) datos entre periféricos y memoria.
 Así mismo, las interfaces de los periféricos no se conectan al bus del sistema PCI, sino a otros **buses de E/S** como el ISA, USB, SCSI, de modo que al PCI solo están conectados los adaptadores inteligentes o puentes ISA/PCI, USB/PCI, SCSI/PCI que aíslan al PCI de un *número grande* de periféricos de *velocidad dispar*, conectados a dichos buses. Esto permite conectarlos con buses de mayor longitud (SCSI, USB) fuera del gabinete, sin ocupar el número limitado conectores ("slots") existentes. También dichos adaptadores evitan conflictos en relación con la configuración de IRQ y ports de las interfaces (sección 1.11 y 1.10).  
@@ -64,7 +66,9 @@ Mbytes/seg.; y el EISA de 8,33 MHz y 32 líneas alcanzaría los 8,33x4 = 33,32Mb
 Dado que antes de transferir se requiere en cada lectura a través del PCI ocupar 2 ciclos preparatorios, en 
 realidad debe estimarse una velocidad promedio de transferencia de dataos bastante menos que la calculada,
 la cual aumenta a 266 Mbytes/seg cuando se transfieren en ráfaga ("burst") muchos bytes consecutivos.
-![imagen 1.80](1.80.jpg)  
+
+![Figura 1.80](./img/f1-80.jpg)
+
 A diferencia de otros buses, en el PCI un "burst" no tiene longitud fija: continúa hasta que uno de los 2
 dispositivos intervinientes indique fin de transferencia, o si otro de alta prioridad debe usar el bus.  
 El bus PCI se comunica mediante el **puente PCI** o controlador PCI (fig. 1.80) con el bus local que va a la
@@ -97,7 +101,8 @@ El  arbitraje si bien se realiza sincronizado por el reloj el bus, *no requiere 
 dado que tiene la ventaja de que se efectúa paralelamente al uso del bus por otro **M**. Para tal fin, cada 
 posivle **M** (incluso la UCP) se comunica con el árbitro mediante dos líneas dedicadas (fig 1.80.a).
 
-![imagen 1.80.a](1.80.ajpg)  
+![Figura 1.80.a](./img/f1-80a.jpg)
+
 Una señal de requerimiento (REQ#) sale de cada posible **M** hacia el árbitro,(GNT#) va en sentido opuesto.
 Se busca beneficiar a las transferencias largas (modo ráfaga),aunque el árbitro puede obligar al **M** a
 ceder el bus en el próximo ciclo si existen prioridad. Dicho **M** puede ganar el bus para una nueva transferencia 
@@ -130,7 +135,7 @@ Si es una transacción de *escritura*, en el ciclo 2 (fig.1.80.b), el **S** que 
 Las líneas se activan en 0 volts. El **M** también activará la línea Irdy (Iniciador operando) y enviará por las 64 (o 32) líneas A/D el dato a escribir, a la par que codificará en las 4 líneas C/BE cuáles de los 8 (ó 4) bytes que envía por A/D deben ser considerados.
 
 
-![Figura 1.80.b](/figura-1-80.b.jpg "Figura 1.80.b")
+![Figura 1.80.b](./img/f1-80b.jpg)
 
 Al comenzar el ciclo 3 (flanco creciente del pulso correspondiente) el buffer del **S** (suponiendo que sea el puente PCI u otro chip) habrá tomado los datos de las líneas A/D sin esperar que se escriban en el destino final (como ser la memoria principal) de modo de no demorar la transferencia de los datos que **M** puede enviar en el ciclo 3.Para ello durante este ciclo **M** mantiene activadas a Frame e Irdy, a la par que por A/D envía los nuevos datos a escribir y por C/BE indica los bytes que deben ser considerados. El **S** también seguirá con Devsel y Trdy activadas, indicando que están preparados para tomar nuevos datos por A/D. De existir algún problema (buffers llenos en **M** o en **S**) se desactivarán las líneas Irdy ó Trdy. Entonces hasta que ambas no vuelvan a estar activas no se transmitirán datos durante uno o varios ciclos ("wait states").  
 El **M** se desentiende de la manera cómo el **S** o los bloques vinculados al mismo (como el controlador de memoria) van incrementando la dirección de escritura a partir de la dirección de inicio.
@@ -144,7 +149,7 @@ El **SCSI**(siglas de Small Computers System Interface)no es un bus como el bus 
 Este bus surgió en los 80 para conectar periféricos en Macintosh sin usar zócalos. Es apto para conectar con buena performance unidades de CD, discos duros, cintas, scanners, RAID, y multimedia.  
 El original SCSI-1 supone 8 líneas para datos y velocidad de transmisión dentro del bus de hasta 3 Mbytes/seg. En los 90 apareció la SCSI-2 para 16 ó 32 líneas, y con hasta 20 ó 40 Mbytes/seg.
 
-![Figura 1.81](/figura-1-81.jpg "Figura 1.81")
+![Figura 1.81](./img/f1-81.jpg)
 
 
 Normalmente el  bus SCSI funciona en forma totalmente asincrónica, pudiendo hacerlo sincrónicamente durante la fase de transferencia de datos. Esto debe acordarse entre los dos dispositivos que se han comunicado. Se considera al adaptador SCSI a PCI como una unidad SCSI, por lo que quedan disponibles sólo 7 unidades para conectarse al bus SCSI. Cada unidad tiene una dirección (**ID**) entre 0 y 7 configurable mediante jumpers.  
@@ -240,7 +245,7 @@ Este bus "raíz" en su otro extremo tiene por lo menos un conector USB para ench
 E/S, o un cable de expansión, o un hub USB, conforme a una topología de conexionado tipo árbol
 irregular, con su raíz tronco en la "mother". usando hubs se conectan hasta 127 dispositivos.
 
-![Figura 1.82.a](/figura-1-82a.jpg "Figura 1.82.a")
+![Figura 1.82.a](./img/f1-82a.jpg)
 
 Un **hub** por un lado se conecta al bus "raíz" o a otro hub, y por otro lado
 presenta varios conectores hembra, para concentrar el conexionado de 
@@ -368,7 +373,7 @@ Los paquetes de dialogo ACK y NACK se transmiten solo con el campo PID (además 
 Según se describió antes, el USB tiene dos líneas en lugar de una para enviar cada bit de información. En cada instante se sensa la diferencia de tensión entre esas dos líneas (*tensión diferencial*) a fin de compensar los ruidos electromagnéticos que pudieran generarse. Cuando ocurre un ruido este afecta por igual a las dos líneas, o sea que ambas durante  cortos lapsos pueden subir o bajar igual valor de tensión en relación a masa, pero estas variaciones no modifican el valor de la diferencia neta de tensión entre los dos conductores.  
 La información se envía en el código vinario **NRZI** (Not Return Zero Inverted), que tiene la ventaja de que el ritmo fijo con que se envían por el bus unos y ceros (frecuencia reloj, o “clock”) está inserto en la información, por lo el receptor no necesita una tercer línea para identificar cuando hay uno o cero.
 
-![imagen 1.82.b](1.82.b.jpg)
+![Figura 1.82.b](./img/f1-82b.jpg)
 
 En NRZI (fig. 1.82.b) los bits de la información binaria que se quiere codifican en NRZI se van generando igualmente espaciados en el tiempo (“bit time”), siendo que una sucesión de ceros hace que la señal NRZI vaya cambiando con cada cero, mientras que una sucesión de unos hace que la señal NRZI no cambie. Un cero debe insertarse luego de cada 6 unos consecutivos (“bit suffering”) para forzar una transacción de nivel. Este cero es reconocido y descartado por el receptor cuando pasa de NRZI al código binario originario.
 ### USB 2.0
@@ -388,7 +393,8 @@ Cuando el **CAUSB** 2.0 en uframe determinado quiere ordenar una transacción (f
  El hub reenviará el "token IN al dispositivo "X", el cual durante los frames siguientes (de 1 mseg) enviará paquetes de datos al hub, que los guardará en su buffer, y le responderá con un paquete ACK al dispositivo "X" ("X" es un dispositivo full o low speed, pero no high speed).  
 A todo esto el **CASB** 2.0 luego de haber enviado los paquetes SOF, SSPLIT e I en **un** uframe, en el siguiente puede iniciar otra transacción con otro dispositivo "Y", enviando SOF;SSPLIT y otro token, sin esperar a que el dispositivo "X" envíe los datossolicitados en el uframe anterior. Luego de varios uframes posteriores, el adaptador enviará al hub el *Complete Split Transaction Token** (CSPLIT) -token Split como el de SSPLIT pero con S/C=1 - seguido del mismo In token enviado anteriormente,para requerir que el hub le envié el resultado de la transacción completada con "X".  
 El hub por las dos líneas de alta velocidad que lo unen con el adaptador, enviarña paquetes con losdatos enviados por el "X", que estaban en su buffer.  
-![imagen 1.82.c](1.82.c.jpg)
+
+![Figura 1.82.c](./img/f1-82c.jpg)
 
 ----
 
