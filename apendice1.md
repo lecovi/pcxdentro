@@ -41,7 +41,7 @@ Cuando leemos 109 persona ( 109 = 1x100 + 0x10 + 9x1) en relación a la totalida
 . con las restantes (109 - 100 = 9) no se puede formar ningún grupo de 10, y sí 9 grupos de una persona.
 También puede pensarse en relación los el número 109, que en una balanza (Figura A1.1) se debe pensar un objeto de peso supuestamente desconocido, pero que a los fines didácticos de simular su pesada debemos partir de que dicho peso es conocido (109 grs.).
 
-![imagen1](/Figura A1-1.png)
+![Figura A1.1](./img/apendice1/FiguraA1-1.png)
 
 
 Los juegos de pesas a utilizar en base de 10 serán subconjuntos de 9 múltiples de diez:
@@ -79,7 +79,7 @@ A los fines de que resulte fácil simbolizar números en otros sistemas numéric
 
 El **sistema hexadecimal** tendrá dieciséis símbolos distintos que construyen la base. Del 0 al 9 coinciden en el significado con los correspondientes decimales; para los seis restantes se crearon los símbolos de la A hasta la F, como aparecen en la figura A1.1 en correspondencia con sus equivalentes decimales y con los números de otros sistemas.
 
-![imagen1](/Figura A1-2.png)
+![Figura A1.2](./img/apendice1/FiguraA1-2.png)
 
 
 #### Sistema en base de ocho u octal
@@ -93,16 +93,10 @@ En base ocho los ocho símbolos van del 0 al 7 (fig. A1.2), con los cuales se pu
 
 y así de seguido, ósea que podemos tener más subconjuntos de 7 pesas que sean múltiplo de ocho (teórica-mente infinitos), según sea la magnitud del peso de los objetos que se quieren pesar.
 
-![imagen1](/Figura A1-3.png)
+![Figura A1.3](./img/apendice1/FiguraA1-3.png)
 
 Volvemos a pesar el objeto que en base diez pesaba 109 grs. cuando se pesa un objeto en general se desconoce su peso, el cual hay que determinar. Para ello se requiere ir probando poniendo y sacando pesas (optares en este caso), hasta que con las pesas adecuada la balanza alcance el equilibrio. La selección de las pesas adecuadas la situaremos haciendo cálculos simples en base diez, como se hizo en relación a la figura A1.1. Suponiendo (fig. A1.3) que se empieza adecuadamente a equilibrar la balanza con una pesa sesenta y cuatro veces mayor que la de 1gr. en el platillo derecho. Pensando en la base diez se habrán equilibrado 64d gas, por lo que faltará equilibrar 109 - 64 = 45d grs.
 Si se coloca otra pesa del mismo tamaño que el anterior se tendría: 64d +64d = 128d > 109d, y el peso del platillo derecho superaría al del izquierdo, por lo que no puede colocarse más que una pesa de dicho tamaño.
-
-
-———Pág 136 - 138
-
-
-
 
 *Probando ahora con pesas ocho veces mayores que la de 1 gr. si se colocan en el platillo derecho 5 pesas de 8dn lo Cual suma 40d), de los 45d que faltaba balancear, ahora restarán balancear 45d - 40d = 5 grs., lo cual se reata colocando 5 pesas de 1 gr.
 *En definitiva, en el platillo derecho se habrían colocado: 1 pesa sesenta y cuatro veces más pesada que 1 gr. ; 5 pesas ocho veces más pesadas que las de 1 gr. y 5 pesas de 1 gr. Esto quedarÌa simbolizado en octal (0) como 155
@@ -123,7 +117,7 @@ Si se coloca otra pesa del mismo tamaño que el anterior se tendría: 64d +64d =
 *…esta cuenta (que indica una pesa de 100, más 5 de 10, más una de 1) realizada en octal darÌa, obviamente, 155Û.	ß j
 *La apreciación de los pesos de 155 0 en base diez era 1 5 5 Û ' =[1x64 + 5x8 + 5xl]d = 109d ; esto es, pensado en base diez se usaron una pesa de 64 más 5 de 8, más 5 de 1, suma que da 109d.
 
-![imagen1](/Figura A1-4.png)
+![Figura A1.4](./img/apendice1/FiguraA1-4.png)
 
 
 *Al apreciar los pesos en base diez en esencia se está pasando de octal a base diez, siendo que el significado de los símbolos 1 y 5 es el mismo en ambas bases. Este método ser· el usado para pasar de cualquier base a decimal.
@@ -139,7 +133,7 @@ De cada uno de dichos tamaños existe una sola pesa (en base diez eran 9), siend
 *Y asÌ de seguido, o sea que podemos tener más pesas, cada una múltiplo de dos (teóricamente infinitas), seg˙n sea la magnitud del peso de los objetos que se quiere pesar.	.			
 *La pesa de cada valor se usa (1), o no se usa (0)
 
-![imagen1](/Figura A1-5.png)
+![Figura A1.5](./img/apendice1/FiguraA1-5.png)
 
 
 *Pesaremos otra vez el objeto que en decimal pesaba 109 grs. La selección de las pesas adecuadas la simularemos haciendo cilrculos simples en base diez, como se hizo en relación con las figuras A 1.1 y Al.3. Suponiendo (fig. Al.5) que se empieza adecuadamente a equilibrar la balanza colocando en el platillo derecho la pesa 64 veces más 1	1 u i ¶ i u i pesada que la de 1 gr, pensando en base diez se habríán equilibrado
@@ -160,7 +154,7 @@ De cada uno de dichos tamaños existe una sola pesa (en base diez eran 9), siend
 *conocer que es 109d- equilibrando la balanza con pesas binarias, de hecho los cálculos que hemos realizado e _ base diez para llegar al 1101101 implican m pasaje dÈ base diez a binario, método que seguiremos usando
 *A fin de ratificar que cada sistema de numeración no surge del sistema decimal, sino que es independiente, como lo sugiere claramente la posible. dad de pesar usando pesas binarias, expresaremos en binario el valor de cada pesa de este sistema. Simplemente (figura Al.6.a) si ponemos en el plato izquierdo de la balanza una pesa binaria dos veces mayor que la de l gr. (2d grs.) para equilibrarla se utiliza (1) la pesa de dicho tamaño y no se usa (0) la pesa de 1 gr., o sea que esta pesa en binario se simboliza ir) (léase uno-cero, y no “diez”).	2 i	~~~
 
-![imagen1](/Figura A1-6.png)
+![Figura A1.6.a](./img/apendice1/FiguraA1-6a.png)
 
 
 *Conforme con esto, en la fig. Al.2 luego del símbolo mayor 1 sigue el 10 (1 0Û = 2d), asÌ como en base diez después del 9 sigue el 10, y en base ocho al 7 le sigue 10.
@@ -174,7 +168,7 @@ De cada uno de dichos tamaños existe una sola pesa (en base diez eran 9), siend
 *110 110 1 b = [1x64+lx32+0x 16+1x8+1x4+0x2+lxl]d = 109d ; esto es,
 *pensado en base diez se usaron la pesa de 64 más la de 32, más la de 8, más la de 4, más la de 1, suma que da 109d. Otra vez vemos que al valorar los pesos de una base en base diez, de hecho estamos pasando de esa base a base diez.
 
-![imagen1](/Figura A1-6.png)
+![Figura A1.6.b]./img/apendice1/FiguraA1-6b.png)
 
 
 *Ejercicios:
@@ -188,14 +182,6 @@ De cada uno de dichos tamaños existe una sola pesa (en base diez eran 9), siend
 *En hexa los dieciséis símbolos van del 0 a F (fig. A 1.2), con los cuales se puede formar cualquier n˙mero. Mientras que en base diez para indicar del 10 al 15 se necesitan dos símbolos, en hexa se usa uno solo.
 *Con los mismos supuestos que planteamos para la pesada realizada en relación con la fig. A1.1, pesaremos (fig. Al.3) el mismo objeto cuyo peso en hexa supondremos desconocido, siendo que en base diez pesa 109 grs. Veamos cuáles son las pesas en hexa. Si cada pesa en relación con la del tamaño anterior en base diez era diez veces m·s pesada, en hexa lo ser· dieciséis veces: juntando dieciséis pesas de un valor se construye una pesa del tamaÒo siguiente. Si para fines didácticos simbolizamos en base diez el peso de cada tipo de pesa hexadecimal se tendría la serie de valores: 1 gr; lgr xl6d = 16d grs; 16d grs xl6d = 256d grs; 256d grs xl6d = 4096d grs., etc. El símbolo ìdî indica que se trata de base diez. El símbolo para representar 1 gr. es el mismo en ambas bases. De cada uno de dichos tamaños existen un total de F pesas hexadecimales (en base diez eran 9), siendo F =15d el símbolo hexadecimal de mayor valor:
 
-
-
-
-———Pág 139 a 141
-
-
-
-
 * F pesa de 1 gr.
 * F pesas diediséis veces mayor que la de 1 gr. (16d grs)
 * F pesos docientoscincuenta y seis veces mayor que la de 1 gr. (256d grs) y dieciséis veces el tamaño anterior
@@ -203,7 +189,7 @@ De cada uno de dichos tamaños existe una sola pesa (en base diez eran 9), siend
 y asÌ de seguido, o sea que podemos tener m·s subconjuntos de F pesas que sean múltiplos de dieciséis
 (teóricamente infinitos), según sea la magnitud del peso de los objetos que se quiere pesar.
 
-![imagen1](/Figura A1-7.png)
+![Figura A1.7](./img/apendice1/FiguraA1-7.png)
 
 Otra vez pasaremos el objeto que en base diez pesaba 109 grs. La selección de las pesas adecuadas la simularemos
 haciendo cálculos simples en base diez, como se hizo en relación con las figuras A 1.1 y A 1.3.
@@ -221,7 +207,7 @@ para equilibrar hace falta una sola pesa dieciséis veces mayor que 1 gr., y nin
 Conforme con esto, en la fig. A1.2 luego del símbolo mayor F sigue el 10 (1 0h = 16d), asÌ como en base diez después del 9 sigue el 10, en octal después del 7 sigue 10, y en binario después del 1 sigue el 10.
 Del mismo modo si en el plato izquierdo se colocarÌa un peso doscientos cincuenta y seis veces mayor que 1gr. se equilibra con una sola de peso de ese tamaño y ninguna de los tamaños menores, por lo que en hexa este peso se simboliza 100h (léase uno-cero-cero, y no "cien")
 
-![imagen1](/Figura A1-8.png)
+![Figura A1.8](./img/apendice1/FiguraA1-8.png)
 
 Por lo tanto, también en hexa las pesas se simbolizan 1, 10, 100, 1000 ... (estos símbolos representan los valores de las pesas que se usan en base diez, aunque en hexa representan 1, 16, 256, y 4096, respectivamente). o sea 100% en hexa: 6 Dh= 6x10+ Dx1]h. Esta cuenta (que indica 6 pesas de 100, más D pesas de 1) realizada en hexadecimal darÌa, obviamente, 6 Dh.
 Con los pesos de 6 Dh en base diez es: 6 Dh= [6x16+13x1]d= 109d; esto es, pensando en base diez se usaron una pesa de 64 más 5 de 8, más 5 de 1, sumar que da 109d. Como ya se dijo, al valorar los pesos de una base en base diez en esencia se est· pasando de dicha base diez.
@@ -343,20 +329,7 @@ diez del número binario hallado, segÌn la regla antes indicada:
  **b.**     A   0 E h
 
 En el paso a. no se pudo usar ninguna pesa de valor 4096d, por lo que se comenzó con las de valor 256d que es la menor en relación con 2574d. para el paso b., si usamos 10d = Ah pesas de 256d habremos equilibrado 10x256 = 2560< 2574 (de haber puesto 11 = B pesas de 256 excedemos a 1574. Entonces debe escribirse A debajo de 256. Falta equilibrar 2574 - 2560 = 14. Si se probara equilibrar con pesas hexadecimales que valen 16 en base diez, no serÌa posible colocar ninguna (cero), pues si se pusiera una, se tendría 2560 + 16 = 2576  excediéndose el numero 2574, por lo que debe escribirse 0
-          
-
-
-
-——————————————^ág 142 a 144   
-
-
-
-
-
-
-
-
-
+ 
 debajo del 16. Los 14 que falta equilibrar se consiguen con 14d = Eh pesas de valor uno, debiéndose escribir **E** debajo del 1.
 En definitiva resulta 2574d = A0Eh.
 
@@ -437,10 +410,6 @@ Pasos 3. y 4.       1            8+1=9       8+4=12=C
 *En caso que los restos decimales superen el valor 9.(como puede ocurrir cuando se pasa de decimal a hexa) se debe convertir
 dichos restos al símbolo equivalente de la base en cuestión (por ejemplo 10=A; 11=B; etc)
 
-
-142
-
-
 **Regla para pasar de hexadecimal a binario**:
 
 1. Separar los dígitos hexadecimales de modo de poder formar debajo de cada uno de ellos un cuarteto binario a dete-
@@ -518,10 +487,6 @@ La tabla de restar binaria es sencilla:                                         
                                                                                                 1 0 0 1 0 1 0 1 1 0 1
 		0 - 1 = 1	y se "pide 1" a la siguiente; o sea se hace 10 - 1 = 1
 
-
-143
-
-
 En al resta indicada, toda vez que se 2pide 1" si la siguiente posición del minuendo vale 1, este pasar· a ser 0, dado que
 (1-1=0) como se indica el renglón superior.
 Si la siguiente es 0 pasar· a ser 1 (10-1=), debiéndose nuevamente "pedir 1" a la subsiguiente, que también pasar· a ser 1
@@ -592,11 +557,6 @@ igual que en base diez se agrega o se quita un cero, respectivamente*:
 *Es conveniente comparar las similitudes de la resta efectuada con restas en base diez, como: (80010010-5349809)d
 
 
-
-
-————————————pág 145 a 147
-
-
 #CODIFICACION ASCII DE CARACTERES ALFANUMERICOS Y UNICODE#
 
 ##¿Que es el código ASCII?##
@@ -641,7 +601,7 @@ Así mismo, si a la plaqueta de video le llegan en orden esas 3 combinaciones bi
 Cuando se tipea Alt64 para que aparezca @, dado que 64d = 01000000b este será el código ASCII de @.
 
 
-![imagen1](/Figura A1-11.png)
+![Figura A1.11](./img/apendice1/FiguraA1-11.png)
 
 
 [^] Una tecla como **SHIFT** es una orden interna para el teclado a fin de que genere una mayúscula o el simbolo superior de los que
@@ -765,11 +725,6 @@ Indicar en decimal cuantas posiciones son, cuantos símbolos hexadecimales se ne
 
 13. 2^32= 2^10 x2^10 x2^10 x2^2= 1024x 1024x 1024x 4 > 4000.000.000
 
-
-
-
-
-_______________________ Página 148 - 151
 #EJERCICIO SISTEMATIZADOR DE CODIGOS
 *En un teclado se ha tipeado 3Z, y la combinación binaria que resulta en memoria es interpretada por 3 programas crean con fines distintos que se indican, siendo que el significado que cada programa asigna a esa combinación debe aparecer pantalla en caracteres alfabéticos y numéricos (alfa-numéricos), indicar en cada caso los pasos a seguir para que ello suced **
 *1)Si dicha combinación es interpretada por el programa Debug que convierte de binario a hexa y viceversa.
@@ -859,8 +814,6 @@ antes de la ejecucion del programa, como se hace en 2d, cuando se esbribe dicho 
 
 **2c. CODIFICACION DE LAS INSTRUCIONES RESULTANTES DE LA TRADUCCION** __ Una vez asignada a cada variable una direccion_ de localizacion, el compilador traduicita la sentencia R=P+Q-T en  instrucviones cuyosd codigos de
 
-—————150
-
 máquina los tomaremos de la fig 1.15. Recordar en relación con la fig. 1.2 que todo sucede como si tuviéramos que pensar los pasos para hacer esa suma algebraica escrita en un papel con una calculadora de bolsillo. Para ello primero (I1) entramos P al visor (o sea AX). Luego (I2) entramos Q y lo sumamos a P, para obtener P + Q en el visor. A este valor le restamos T, resultando P + Q - T en el visor (I3), valor que se guarda en la memoria de la calculadora mediante la tecla correspondiente (I4). Como en la descripción relacionada con la fig. 1.15. sin la cual esta traducción no puede entenderse, estos 4 pasos en un procesador se realizan mediante las instrucciones I1 a I4. Sus códigos de máquinas se indican en la zona de instrucciones de la fig. A1.15 desde la dirección 03AC tomada arbitrariamente (pues bastaría hacer IP = 03AC antes de ejecutar las instrucciones para que se localice cada una de ellas). Tanto en la suma algebraica R = P + Q - T, como en la R = P + P - Q  traducida en la fig. 1.15, la secuencia de instrucciones 11A14 ordena una asignación a AX (cod-op A1), seguida de una suma (cod-op 0305) seguido de una resta (cod-op 2B06), seguida de otra asignación (cod-op A3). Debajo de cada cod-op está la dirección de la variable (asignada en 2b) que se ordena operar (no el valor de esta), que obviamente difieren en un caso y en otro.
 Recordar para las codificaciones que para Intel una dirección o datos XXYY se escribe YYXX.
 
@@ -869,7 +822,7 @@ Recordar para las codificaciones que para Intel una dirección o datos XXYY se e
 Hasta acá se describió el proceso de datos que es una traducción. Ahora se supone que se ejecutará la secuencia traducida.
 
 
-![imagen1](/Figura A1-15.png)
+![Figura A1.15](./img/apendice1/FiguraA1-15.png)
 
 ### **2d. ASIGNACIÓN DE VALOR DE LOS DATOS ANTES DE LA EJECUCIÓN DE LAS INSTRUCCIONES:**
 
@@ -918,25 +871,6 @@ del mismo modo, el valor de 4 de T que al compilarlo llega como 00110100 en ASCI
 *—T J	(Orden para ejecutar una instrucción L)
 *AX=0082 BX=0000 CX=0000 DX=0000 SP=FFEE BP=0000 SI=0000 DI=0000 ES=309D SS=309D CS=309D IP=03AF NV UP El PL NZ NA PE NC 309D:03AF 030642A2 (próxima instrucción I2 a ejecutar)
 *Constatamos que Ií se ha ejecutado correctamente, pues se ha cumplido la orden que portaba su código: escribir en AX una copia del contenido de la posición A240, que es 0082. También ha cambiado automáticamente IP a 03AF, para apuntar la dirección de I2, como habíamos previsto al hablar de IP. Asimismo vemos que el código 030642A2 de I2 es el correcto, por lo que podemos ejecutar I2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 * T  (Ejecución de la instrucción I2)
 AX = 1089  BX=0000   CX=0000   DX=0000   SO= FFEE   BP=0000   SI=0000 DI=0000
