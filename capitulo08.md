@@ -3,7 +3,7 @@
 ----
 
 # 1.8 UAL: OPERACIONES LOGICAS, DE COMPARACION Y "FLAGS" EL COPROCESADOR MATEMATICO
-
+___
 
 ## *¿Cuáles son las operaciones lógicas que realiza la UAL, y cómo se comparan números en un computador por medio de ella?*
 
@@ -28,7 +28,6 @@ Supongamos que se realiza una encuesta con ocho preguntas que se contestan por "
 >Habiéndose ejemplificado una operación lógica, debe quedar claro que **la UAL es un simple circuito calculador** que realiza automáticamente operaciones aritméticas o lógicas. *La UAL no tiene "inteligencia" de tipo deductivo como puede insinuar su denominación "lógica"*.
 >
 
----
 >Para **comparar** dos números  A y B -a fin de saber si A es menor, igual o mayor que B- en la UAL **se resta** A-B. La indicación de la UAL de resultado negativo, cero o positivo, permitirá conocer (suponiendo que son enteros), como es A respecto de B.
 > 
 
@@ -37,7 +36,7 @@ Cuando nos presentan dos números escritos, basta con observarlos para darnos cu
 El método usado en un computador para conocer, por ejemplo, si un número binario es el 3192, es restarle 3192. Si el resultado es cero, será dicho número, caso contrario no. La UAL tampoc determina como es A respecto de B, sólo efectúa A-B e indica si el resultado fue cero o no. Se necesita luego considerar esta indicación para tal determinación.
 Por lo tanto, la **comparación es una operación aritmética de resta**, no lógica, siendo que las otras operaciones aritméticas que realiza la Unidad Aritmético Lógica son la suma, la multiplicación y división de números enteros y naturales.
 
-##¿Qué son los indicadores ("flags") de resultado generados por la UAL contenidos en el Registro de Estado de la UCP?##
+## ¿Qué son los indicadores ("flags") de resultado generados por la UAL contenidos en el Registro de Estado de la UCP?
 ___
 
 >Al tratar los registros de un computador se estableció que junto con el resultado de una operación la UAL genere -*mediante indicadores ("flags") que pueden valer uno o cero*- un pequeño "resumen" de las características del mismo, que puede ser o no utilizado por la instrucción siguiente a la que ordenó dicha operación.
@@ -57,7 +56,7 @@ En esa secuencia de instrucciones antes ejecutada, el indicador **Z** luego de e
 
 Los flags se definen en detalle en la Unidad 4 de esta obra, así como al tratar las instrucciones de salto (sección 1.19 y en el modelo circuital del Apéndice de esta unidad), donde se ve cómo *la máquina toma decisiones en función del valor de los flags*, tema también tratado en la Unidad 3 de esta obra.
 
-##¿En qué se diferencian la UAL y el coprocesador matemático que opera con números reales representados en "punto flotante" y cómo opera éste?##
+## ¿En qué se diferencian la UAL y el coprocesador matemático que opera con números reales representados en "punto flotante" y cómo opera éste?
 ___
 
 *La UAL sólo realiza operaciones aritméticas con números naturales o enteros*, siendo que las instrucciones para sumar y restar con estos números son muy rápidas de ejecutar. Para operar en la UAL números fraccionarios, el programa que ordena las operaciones aritméticas debe controlar el lugar donde está la coma, y operar los números como si fueran enteros. Esto es lo que hacemos con papel y lápiz cuando, por ejemplo, multiplicamos dos números y luego al final ubicamos la posición de la coma en el resultado, sumando la cantidad de dígitos fraccionarios que presentan cada uno de los operandos. Estas determinaciones y otras, demoran los resultados.
@@ -96,7 +95,7 @@ En un computador pueden existir otros coprocesadores, como ser para video, para 
 Un coprocesador es una extensión de procesador central, que colabora con este trabajando en paralelo y proporcionando registros extras.
 
 
-##¿Que son los MIPS y las MFLOPS?##
+## ¿Qué son los MIPS y las MFLOPS?
 ___
 
 Actualmente un procesador puede ejecutar millones de instrucciones por segundo. Estas últimas palabras se abrevian con la sigla **MIPS** [^Cap.1.8Nota1]. Este dato puede servir relativamente para comparar, a una misma frecuencia de operación, la performance de un mismo procesador o de distintos procesadores entre sí, ejecutando instrucciones de tipo semejante, siendo que los MIPS de un mismo procesador varían de un programa a otro. La ejecución de distintos tipos de programas es siempre la mejor medida de comparación.
@@ -119,7 +118,7 @@ Conforme a esta definición --a diferencia de los MIPS-- teóricamente la evalua
 
 ___
 
-[^Cap.1.8Nota1]: Esta unidad se acuño con los computadores IBM 370 y VAX-11-780 de DEC, que comercialmente fueron los primeros de 1MIPS. Debe consignarse que existe la MIPS Computer Systems, Inc propietaria de las arquitecturas RISC MIPS R2000 y MIPS R3000
+[^Cap.1.8Nota1]: Ésta unidad se acuño con los computadores IBM 370 y VAX-11-780 de DEC, que comercialmente fueron los primeros de 1MIPS. Debe consignarse que existe la MIPS Computer Systems, Inc propietaria de las arquitecturas RISC MIPS R2000 y MIPS R3000
 
 
 
