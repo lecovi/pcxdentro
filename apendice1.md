@@ -534,16 +534,7 @@ punto flotante** que está al final de esta unidad.|
 
 Realizaremos la misma resta anterior sin pedir prestado, mediante **una sola suma** que hace la UAL
 
-                                              1 1 1       1     1
-	1 0 1 1 0 0 1 0 0 1 0                       1 0 1 1 0 0 1 0 0 1 0
-  -                                          +
-    0 0 0 1 1 1 0 0 1 0 1                       1 1 1 0 0 0 1 1 0 1 0        
-   -----------------------
-                                                                    1
-                                               ------------------------
-                                            1** 1 0 0 1 0 1 0 1 1 0 1 ** (El resultado está en negrita recuadrado)
-                         Este uno se descarta
-
+![Figura A1.20](./img/apendice1/FiguraA1-20.png)
 
 **Regla** 
 
