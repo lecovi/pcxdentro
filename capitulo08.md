@@ -98,15 +98,24 @@ Un coprocesador es una extensión de procesador central, que colabora con este t
 ## ¿Qué son los MIPS y las MFLOPS?
 ___
 
-Actualmente un procesador puede ejecutar millones de instrucciones por segundo. Estas últimas palabras se abrevian con la sigla **MIPS** [^Cap.1.8Nota1]. Este dato puede servir relativamente para comparar, a una misma frecuencia de operación, la performance de un mismo procesador o de distintos procesadores entre sí, ejecutando instrucciones de tipo semejante, siendo que los MIPS de un mismo procesador varían de un programa a otro. La ejecución de distintos tipos de programas es siempre la mejor medida de comparación.
+Actualmente un procesador puede ejecutar millones de instrucciones por segundo. Estas últimas palabras se abrevian con la sigla **MIPS**(1).
+> (1) Ésta unidad se acuño con los computadores IBM 370 y VAX-11-780 de DEC, que comercialmente fueron los primeros de 1 MIPS. Debe consignarse que existe la MIPS Computer Systems, Inc propietaria de las arquitecturas RISC MIPS R2000 y MIPS R3000.
+>
+Este dato puede servir relativamente para comparar, a una misma frecuencia de operación, la performance de un mismo procesador o de distintos procesadores entre sí, ejecutando instrucciones de tipo semejante, siendo que los MIPS de un mismo procesador varían de un programa a otro. La ejecución de distintos tipos de programas es siempre la mejor medida de comparación.
 Los procesadores 80x86 de Intel aumentaron sus MIPS en promedio como sigue:
 
 8088 y 8086: o,33 MIPS a 5 MHz.
+
 80286: 1,2 MIPS a 8 MHz.
+
 80386 SX: 2,5 MIPS a 16 MHz.
+
 80386 DX: 6 MIPS a 16 MHz.
+
 80486 SX: 20 MIPS a 25 MHz.
+
 80486 DX: 20 MIPS a 25 MHz y 40 MIPS a 50 MHz.
+
 80586 (Pentium I): 100 MIPS a 66 MHz.
 
 
@@ -115,11 +124,6 @@ Un Pentium actual de 1 Ghz en promedio puede terminar de ejecutar hasta 3 instru
 Dados los requerimientos actuales de las operaciones en punto flotantes, la evaluación de la performance de procesadores para las mismas, paso a ser importante. Los **MFLOPS** --pronunciados "megaFLOPS"-- (de inglés *mega floating points operations per second*) son las millones de operaciones en punto flotante por segundo que puede realizar un procesador, calculados como el cociente:
 Número de operaciones en punto flotante de un programa/tiempo de ejecución x 106
 Conforme a esta definición --a diferencia de los MIPS-- teóricamente la evaluación de los MFLOPS dependerá del procesador y del programa elegido. O sea que se debieran comparar los MFLOPS de distintos procesadores ejecutando una misma tarea con igual número de operaciones en punto flotante del mismo tipo, aunque un mismo programa en cada procesador en general tendrá distinto número de instrucciones.
-
-___
-
-[^Cap.1.8Nota1]: Ésta unidad se acuño con los computadores IBM 370 y VAX-11-780 de DEC, que comercialmente fueron los primeros de 1MIPS. Debe consignarse que existe la MIPS Computer Systems, Inc propietaria de las arquitecturas RISC MIPS R2000 y MIPS R3000
-
 
 
 ----
