@@ -57,7 +57,6 @@ o sea que podemos tener más subconjuntos de 9 pesas que sean múltiplos de diez
 
 Para pesar dichos objetos se usaría primero una pesa de 100 grs. (la de mayor peso posible para empezar a equilibrar, sed que con dos pesas de ese tipo se excederían los 109 grs. a pesar: 100 + 100 = 200 > 109). Luego si se prueba con una pesa de 10 grs. también se excederá el peso a ponderar: 100 + 10 = 110 > 109. Finalmente agregando 9 pesas de 1 gr. se equilibra la balanza. En definitiva se usaron una pesa de 100 gas, 0 pesas de 10 gas y 9 pesas de 1 gr. con lo cual el número 109 indica el peso del objeto en base de diez. O sea:
 
-100 10 1
   1  0 9 = 1x100 + 0x10 + 1x9
 
 Es importante observar que tanto con las personas como con las balanzas, se empieza siempre respectivamente por los grupos o pesas más grandes (de valor… 1000, 1000, …) que se puedan formar o emplear. De este modo se asegura que la representación simbólica es única.
@@ -107,29 +106,27 @@ Probando ahora con pesas ocho veces mayores que la de 1 gr. si se colocan en el 
 En definitiva, en el platillo derecho se habrían colocado: **1** pesa sesenta y cuatro veces más pesada que 1 gr. ; 5 pesas ocho veces más pesadas que las de 1 gr. y **5** pesas de 1 gr. Esto quedarÌa simbolizado en octal (0) como 155
 
 
-          100 10 1 ]d    64  8  1  ]d
 Entonces    1  0   9d  =  1  5  5  0 (sobre los símbolos en base diez y base ocho se indican sus pesos en decimal)
 (La igualdad anterior también implica que si en un plato de la balanza colocamos las pesas en base diez correspondientes al 109, y en el otro las pesas octales correspondientes al **155**, obviamente se equilibrarán)
 
 El mismo objeto que en la fig. A 1.1 fue fraccionado artificialmente en porciones indicadas como 109d; en la fig A1 .3 lo hemos fraccionado también en forma virtual en porciones para simbolizar su peso en octal. Si a los fines de comparar lo efectuado en ambas casos expresamos el valor de las pesas octales en base diez, resulta que 155ø implica que se fraccione dicho objeto en una porción de 64 grs, en 5 porciones de 8 grs. y en 5 porciones de 1 gr.
-*Asimismo, si pensamos en el conjunto de personas que en base diez fue dividido conforme indican los símbolos 109, dicha totalidad en base ocho fue dividida (pensando el tamaño de los grupos en base diez), en un grupo de 64, 5 grupos de 8, y 5 grupos de una persona, siendo que pueden existir hasta 7 grupos de cada tipo
+Asimismo, si pensamos en el conjunto de personas que en base diez fue dividido conforme indican los símbolos 109, dicha totalidad en base ocho fue dividida (pensando el tamaño de los grupos en base diez), en un grupo de 64, 5 grupos de 8, y 5 grupos de una persona, siendo que pueden existir hasta 7 grupos de cada tipo
 
 Nuevamente se verifica que un sistema numérico es una forma de fraccionar una totalidad en porciones, cuyos tamaños, a partir del valor uno, se van escalonando -a medida que se necesitan nuevos tamaños- de forma tal que cada nuevo tamaño que se necesite es el anterior multiplicado por la cantidad de símbolos de la base. El n˙mero máximo de porciones de cada tamaño lo determina el símbolo de mayor valor de la base en cuestión.|
 :-|
 
 **¿Cómo se simbolizan los pesos en octal sin necesidad de estimarlos en base diez?**
-*Hasta acá nos hemos centrado en el objetivo de entender conceptualmente que es un sistema numérico posicional, para lo cual por razones didácticas hemos valorado los pesos en base diez, mediante los cuales simbolizamos el peso de un objeto o de un n˙mero de elementos usando los símbolos en base ocho. Si bien se puso Énfasis en que la balanza usaba pesas octales, y que el peso simbolizado 155 se podía lograr -sin conocer que es 109d- equilibrando la balanza con pesas octales, de hecho los cirlculos que hemos realizado en base diez para llegar al 155 **implican un pasaje de base diez a octal método que seguiremos usando**.
+Hasta acá nos hemos centrado en el objetivo de entender conceptualmente que es un sistema numérico posicional, para lo cual por razones didácticas hemos valorado los pesos en base diez, mediante los cuales simbolizamos el peso de un objeto o de un n˙mero de elementos usando los símbolos en base ocho. Si bien se puso énfasis en que la balanza usaba pesas octales, y que el peso simbolizado 155 se podía lograr -sin conocer que es 109d- equilibrando la balanza con pesas octales, de hecho los cirlculos que hemos realizado en base diez para llegar al 155 **implican un pasaje de base diez a octal método que seguiremos usando**.
 A fin de ratificar que cada sistema de numeración no surge del sistema decimal, sino que es independiente, como lo sugiere claramente la posibilidad de pesar usando pesas octales, expresaremos en octal el valor de las pesas o pesos de este sistema. Simplemente (fig. Al.4.a) si ponemos en el plato izquierdo de la balanza una pesa ocho veces mayor que 1 gr. (8 grs. en base diez) para equilibrarlo hace falta una sola pesa ocho veces mayor que 1 gr, y ninguna (cero) pesa de 1 gr., o sea que esta pesa o peso **en octal se simboliza 10** (léase uno-cero, y no “diez”).
  
-                                                                              8 1 
+                                                                           
 Conforme con esto, en la fig. A1.2 luego del símbolo mayor 7 sigue el **10** (1 0Û = 8d), así como en base diez después del 9 sigue el 10. Esto es general: **en cada base al símbolo más alto en valor le sigue en valor el 10**. Del mismo modo (fig. A1.4.b), si en el plato izquierdo se coloca una pesa sesenta y cuatro veces mayor que 1 gr se equilibra con una sola de ese tamaño y ninguna de los tamaños menores, por lo que en octal este peso se simboliza lOOÛ (lÈase uno-cero-cero, y no ìcienî). Igualmente una pesa 256 veces mayor que 1 gr se equilibra con solo una de ese tamaÒo, y ninguna de los tamaños subsiguientes, por lo que en octal este peso es **1OOO**0, etc
 
-O sea 100% en octal:  100 10  1 ]È
-                       1   5  5  Û = 1x100 + 5x10 + 5xl]Û
+O sea 100% en octal: 1   5  5  Û = 1x100 + 5x10 + 5xl]Û
 
 Esta cuenta (que indica una pesa de 100, más 5 de 10, más una de 1) realizada en octal daría, obviamente, 155Û.
 									
-													 64	8 1	
+
 La apreciación de los pesos de 155 0 en base diez era 1 5 5 Û = [1x64 + 5x8 + 5xl]d = 109d ; esto es, pensado en base diez se usaron una pesa de 64 más 5 de 8, más 5 de 1, suma que da 109d.
 
 ![Figura A1.4](./img/apendice1/FiguraA1-4.png)
@@ -145,7 +142,7 @@ Idem otro que pesa 120d
 
 ## **Sistema en base dos o binario**
 
-En base dos los símbolos con los cuales se puede formar cualquier n˙mero son 0 y 1 (figura A1.2),Con los mismos supuestos que planteamos para la pesada realizada en relación con la fig. A 1.1, pesaremos (fig. A 1.5) eÌ mismo objeto cuyo peso en binario se quiere determinar, siendo que en base diez pesa 109 grs. Veamos cuáles son las pesas en base dos. Si cada pesa en base diez en relación con la del tamaño anterior era diez veces m·s pesada, en binario lo ser· dos veces: juntando dos pesas de un valor se construye una pesa del tamaño siguiente. Si para fines didácticos simbolizamos en base diez el peso de cada tipo de pesa binario, se tendría la serie de valores: 1 gr; 2d grs: 4d grs; 8d grs; 32d grs; 64d grs; 128d grs; 256d grs; 512dgrs., etc... El símbolo "d" indica que se trata de base diez. El símbolo para representar 1 gr. es el mismo en ambas bases.
+En base dos los símbolos con los cuales se puede formar cualquier número son 0 y 1 (figura A1.2),Con los mismos supuestos que planteamos para la pesada realizada en relación con la fig. A 1.1, pesaremos (fig. A 1.5) eÌ mismo objeto cuyo peso en binario se quiere determinar, siendo que en base diez pesa 109 grs. Veamos cuáles son las pesas en base dos. Si cada pesa en base diez en relación con la del tamaño anterior era diez veces m·s pesada, en binario lo ser· dos veces: juntando dos pesas de un valor se construye una pesa del tamaño siguiente. Si para fines didácticos simbolizamos en base diez el peso de cada tipo de pesa binario, se tendría la serie de valores: 1 gr; 2d grs: 4d grs; 8d grs; 32d grs; 64d grs; 128d grs; 256d grs; 512dgrs., etc... El símbolo "d" indica que se trata de base diez. El símbolo para representar 1 gr. es el mismo en ambas bases.
 De cada uno de dichos tamaños existe **una sola pesa** (en base diez eran 9), siendo 1 el mayor símbolo binario:
 * 1 pesa de 1 gramo
 * 1 pesa dos veces mayor que la de 1 gr. (2d)
@@ -160,20 +157,20 @@ La pesa de cada valor se usa (1), o no se usa (0)|
 ![Figura A1.5](./img/apendice1/FiguraA1-5.png)
 
 
-Pesaremos otra vez el objeto que en decimal pesaba 109 grs. La selección de las pesas adecuadas la simularemos haciendo circulos simples en base diez, como se hizo en relación con las figuras A 1.1 y Al.3. Suponiendo (fig. Al.5) que se empieza adecuadamente a equilibrar la balanza colocando en el platillo derecho la pesa 64 veces más 1	1 u i ¶ i u i pesada que la de 1 gr, pensando en base diez se habríán equilibrado 64d grs, por lo que faltar· equilibrar 109-64 = 45d grs. Figura Al .5	64d grs, por lo que faltar· equilibrar 109-64 = 45d grs.
+Pesaremos otra vez el objeto que en decimal pesaba 109 grs. La selección de las pesas adecuadas la simularemos haciendo circulos simples en base diez, como se hizo en relación con las figuras A 1.1 y Al.3. Suponiendo (fig. Al.5) que se empieza adecuadamente a equilibrar la balanza colocando en el platillo derecho la pesa 64 veces más pesada que la de 1 gr, pensando en base diez se habríán equilibrado 64d grs, por lo que faltar· equilibrar 109-64 = 45d grs. Figura Al .5	64d grs, por lo que faltará equilibrar 109-64 = 45d grs.
 
 Probando equilibrar agregando en el platillo derecho la pesa de tamaño menor siguiente, 32 veces mayor que la de lgr., de los 45d que faltaba balancear, ahora restarán balancear 45d - 32d = 13 grs. Si se prueba colocar la pesa 16 veces mayor que la de lgr, sumando en base diez resultarÌa (64 + 32 + 16)d = 112d > 109d, con lo cual el peso del platillo derecho superarÌa al del izquierdo, por lo que no puede colocarse la pesa 16 veces mayor que la de 1 gr. Esto se simboliza con un cero en relación con esa pesa 16 veces mayor.. Colocando la pesa 8 veces mayor que la de 1 gr. resultan balanceados (64 + 32 + 8)d = 104d grs., faltando ahora balancear (13 - 8)d= 5d grs. Agregando la pesa siguiente, 4 veces mayor que 1 gr. faltarÌa balancear (5 -4)d = Id gr., por lo que no se puede colocar (cero) la pesa 2 veces mayor que la de 1 gr., y sÌ debe agregarse la pesa de 1 gr.
 En definitiva, en el platillo derecho se habrían colocado: 1 pesa binaria 64 veces más pesada que la de 1 gr.; 1 pesa binaria 32 veces más pesada que la de 1 gr.; 0 pesa binaria 16 veces más pesada que la de 1 gr.; 1 pesa binaria 8 veces más pesada que la de 1 gr.; 1 pesa binaria 4 veces más pesada que la de 1 gr.; 0 pesa binaria 2 veces más pesada que la de 1 gr.; 1 pesa binaria de 1 gr. Esto quedarÌa simbolizado binario (b) como 1101101b
 
-          100 10 1 ]d  64 32 16 8 4 2 1 ]d
+
 Entonces   1   0 9d   = 1  1  0 1 1 0 1 b   (sobre los símbolos en ambas bases se indican sus pesos en decimal)
 
 El mismo objeto que en la fig. A 1.1 fue fraccionado artificialmente en porciones indicadas como 109d; en la fig. Al.5 lo hemos fraccionado también en forma virtual en las porciones indicadas para simbolizar su peso en binario. Asimismo, si pensamos en el conjunto de personas que en base diez fue dividido conforme indican los símbolos 109, dicha totalidad en base dos fue dividida (pensando el tamaño de los grupos en base diez), en un grupo de 64, un grupo de 32; entre los restantes no se pudo formar ningún grupo de 16, sÌ un grupo de 8 y otro de 4; entre los restantes no se pudo formar ningún grupo de 2, y si un grupo de una persona.
 
 Nuevamente se verifica que un sistema numérico es una forma de fraccionar una totalidad en porciones, cuyos tamaños, a partir del valor uno, se van escalonando -a medida que se necesitan nuevos tamaños- de forma tal que cada nuevo tamaño que se necesite es el anterior multiplicado por la cantidad de símbolos de la base.
 
-**¿QuÈ son los bits y bytes?**
-El numero binario 1101101 consta de 7 dígitos binarios. En inglés serían 7 binary digits, o sea 7 bits.
+**¿Qué son los bits y bytes?**
+El número binario 1101101 consta de 7 dígitos binarios. En inglés serían 7 binary digits, o sea 7 bits.
 O sea que un bit es un dígito binario, por lo que es un símbolo que puede valer 0 Û 1.
 Un **byte** es un conjunto de 8 bits. El tamaño de las memorias se mide en bytes. En el interior de un procesador se opera con múltiplos pares de un byte: 2, 4, 8, 6 bytes (16, 32, 64, 128 bits)
 
@@ -187,11 +184,11 @@ A fin de ratificar que cada sistema de numeración no surge del sistema decimal,
 Conforme con esto, en la fig. A1.2 luego del símbolo mayor 1 sigue el 10 (1 0Û = 2d), asÌ como en base diez después del 9 sigue el 10, y en base ocho al 7 le sigue 10.
 *Del mismo modo (fig. A1.6.b), si en el plato izquierdo se coloca un cuerpo cuatro veces el peso de 1 gr. (4d grs. en base diez), se equilibra usando (1) la pesa binaria cuatro veces mayor que la de 1 gr., sin usar (0) la pesa dos veces mayor que la de 1 gr., y sin usar (0) la pesa de 1 gr., por lo que en binario este peso se simboliza 100b (léase uno-cero-cero, y no “cien”). Igualmente un objeto ocho veces mayor que 1 gr (8d grs.) se equilibra con la pesa binaria de ese tamaño, y ninguna de los tamaños subsiguientes, por lo que en binario este peso es lOOOÛ, etc. Por lo tanto, en binario las pesas se simbolizan 1, 10, 100, 1000 . . . (estos mismos símbolos representan los valores de las pesas que se usan en base diez, aunque en binario representan 1,2,4 y 8, respectivamente).
 
-1000000 100000 10000 1000 100 10 1 )b
+
       1      1     0    1   1  0 1  b  = (1x1000000 + 1x100000 + 0x10000 + 1x1000 + 1x100 + 0x10 + 1x1)b = 1101101b
 Esta cuenta (que indica sumar: la pesa de 1000000, la de 100000, no la de 10000, la de 1000, la de 1000, la de 100, no la de 10 y sÌ la de 1 gr) realizada en binario darÌa, obviamente, 1101101b.
 	
-										64 32 16  8  4  2  1
+									
 Los pesos de 1101101b en base diez eran  1  1  0  1  1	0  1 = [1x64 + lx32 + 0x16 + 1x8 + 1x4 + 0x2 + 1x1]d = 109d ; esto 
 es pensado en base diez se usaron la pesa de 64 más la de 32, más la de 8, más la de 4, más la de 1, suma que da 109d. Otra vez vemos que al valorar los pesos de una base en base diez, de hecho estamos pasando de esa base a base diez.
 
@@ -207,8 +204,7 @@ Vamos a partir de n=4 bits, para luego generalizar para cualquier número **n** 
 El valor mínimo es NMIN = 0000b = 0d; y el máximo NMAX = 1111b = 15d = 16-1 = 2^4 - 1 
 En general para **n** bits	
 
-NMIN - 00	00b - Od; y el m·ximo NMAX = 11.....11b = (2^n - 1)d (el número que sigue a NMAX menos uno)
-     n bits	                             n bits|
+NMIN - 00	00b - Od; y el m·ximo NMAX = 11.....11b = (2^n - 1)d (el número que sigue a NMAX menos uno)|
 :-|
 
 **Sistema en base dieciséis o hexadecimal ("hexa")**
@@ -248,7 +244,6 @@ Del mismo modo si en el plato izquierdo se colocarÌa un peso doscientos cincuen
 
 Por lo tanto, también en hexa las pesas se simbolizan 1, 10, 100, 1000 ... (estos símbolos representan los valores de las pesas que se usan en base diez, aunque en hexa representan 1, 16, 256, y 4096, respectivamente). o sea 100% en hexa: 
 
-10  1  ]h 
 6   D  h  = 6 x 10 + Dx1]h
 
 Esta cuenta (que indica 6 pesas de 100, más D pesas de 1) realizada en hexadecimal daría, obviamente, 6 Dh.
@@ -281,11 +276,11 @@ Suponiendo que esta cuenta vueltas indique 1010, si la rueda extrema derecha de 
 El número decimal 109 de 3 dígitos, en binario es 11011001 de bits. Si consideramos que 109 es un poco mayor que el 99 de dos dígitos, resulta aproximadamente 7/2 = 3,5 bits por cada dígito decimal. 512d= 1000000000b o sea 10 bits para representar 3 dígitos decimales: 1073=3,3 bits por dígito decimal.
 Con 2 bits se forman 4 = 2^2 Combinaciones binarios (00 01 10 11). Con 3 bits se forman 8=2^3 combinaciones binarios (000 001 010 011 100 101 110 111). En la figura 1.4 de la sección 1,2 aparecen las 16 = 2^4 combinaciones binarios que se forman con 4 bits.
 
-O sea, que el exponente de dos indica la cantidad de bits que se necesitan para formar un n˙mero de combinaciones que es potencia de dos, siendo que si el exponente aumenta en uno, el n˙mero de combinaciones se duplica.|
+O sea, que el exponente de dos indica la cantidad de bits que se necesitan para formar un número de combinaciones que es potencia de dos, siendo que si el exponente aumenta en uno, el n˙mero de combinaciones se duplica.|
 :-|
 
 Es importante recordar siempre que 2^10 = 1024, número cercano a 1000= 10^3 (1K)
-El exponente diez de dos indica que con 10 bits puede formarse 1024 n˙meros o combinaciones binarias distintas (de 0000000000 a 1111111111b =1023d), número cercano a 1000d que es el número de números o combinaciones que en base diez puesto en el platillo derecho den formarse con 3 dígitos decimales (de 000 a 999), siendo 3 el exponente de diez.
+El exponente diez de dos indica que con 10 bits puede formarse 1024 números o combinaciones binarias distintas (de 0000000000 a 1111111111b =1023d), número cercano a 1000d que es el número de números o combinaciones que en base diez puesto en el platillo derecho den formarse con 3 dígitos decimales (de 000 a 999), siendo 3 el exponente de diez.
 
 Por lo tanto, un número aproximadamente igual de combinaciones distintas se forman con 10 bits en binario, y con 3 dígitos en decimal. O sea unos 10 bits por cada 3 dígitos decimales, lo que da 10/3=**3,33bits** por cada dígito decimal.|
 :-|
@@ -302,13 +297,11 @@ Otra forma de hacerlo: 2^10, se tiene 10^6= 10^3 x 10^3 ~ 2^10 x 2^10 = 2^20  El
 Se trata de una metodología que de hecho hemos realizado anteriormente cuando evaluamos en base diez los valores de las pesas con las cuales formaremos n˙meros en 
 otras bases. Así, hemos realizado:
 
-64 8 1
+
 1  5 5 0 = [1x64+5x8+5x1]d=109d
 
-64 32 16 8 4 2 1d
- 1  1  0 1 1 0  1   b = [1x64+1x32+0x16+1x8+1x4+0x2+1x1]d = 109d
+1  1  0 1 1 0  1   b = [1x64+1x32+0x16+1x8+1x4+0x2+1x1]d = 109d
 
-16 1
 6  D h = [6x16+ 13x1]d = 109d
 
 
@@ -332,8 +325,8 @@ O sea que el método de simular que se pesa un objeto, cuyo peso se conoce en ba
 #### **Regla para pasar un número decimal a binario:** (no se requiere realizar dibujo alguno)
 
 **a.** Dado el número a convertir, se parte de la pesa binario que en base diez tiene un valor igual a dicho número, o que presenta el valor menor más próximo al mismo; y a partir de este valor se escriben en base diez los sucesivos valores decreciente de las pesas binarias hasta el valor uno, siendo cada valor la mitad del anterior.
-**b.** Se coloca un **uno** debajo del primero valor determinado en el paso anterior. A este valor decimal se le sumar· el valor decimal de cada peso binario que sigue a la derecha sin omitir ninguno hasta el peso uno. Si al sumar el valor de la pesa que sigue a la última que se analizó el resultado alcanzando iguala o es menor que el n˙mero decimal a convertir, e colocar· un uno debajo del valor de esa pesa; y si ese resultado supera dicho n˙mero se coloca un cero, para indicar que esa pesa no se usa para balancear.
-**c.** Los unos y ceros asÌ determinados de izquierda a derecha son los bits del n˙mero binario buscando.|
+**b.** Se coloca un **uno** debajo del primero valor determinado en el paso anterior. A este valor decimal se le sumar· el valor decimal de cada peso binario que sigue a la derecha sin omitir ninguno hasta el peso uno. Si al sumar el valor de la pesa que sigue a la última que se analizó el resultado alcanzando iguala o es menor que el número decimal a convertir, e colocar· un uno debajo del valor de esa pesa; y si ese resultado supera dicho número se coloca un cero, para indicar que esa pesa no se usa para balancear.
+**c.** Los unos y ceros asÌ determinados de izquierda a derecha son los bits del número binario buscando.|
 :-|
 
 **Ejemplo:** Convertir el número 284d a binario
@@ -343,52 +336,55 @@ b.->  1   0   0  0  1 1 1 0 0 b   c. 284d = 100011100d
 En el paso a. se comenzó con la pesa de valor 256, que es la menor en relación con 284, siendo que la de 512 lo supera.
 El paso b. comienza escribiendo un uno debajo de 256. Sumando el valor 128 que le sigue darÌa 256 + 128 = 384 > 284, por lo que se coloca 0 debajo del 128. Lo mismo ocurre si intentamos sumar al 256 ya sea 64 o 32, por lo que también escribimos un cero debajo del 64 y del 32, para indicar que no se han usado estas pesas. Con el peso 16. Con el peso 8 resulta 272 + 8 = 280<284 por lo que también se escribe un uno bajo del 8. Restan equilibrar 284 - 280 = 4, lo cual se consigue con la pesa de ese valor, escribiéndose un uno debajo del 4. Dado que se ha equilibrado el 284 con las pesas indicadas con un uno, no se usar·n las pesas de 2 y 1, colocándose un cero debajo de cada uno de esos valores.
 **verificación:** Siempre es factible determinar si el resultado de una conversión est· bien, realizando el pasaje inverso a base
-diez del número binario hallado, segÌn la regla antes indicada:
-256  128  64  32  16  8  4  2  1 d
+diez del número binario hallado, según la regla antes indicada:
+
  1    0    0   0   1  1  1  0  0 b = (1x256+1x16+1x8+1x4)d=284d   Se verifica que la conversión fue bien hecha.
 
 
-**Ejercicio** Convertir 100d a binario				Respuesta: 1100100b
+**Ejercicio** Convertir 100d a binario							Respuesta: 1100100b
 	      Con el presente método formar los números binarios del 0 al 15, y verificar su concordancia con la fig. 1.4.
 
 #### **Método para pasar de base diez a hexadecimal:**
-	***a.** Dado el número a convertir, se parte de la pesa hexadecimal que en base diez tiene un valor igual a dicho número, o que presenta el valor menor más próximo al mismo; y a partir de este valor se escriben en base diez los sucesivos valores decrecientes de las pesas hexadecimales hasta el valor uno, siendo cada valor dieciséis veces menor que el anterior.
+	**a.** Dado el número a convertir, se parte de la pesa hexadecimal que en base diez tiene un valor igual a dicho número, o que presenta el valor menor más próximo al mismo; y a partir de este valor se escriben en base diez los sucesivos valores decrecientes de las pesas hexadecimales hasta el valor uno, siendo cada valor dieciséis veces menor que el anterior.
 	**b.** Repitiendo la metodología de las pesas desarrollada en relación con la figura A 1.7, sistematizaremos la forma de hallar los dígitos hexadecimales a través del siguiente ejemplo representativo.
 
 **EJEMPLO:** Convertir el número 2574d a hexadecimal
+
  **a.** -> 256 16 1 d
+
  **b.**     A   0 E h
+
 
 En el paso a. no se pudo usar ninguna pesa de valor 4096d, por lo que se comenzó con las de valor 256d que es la menor en relación con 2574d. para el paso b., si usamos 10d = Ah pesas de 256d habremos equilibrado 10x256 = 2560< 2574 (de haber puesto 11 = B pesas de 256 excedemos a 1574. Entonces debe escribirse A debajo de 256. Falta equilibrar 2574 - 2560 = 14. Si se probara equilibrar con pesas hexadecimales que valen 16 en base diez, no serÌa posible colocar ninguna (cero), pues si se pusiera una, se tendría 2560 + 16 = 2576  excediéndose el numero 2574, por lo que debe escribirse 0 debajo del 16. Los 14 que falta equilibrar se consiguen con 14d = Eh pesas de valor uno, debiéndose escribir **E** debajo del 1.
 En definitiva resulta 2574d = A0Eh.
 
-                256  16  1
 *verificación*:   A   O   E h = (10x256 + 0x16 + 14x1)d = 2574d     Se verifica que la conversión fue bien hecha.
 
-*Ejercicio* Convertir 45056d a hexadecimal                          Respuesta:B00h
+*Ejercicio* Convertir 45056d a hexadecimal                        ---Respuesta:B00h
+
 
 
 #### **Otros métodos para convertir de base diez a otra base cualquiera**
 
 **Método de las divisiones sucesivas por la base a la que se quiere pasar:**
 
-1.  Dividir por el valor decimal de la base el número decimal a convertir.
+1.Dividir por el valor decimal de la base el número decimal a convertir.
     Idem el cociente aÌ obtenido.
     Idem hasta obtener un cociente menor que divisor
-2.  Este último cociente y los restos de las divisiones efectuadas, constituyen, en ese orden, el número buscado.|
+2.Este último cociente y los restos de las divisiones efectuadas, constituyen, en ese orden, el número buscado.|
 :-|
 
 
 **EJEMPLOS** (la justificación de este método se da en la Unidad 4 de la presente obra)
 a. Convertir a binario los números decimales 13 y 12
 
-!(./img/apendice1/FiguraA1-19.png)
+(./img/apendice1/FiguraA1-19.png)
 
 
 b. Convertir a hexadecimal el número decimal 16140
 
 
-!(./img/apendice1/FiguraA1-18.png)
+![Figura A1.18](./img/apendice1/FiguraA1-18.png)
 
 
 **Ejercicio**: Usando el presente método pasar el número 109d a binario y hexadecimal.
@@ -402,13 +398,11 @@ Como se anticipó al traer el sistema hexadecimal, Este se usa para pasar de una
 
 **Regla para pasar de binario a hexadecimal**:
 
-1. A partir del bit extremo derecho del n˙mero binario, dividirlo en cuartetos, agregando ceros a la izquierda si se necesita.
-2. Asignar a cada cuarteto los pesos 8-4-2-1 en forma escrita o mentalmente.
-3. Sumar en base diez los pesos de cada cuarteto correspondientes a los bits de valor 1, o sea hallar su valor en base diez.
-4. El número resultante de cada suma así efectuada en cada cuarteto según el paso anterior, será el dígito hexadecimal
-   correspondiente a ese cuarteto, siendo que si dicho número es del 0 al 9 será el mismo en hexa; y si el mismo es 10 el
-   dígito hexadecimal será A, si es B, si es 12 ser· C, si es 13 ser· D, si es 14 ser· E, si es 15 será F.|
-   :-|
+1.A partir del bit extremo derecho del n˙mero binario, dividirlo en cuartetos, agregando ceros a la izquierda si se necesita.
+2.Asignar a cada cuarteto los pesos 8-4-2-1 en forma escrita o mentalmente.
+3.Sumar en base diez los pesos de cada cuarteto correspondientes a los bits de valor 1, o sea hallar su valor en base diez.
+4.El número resultante de cada suma así efectuada en cada cuarteto según el paso anterior, será el dígito hexadecimal correspondiente a ese cuarteto, siendo que si dicho número es del 0 al 9 será el mismo en hexa; y si el mismo es 10 el dígito hexadecimal será A, si es B, si es 12 ser· C, si es 13 ser· D, si es 14 ser· E, si es 15 será F.|
+:-|
 
 
 **EJEMPLO** Convertir a hexadecimal el número binario 110011100
@@ -420,6 +414,7 @@ Pasos 3. y 4.       1            8+1=9       8+4=12=C
 
 
 **Ejercicio**: Convertir a hexa 1010000011110111 y 1100011101                                *Respuesta: A0F7h y 31DH*
+
                Con un método semejante al presente y formando tríos, pasar 1101101b a octal  *Respuesta: 155o
 
 
@@ -432,26 +427,25 @@ dichos restos al símbolo equivalente de la base en cuestión (por ejemplo 10=A;
 
 **Regla para pasar de hexadecimal a binario**:
 
-1. Separar los dígitos hexadecimales de modo de poder formar debajo de cada uno de ellos un cuarteto binario a dete-
+1.Separar los dígitos hexadecimales de modo de poder formar debajo de cada uno de ellos un cuarteto binario a dete-
    minar de pesos 8-4-2-1. Estos n˙meros pueden escribirse o ser imaginados mentalmente.
-2. Convertir cada dígito hexadecimal de 0 a F a decimal (serán iguales del 0 al 9), y Este número a su vez en un cuarteto
+2.Convertir cada dígito hexadecimal de 0 a F a decimal (serán iguales del 0 al 9), y Este número a su vez en un cuarteto
    de pesos 8-4-2-1 por el método de las pesas ya visto.
-3. El conjunto de cuartetos asÌ formados constiuirán el nímero binario buscado.|
+3.El conjunto de cuartetos asÌ formados constiuirán el nímero binario buscado.|
 :-|
 
 **EJEMPLO**: Convertir a binario el número hexadecimal A07
 
-Paso 1      A    0    7 h
-         **8421 8421 8421d**
+Paso 1 **8421 8421 8421d**
 
-Paso 2    1010 0000 0111b           O sea A07H = 101000000111b
-        A=10=8+2     7=4+2+1
+Paso 2  A=10=8+2     7=4+2+1 -- O sea A07H = 101000000111b
+       
 
 Ejercicio: Convertir a binario 10h                                             Respuesta: 00010000b
 
 
 
-## **OPERACIONES ARITM…TICAS CON NÚMEROS BINARIOS NATURALES**
+## **OPERACIONES ARITMÉTICAS CON NÚMEROS BINARIOS NATURALES**
 
 
 ### **¿De qué forma la UAL suma dos números?**
@@ -467,7 +461,7 @@ números binarios por vez, como lo hacen las unidades aritméticas de los microp
 > Para sumar en binario se debe tener presente que en la sucesión de los números naturales: 0,1,10,11 etc. si se suma
 cero a un número debe resultar el mismo, y si se suma uno debe obtenerse el siguiente.
 
-Esto se verifica en las siguientes sumas elementales, que son las variantes que tienen lugar en la suma de dos n˙meros binarios:
+Esto se verifica en las siguientes sumas elementales, que son las variantes que tienen lugar en la suma de dos números binarios:
 
 
                                          0    1    0    1    10
@@ -489,14 +483,23 @@ Efectuar    110110100 + 11010110
 La suma se ha realizado, posición por posición, como se detalla:
 
 a.    0 + 0 = 0
-b.    0 + 1 = 1
+
+b.    0 + 1 = 1	
+
 c.    1 + 1 = 10    ----------    se escribe el 0 y "me llevo 1" de acarreo ("carry") a la posición siguiente
+
 d.    1 + 0 + 0 = 1 + 0 = 1
+
 e.    1 + 1 = 10    ----------    (ídem c.)
+
 f.    1 + 1 + 0 = 10 + 0 = 10     (ídem c.)
+
 g.    1 + 0 + 1 = 10              (ídem c.)
+
 h.    1 + 1 + 1 = 10 + 1 = 11     se escribe 1 y "me llevo 1" a la posición siguiente.
+
 i.    1 + 1 = 10
+
 
 
 ### **¿De qué forma se realiza manualmente una resta de binarios?**
@@ -511,7 +514,7 @@ La tabla de restar binaria es sencilla:
 		0 - 1 = 1	y se "pide 1" a la siguiente; o sea se hace 10 - 1 = 1
 
 
-!(./img/apendice1/FiguraA1-17.png)
+![Figura A1.17](./img/apendice1/FiguraA1-17.png)
 
 
 En la resta indicada1, toda vez que se "pide 1" si la siguiente posición del minuendo vale 1, este pasará a ser 0, dado que
@@ -565,7 +568,7 @@ Es importante señalar que cada vez que se multiplica o divide un número entero
 igual que en base diez se agrega o se quita un cero**, respectivamente:|
 :-|
 
-(1011 x 10)b = 10110b                                              (10 x 10)b = 100b
+(1011 x 10)b = 10110b                                           ---(10 x 10)b = 100b
 
 (10110 x 10 x 10 = 10110 x 100)b = 1011000b (1110/10)b = 111b
 
@@ -573,6 +576,7 @@ igual que en base diez se agrega o se quita un cero**, respectivamente:|
 
 
 > 1.Es conveniente comparar las similitudes de la resta efectuada con restas en base diez, como: (80010010 - 5349809)D
+
 
 
 ## **CODIFICACION ASCII DE CARACTERES ALFANUMERICOS Y UNICODE**
@@ -589,15 +593,15 @@ Suman 128=2^7 caracteres y otros a codificar un binario por lo que bastarían 7b
 binarios distintas, aunque se usan 8 bits (el primer bit de todas las combinaciones del ASCII estándar es cero, pudiéndose usar para paridad u otros fines). cON 8 bitsresultan 2^8 = 256 combinaciones, 128 por ascii estándar y 128 por ascii extendido.
 Por ejemplo, las mayúsculas de la A hasta la Z se codifican según una sucesión ordenada de números binarios (que permite realizar ordenaciones alfabéticas)
 
-**A** 01000001 = 41h = 65d;               **0** 00110000 = 30h = 48d;             **SP* 00100000 = 20h =32d;
+**A** 01000001 = 41h = 65d;      --         **0** 00110000 = 30h = 48d;      --       **SP* 00100000 = 20h =32d;
 
-**a** 01100001 = 61h = 97d;               **1** 00110001 = 31h = 49d;     
+**a** 01100001 = 61h = 97d;      --         **1** 00110001 = 31h = 49d;     
 
-**B** 01000010 = 42h = 66d;                **2** 00110010 = 32h = 50d;
+**B** 01000010 = 42h = 66d;      --          **2** 00110010 = 32h = 50d;
 
 **b** 00110010 = 62d = 98d;                       ....
 
-**Z** 01011010 = 5Ah = 90d;             **9** 00111001 = 39h = 57d
+**Z** 01011010 = 5Ah = 90d;      --       **9** 00111001 = 39h = 57d
 
 **z** 01111010 = 7Ah = 90d
 
@@ -611,7 +615,6 @@ determinar la tecla de la letra tipeada sin importar si el carácter es el de ar
 Los dígitos del 0 al 9 empiezan con 0011, y el segundo cuarteto con pesos 8-4-2-1 indicados determina que dígito es.
 
 Si se tipea 109XP en memoria queda an ASCII como: 00110001 00110000 00111001 01010111 01010000
-													1			0			9		X			P
 Así mismo, si a la plaqueta de video le llegan en orden esas 3 combinaciones binarias ASCII, en pantalla se vera 109XP|
 :-|  
 
@@ -646,7 +649,9 @@ Pasos a efectuar a partir del símbolo **C:/>** del DOS:
 
 
 3.  *E100*┘                (Orden de leer la memoria a partir de 0100, donde quedan los archivos)
-     309D: 0100          41.  6C.    6I.  20.   33.  2F.  36.   2F. **
+
+     309D: 0100          41.  6C.    6I.  20.   33.  2F.  36.   2F.
+
      309D: 0108          39   30. ┘
 
              
@@ -678,36 +683,37 @@ pueda orientarse a múltiples plataformas idiomas y países, sin necesidad de re
 
 **EJERCITACION**
 
-1.Escribir los sucesivos números en hexadecimales del 1048h y 1070h
+1. Escribir los sucesivos números en hexadecimales del 1048h y 1070h
 
-2.Conforme al ejercicio anterior, indicar cuál es el siguiente de los siguientes números hexadecimales: FFF, 2ABF, 2B99, 1FF, ABCD, C0D0, A0F, 999
+2. Conforme al ejercicio anterior, indicar cuál es el siguiente de los siguientes números hexadecimales: FFF, 2ABF, 2B99, 1FF, ABCD, C0D0, A0F, 999
 
-3.¿De cuántos bytes consta el numero hexadecimal 003B, y que numero binario y decimal es?
+3. ¿De cuántos bytes consta el numero hexadecimal 003B, y que numero binario y decimal es?
 
 4. Dado el numero 10 en base dos, y el numero 10 en base dieciséis ¿qué números son en base diez?
 
-5 Generalizar la pregunta anterior dado el numero 10en base X ¿que numero es en base 10?
+5. Generalizar la pregunta anterior dado el numero 10en base X ¿que numero es en base 10?
 
-6 Dado el numero binario 1111111, halar una forma rápida de pasarlo a decimal sin tener que halla el peso decimal de cada bit y luego sumar los pesos. Generalizar el procedimiento hallado.
+6. Dado el numero binario 1111111, halar una forma rápida de pasarlo a decimal sin tener que halla el peso decimal de cada bit y luego sumar los pesos. Generalizar el procedimiento hallado.
 
-7.Determinar en la expresión 2^n que sucede con su valor, cada vez que **n** aumenta uno, y calcular el numero de combinaciones binarias distintas que pueden formarse con n=10 y n=11 tener Presente la figura 1.4
+7. Determinar en la expresión 2^n que sucede con su valor, cada vez que **n** aumenta uno, y calcular el numero de combinaciones binarias distintas que pueden formarse con n=10 y n=11 tener Presente la figura 1.4
 
 8. Convertir a base doce el numero decimal 140.
 
-9.Convertir a hexadecimal el numero 11000000000001b luego convertir este numero binario a octal
+9. Convertir a hexadecimal el numero 11000000000001b luego convertir este numero binario a octal
 
-10.Los números de las direcciones de una zona de memoria un computador van de 0000 a FFFF. Determinar a cuantas posiciones de memoria existen combinaciones.
+10. Los números de las direcciones de una zona de memoria un computador van de 0000 a FFFF. Determinar a cuantas posiciones de memoria existen combinaciones.
 
 11. Se tiene una memoria con 2^20 posiciones y se quiere identificar cada una con un numero binario distinto.
 Expresar un binario la primera, segunda, ante ultima y ultima dirección de dicha memoria.
 Indicar en decimal cuantas posiciones son, y cuantos símbolos hexadecimales se necesitan para codificar cualquier posición. Indicar en hexa el valor de la posición cero y última.
 
-12¿ Cuantos bits hacen falta para representar números decimales entre 0 y 999999d? ¿Cuántos dígitos hexadecimales?
+12. ¿Cuántos bits hacen falta para representar números decimales entre 0 y 999999d? ¿Cuántos dígitos hexadecimales?
 
 13. Los registros de un 386, 486, pentium tienen 32 bits.¿ Cual es el mayor y menor numero natural que se representan?
 
 14. Dados los números naturales 180 y 40
- a)Representar en Código ASCII
+
+ a) Representar en Código ASCII
  b) Representar en binarios y sumarlos en formato 8 y 16
  c) Representarlos en binarios y restarlos por el método del complemento a la base en formato 8 y 16.
 
@@ -718,23 +724,23 @@ Indicar en decimal cuantas posiciones son, y cuantos símbolos hexadecimales se 
 
 **RESPUESTAS A PARTE DE LOS EJERCICIOS**
 
-3. 2 bytes.;  003Bh = 0000000000111001b = 59d
+3.2 bytes.;  003Bh = 0000000000111001b = 59d
 
-4. Dos y dieciséis
+4.Dos y dieciséis
 
-5. X
+5.X
 
-1. Conviene tomar el número siguiente 1000000 = 128d y restarle uno
+1.Conviene tomar el número siguiente 1000000 = 128d y restarle uno
 
-9. 3001h = 30001o    10. 65.536
+9.3001h = 30001o    10. 65.536
 
-11 00000000000000000000     00000000000000000001      11111111111111111110     11111111111111111111
+11.00000000000000000000     00000000000000000001      11111111111111111110     11111111111111111111
    
     1.048.576; 5 dígitos hexa, de 00000 a FFFFF
 
-12. 20 bits y 5 dígitos hexa
+12.20 bits y 5 dígitos hexa
 
-13. 2^32= 2^10 x2^10 x2^10 x2^2 = 1024 x 1024 x 1024 x 4 > 4000.000.000
+13.2^32= 2^10 x2^10 x2^10 x2^2 = 1024 x 1024 x 1024 x 4 > 4000.000.000
 
 
 
@@ -752,7 +758,9 @@ Para empezar, los dos caracteres tipeados (3Z), en memoria quedarán codificados
 1)El Debug está preparado para “ver" -con vistas a que aparezca en hexa en pantalla- cada combinación binaria dividida en cuartetos con pesos 8-4-2-1, que deberá traducir en dígitos hexadecimales (sección A1.3):
 
 8421 8421 8421 8421
+
 0011 0011 0101 1010
+
  3	  3 	5    A   estos 4 símbolos son los que deben aparecer en la pantalla, para lo cual el Debug deberá generar
 *en memoria sus correspondientes códigos ASCII, que deberán llegar luego a la plaqueta de video.
 *Ellos son: 000110011 (3) 000110011(3) 00110101(5) 01000001 (A) que en hexason 33 33 35 41 (Tabla A1.11)
@@ -850,7 +858,7 @@ AX = 0000000010000010 que es el valor de **P** (130d = 0182h; éste y otros valo
 ![Figura A1.16](./img/apendice1/FiguraA1-16.png)
 
 
-**4.**La ejecución de **I4** ordena que en la dirección A23E y en la siguiente (asignadas a R) copiar el valor de AX (8510 en hexa), por lo que luego de ejecutarse **I4** en memoria se tendrá para R los valores 10 y 85 indicados en la figura Al. 17
+**4.** La ejecución de **I4** ordena que en la dirección A23E y en la siguiente (asignadas a R) copiar el valor de AX (8510 en hexa), por lo que luego de ejecutarse **I4** en memoria se tendrá para R los valores 10 y 85 indicados en la figura Al. 17
 
 **5.** En modo texto, la subrutina de impresión dejará en posiciones sucesivas de memoria ios caracteres a imprimir, cada uno en código ASCII. Previamente dicha subrutina interpretará la orden de impresión (en este caso R = valor de R), siendo que el valor de R que está en A23E y A23F deberá pasarlo a dígitos decimales codificados en ASCII. Esto es, determinará que el valor de R, que es 0001000010000101 es el 4229, el cual en ASCII resultará 00110100 00110010 00110010 00111001, como aparece en memoria en la figura Al. 16 Antes de estos códigos aparecen los códigos de **R** y el de igual (=), como se indica.
 
@@ -862,12 +870,12 @@ Dado que R no se conoce, se comienza por escribir el valor de P en ia dirección
 -E A240 (Comando para examinar memoria y escribir en ella si se desea, siendo que xx indica el contenido “basura” pre-existente)
 **309D:A240**	xx.82	xx.00	xx.07	xx.10	xx.04 xx.00  (0082 se escribe 8200, etc.)
 
-*Para corroborar que los valores recién escritos son los nuevos contenidos de las posiciones modificadas, otra vez se examina con E 
+- Para corroborar que los valores recién escritos son los nuevos contenidos de las posiciones modificadas, otra vez se examina con E 
 -E A240 J	    (Examinar memoria para verificar si la escritura anterior fue correcta)
 **309D:A240**	  82.	  00.	  07.	  10.	  04.	  00.     (la escritura fue correcta)
                 (A240)	(A241)	(A242)	(A243)	(A244)	(A245)    Entre paréntesis las direcciones
 
-*Con el mismo procedimiento se escriben los códigos de máquina (cod-op + dir del dato) de las instrucciones a partir de 03AC
+- Con el mismo procedimiento se escriben los códigos de máquina (cod-op + dir del dato) de las instrucciones a partir de 03AC
 
 
 -E 03AC        (Examinar memoria y escribir en ella)
@@ -875,7 +883,7 @@ Dado que R no se conoce, se comienza por escribir el valor de P en ia dirección
 **309D:03B4**    xx.06.	     xx.44.   	xx.A2.       	xx.A3.	      xx.3E	     xx.42	 (los cod.op no se invierten: 0306 sigue igual, etc)
                
 
--E 03AC        (Examinar memoria para verificar si la escritura anterior fue correcta)
+- E 03AC        (Examinar memoria para verificar si la escritura anterior fue correcta)
 **309D:03AC** 	 A1.      40.    	A2.	        03.	      06.     42.   	A2.    	2B.
 **309D:03B4**    06.	  44.   	A2.     	A3.	      3E	  42	
                (03B4)	(03B5)	  (03B6)	  (03B7)	(03B8)	(03B9) Entre paréntesis algunas direcciones de los valores
@@ -884,35 +892,35 @@ R IP         (comando al Debug para examinar el valor del Registro IP y cambiarl
 **IP 0100**  (el Debug informa que actualmente el IP contiene 0100)
 03AC         (al lado de los dos puntos que deja el Debug escribimos 03AC, nuevo valor que debe tener IP)
 
-*R  (Antes de ejecutar se deben examinan registros, siendo que el Debug muestra la información siguiente)
+- R  (Antes de ejecutar se deben examinan registros, siendo que el Debug muestra la información siguiente)
 AX=0000 BX=0000 CX=0000 DX=0000 SP=FFEE BP=000ü SI=0000 DI=0000 ES=309D SS=309D CS=309D IP=03AC NV UP El PL NZ NA PE NC
 309D:03B4	**A140A2** (en negrita se verifica que, como debe ser, el IP está en 03AC, y que la próxima instr. a ejecutar es A140A2)
 
-*T	(Orden para ejecutar una instrucción I1)
+- T	(Orden para ejecutar una instrucción I1)
 **AX=0082** BX=0000 CX=0000 DX=0000 SP=FFEE BP=0000 SI=0000 DI=0000 ES=309D SS=309D CS=309D IP=03AF NV UP El PL NZ NA PE NC 309D:03AF 030642A2 (próxima instrucción I2 a ejecutar)
 
-*Constatamos que I1 se ha ejecutado correctamente, pues se ha cumplido la orden que portaba su código: escribir en AX una copia del contenido de la posición A240, que es 0082. También ha cambiado automáticamente IP a 03AF, para apuntar la dirección de I2, como habíamos previsto al hablar de IP. Asimismo vemos que el código 030642A2 de I2 es el correcto, por lo que podemos ejecutar I2
+- Constatamos que I1 se ha ejecutado correctamente, pues se ha cumplido la orden que portaba su código: escribir en AX una copia del contenido de la posición A240, que es 0082. También ha cambiado automáticamente IP a 03AF, para apuntar la dirección de I2, como habíamos previsto al hablar de IP. Asimismo vemos que el código 030642A2 de I2 es el correcto, por lo que podemos ejecutar I2
 
-*T  (Ejecución de la instrucción I2)
+- T  (Ejecución de la instrucción I2)
 **AX = 1089**  BX=0000   CX=0000   DX=0000   SO= FFEE   BP=0000   SI=0000 DI=0000
 ES=309D   SS=309D   CS=309D   **IP=03B3**   NV   UP   EI   PL   NZ   NA   PE   NC
 309D:03B3   2b0644A2  (próxima instrucción I3 a ejecutar)
 
-*Se ha realizado lo que ordenaba el I2 : sumar el valor 0082 de AX el contenido de la dirección A244 (que es 1007), y el resultado (1089) escribirlo en lugar de 0082. También se verifica que el 2B0644A2 es el código de I3, instrucción de resta que pasaremos a ejecutar:
+- Se ha realizado lo que ordenaba el I2 : sumar el valor 0082 de AX el contenido de la dirección A244 (que es 1007), y el resultado (1089) escribirlo en lugar de 0082. También se verifica que el 2B0644A2 es el código de I3, instrucción de resta que pasaremos a ejecutar:
 
-*T  (Ejecución de la instrucción I3)
+- T  (Ejecución de la instrucción I3)
 AX = 1085  BX=0000   CX=0000   DX=0000   SP= FFEE   BP=0000   SI=0000 DI=0000
 ES=309D   SS=309D   CS=309D   **IP=03B7**   NV   UP   EI   PL   NZ   NA   PE   NC
 309D:03B7   **A346A2**  (próxima instrucción I4 a ejecutar)
-*I3 ordena restar a AX el contenido de A246, que es 0004h, o sea que la UAL ha efectuado 1089h - 0004h = 1085h, como aparece en AX.
+- I3 ordena restar a AX el contenido de A246, que es 0004h, o sea que la UAL ha efectuado 1089h - 0004h = 1085h, como aparece en AX.
 
-*T  (Ejecución de la instrucción I4)
+- T  (Ejecución de la instrucción I4)
 **AX = 1085**  BX=0000   CX=0000   DX=0000   Sp= FFEE   BP=0000   SI=0000  DI=0000
 ES=309D   SS=309D   CS=309D   **IP=03BA**   NV   UP   EI   PL   NZ   NA   PE   NC
 309D:03BA   **XXXXXX**  (no interesa cuál sea la instrucción pues no se ejecutará).
 
 Es necesario verificar que en las direcciones A23E y A23F se escribió el resultado que está en AX Hacemos:
-* E E23E    (Examinar memoria)
+- E E23E    (Examinar memoria)
 309D:**E23E**    **85.**       **10.**
 *Con lo cual constatamos que efectivamente se cumplió lo que se ordeno al I4
 
