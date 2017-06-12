@@ -132,7 +132,7 @@ La apreciación de los pesos de 155 0 en base diez era 1 5 5 Û = [1x64 + 5x8 + 
 ![Figura A1.4](./img/apendice1/FiguraA1-4.png)
 
 
-Al apreciar los pesos en base diez en esencia se está pasando de octal a base diez, siendo que el significado de los símbolos 1 y 5 es el mismo en ambas bases. Este método ser· el usado para pasar de cualquier base a decimal.|
+Al apreciar los pesos en base diez en esencia se está pasando de octal a base diez, siendo que el significado de los símbolos 1 y 5 es el mismo en ambas bases. Este método será el usado para pasar de cualquier base a decimal.|
 :-|
 
 **Ejercicios:**
@@ -142,7 +142,7 @@ Idem otro que pesa 120d
 
 ## **Sistema en base dos o binario**
 
-En base dos los símbolos con los cuales se puede formar cualquier número son 0 y 1 (figura A1.2),Con los mismos supuestos que planteamos para la pesada realizada en relación con la fig. A 1.1, pesaremos (fig. A 1.5) eÌ mismo objeto cuyo peso en binario se quiere determinar, siendo que en base diez pesa 109 grs. Veamos cuáles son las pesas en base dos. Si cada pesa en base diez en relación con la del tamaño anterior era diez veces m·s pesada, en binario lo ser· dos veces: juntando dos pesas de un valor se construye una pesa del tamaño siguiente. Si para fines didácticos simbolizamos en base diez el peso de cada tipo de pesa binario, se tendría la serie de valores: 1 gr; 2d grs: 4d grs; 8d grs; 32d grs; 64d grs; 128d grs; 256d grs; 512dgrs., etc... El símbolo "d" indica que se trata de base diez. El símbolo para representar 1 gr. es el mismo en ambas bases.
+En base dos los símbolos con los cuales se puede formar cualquier número son 0 y 1 (figura A1.2),Con los mismos supuestos que planteamos para la pesada realizada en relación con la fig. A 1.1, pesaremos (fig. A 1.5) eÌ mismo objeto cuyo peso en binario se quiere determinar, siendo que en base diez pesa 109 grs. Veamos cuáles son las pesas en base dos. Si cada pesa en base diez en relación con la del tamaño anterior era diez veces más pesada, en binario lo será dos veces: juntando dos pesas de un valor se construye una pesa del tamaño siguiente. Si para fines didácticos simbolizamos en base diez el peso de cada tipo de pesa binario, se tendría la serie de valores: 1 gr; 2d grs: 4d grs; 8d grs; 32d grs; 64d grs; 128d grs; 256d grs; 512dgrs., etc... El símbolo "d" indica que se trata de base diez. El símbolo para representar 1 gr. es el mismo en ambas bases.
 De cada uno de dichos tamaños existe **una sola pesa** (en base diez eran 9), siendo 1 el mayor símbolo binario:
 * 1 pesa de 1 gramo
 * 1 pesa dos veces mayor que la de 1 gr. (2d)
@@ -157,7 +157,7 @@ La pesa de cada valor se usa (1), o no se usa (0)|
 ![Figura A1.5](./img/apendice1/FiguraA1-5.png)
 
 
-Pesaremos otra vez el objeto que en decimal pesaba 109 grs. La selección de las pesas adecuadas la simularemos haciendo circulos simples en base diez, como se hizo en relación con las figuras A 1.1 y Al.3. Suponiendo (fig. Al.5) que se empieza adecuadamente a equilibrar la balanza colocando en el platillo derecho la pesa 64 veces más pesada que la de 1 gr, pensando en base diez se habríán equilibrado 64d grs, por lo que faltar· equilibrar 109-64 = 45d grs. Figura Al .5	64d grs, por lo que faltará equilibrar 109-64 = 45d grs.
+Pesaremos otra vez el objeto que en decimal pesaba 109 grs. La selección de las pesas adecuadas la simularemos haciendo circulos simples en base diez, como se hizo en relación con las figuras A 1.1 y Al.3. Suponiendo (fig. Al.5) que se empieza adecuadamente a equilibrar la balanza colocando en el platillo derecho la pesa 64 veces más pesada que la de 1 gr, pensando en base diez se habríán equilibrado 64d grs, por lo que faltará equilibrar 109-64 = 45d grs. Figura Al .5	64d grs, por lo que faltará equilibrar 109-64 = 45d grs.
 
 Probando equilibrar agregando en el platillo derecho la pesa de tamaño menor siguiente, 32 veces mayor que la de lgr., de los 45d que faltaba balancear, ahora restarán balancear 45d - 32d = 13 grs. Si se prueba colocar la pesa 16 veces mayor que la de lgr, sumando en base diez resultarÌa (64 + 32 + 16)d = 112d > 109d, con lo cual el peso del platillo derecho superarÌa al del izquierdo, por lo que no puede colocarse la pesa 16 veces mayor que la de 1 gr. Esto se simboliza con un cero en relación con esa pesa 16 veces mayor.. Colocando la pesa 8 veces mayor que la de 1 gr. resultan balanceados (64 + 32 + 8)d = 104d grs., faltando ahora balancear (13 - 8)d= 5d grs. Agregando la pesa siguiente, 4 veces mayor que 1 gr. faltarÌa balancear (5 -4)d = Id gr., por lo que no se puede colocar (cero) la pesa 2 veces mayor que la de 1 gr., y sÌ debe agregarse la pesa de 1 gr.
 En definitiva, en el platillo derecho se habrían colocado: 1 pesa binaria 64 veces más pesada que la de 1 gr.; 1 pesa binaria 32 veces más pesada que la de 1 gr.; 0 pesa binaria 16 veces más pesada que la de 1 gr.; 1 pesa binaria 8 veces más pesada que la de 1 gr.; 1 pesa binaria 4 veces más pesada que la de 1 gr.; 0 pesa binaria 2 veces más pesada que la de 1 gr.; 1 pesa binaria de 1 gr. Esto quedarÌa simbolizado binario (b) como 1101101b
@@ -204,7 +204,7 @@ Vamos a partir de n=4 bits, para luego generalizar para cualquier número **n** 
 El valor mínimo es NMIN = 0000b = 0d; y el máximo NMAX = 1111b = 15d = 16-1 = 2^4 - 1 
 En general para **n** bits	
 
-NMIN - 00	00b - Od; y el m·ximo NMAX = 11.....11b = (2^n - 1)d (el número que sigue a NMAX menos uno)|
+NMIN - 00	00b - Od; y el máximo NMAX = 11.....11b = (2^n - 1)d (el número que sigue a NMAX menos uno)|
 :-|
 
 **Sistema en base dieciséis o hexadecimal ("hexa")**
@@ -213,20 +213,20 @@ Si bien la representación de la información en el interior de un computador s�
 :-|
 
 En hexa los dieciséis símbolos van del 0 a F (fig. A 1.2), con los cuales se puede formar cualquier número. Mientras que en base diez para indicar del 10 al 15 se necesitan dos símbolos, en hexa se usa uno solo.
-*Con los mismos supuestos que planteamos para la pesada realizada en relación con la fig. A1.1, pesaremos (fig. Al.3) el mismo objeto cuyo peso en hexa supondremos desconocido, siendo que en base diez pesa 109 grs. Veamos cuáles son las pesas en hexa. Si cada pesa en relación con la del tamaño anterior en base diez era diez veces m·s pesada, en hexa lo será dieciséis veces: juntando dieciséis pesas de un valor se construye una pesa del tamaño siguiente. Si para fines didácticos simbolizamos en base diez el peso de cada tipo de pesa hexadecimal se tendría la serie de valores: 1 gr; lgr xl6d = 16d grs; 16d grs xl6d = 256d grs; 256d grs xl6d = 4096d grs., etc. El símbolo ìdî indica que se trata de base diez. El símbolo para representar 1 gr. es el mismo en ambas bases. De cada uno de dichos tamaños existen un total de F pesas hexadecimales (en base diez eran 9), siendo **F** =15d el símbolo hexadecimal de mayor valor:
+*Con los mismos supuestos que planteamos para la pesada realizada en relación con la fig. A1.1, pesaremos (fig. Al.3) el mismo objeto cuyo peso en hexa supondremos desconocido, siendo que en base diez pesa 109 grs. Veamos cuáles son las pesas en hexa. Si cada pesa en relación con la del tamaño anterior en base diez era diez veces más pesada, en hexa lo será dieciséis veces: juntando dieciséis pesas de un valor se construye una pesa del tamaño siguiente. Si para fines didácticos simbolizamos en base diez el peso de cada tipo de pesa hexadecimal se tendría la serie de valores: 1 gr; lgr xl6d = 16d grs; 16d grs xl6d = 256d grs; 256d grs xl6d = 4096d grs., etc. El símbolo ìdî indica que se trata de base diez. El símbolo para representar 1 gr. es el mismo en ambas bases. De cada uno de dichos tamaños existen un total de F pesas hexadecimales (en base diez eran 9), siendo **F** =15d el símbolo hexadecimal de mayor valor:
 
 * F pesa de 1 gr.
 * F pesas diediséis veces mayor que la de 1 gr. (**16**d grs)
 * F pesos docientoscincuenta y seis veces mayor que la de 1 gr. (**256**d grs) y dieciséis veces el tamaño anterior
 * F pesas mil veinticuatro veces mayor que la de 1 gr. (**1024**d grs) y dieciséis veces el tamaño anterior.
-y así de seguido, o sea que podemos tener m·s subconjuntos de F pesas que sean múltiplos de dieciséis
+y así de seguido, o sea que podemos tener más subconjuntos de F pesas que sean múltiplos de dieciséis
 (teóricamente infinitos), según sea la magnitud del peso de los objetos que se quiere pesar.
 
 ![Figura A1.7](./img/apendice1/FiguraA1-7.png)
 
 Otra vez pasaremos el objeto que en base diez pesaba 109 grs. La selección de las pesas adecuadas la simularemos
 haciendo cálculos simples en base diez, como se hizo en relación con las figuras A 1.1 y A 1.3.
-Suponiendo que se empieza adecuadamente a equilibrar la balanza con las pesas dieciséis veces m·s pesadas
+Suponiendo que se empieza adecuadamente a equilibrar la balanza con las pesas dieciséis veces más pesadas
 que 1 gr., se podrán colocar hasta 6 pesas de este peso, con la cual, calculando en base diez, habremos equilibrado
 6x16=96d grs., faltando equilibrar 109-96=13d grs. El equilibrio de los platillos se logra agregando 13d= Dh pesas del
 tamaño menor siguiente, que es de 1 gr. Por consiguiente, el peso del objeto en hexa es **6D**. O sea: 109d = 155o = 1101101b = 6Dh
@@ -259,18 +259,18 @@ Idem otro que pesa 100d																		Respuesta: 64h
 El cuenta vueltas que indica los kms, recorridos por un auto conta de ruedas con los símbolos del 0 al 9. Cada rueda al cambiar de 9 a 0 obliga a la que está a su izquierda a avanzar una posición. La rueda de las unidades progresa una unidad merced a una acción exterior para que las otras puedan cambiar, si así debe ocurrir.
 
 Suponiendo que el número que está frente al visor es 4588, si la rueda de las unidades avanza un símbolo, pasará de 8 a 9 sin afectar la rueda de las decenas, por lo que el número siguiente es 4589. Cuando las unidades vuelvan a aumentar uno,
-ahora pasarán de 9 a 0, lo que har· que las decenas también progresen uno. de 8 a 9. Sin afectar las centenas. Por lo tanto, el número que sigue será 4590. Con las mismas consideraciones, si las unidades siguen aumentando uno, sucesivamente se tendrá·: 4591, 4592,... 4599. Luego de Èste las unidades pasan de 9 a 0, lo que hace que las decenas también pasen de 9 a 0, lo cual a su vez obliga que las centenas cambien de 5 a 6. Así formará el 4600, y asÌ de seguido.
+ahora pasarán de 9 a 0, lo que hará que las decenas también progresen uno. de 8 a 9. Sin afectar las centenas. Por lo tanto, el número que sigue será 4590. Con las mismas consideraciones, si las unidades siguen aumentando uno, sucesivamente se tendrá: 4591, 4592,... 4599. Luego de Èste las unidades pasan de 9 a 0, lo que hace que las decenas también pasen de 9 a 0, lo cual a su vez obliga que las centenas cambien de 5 a 6. Así formará el 4600, y asÌ de seguido.
 
 
 Cuantas vueltas hexadecimales y binarias nos permitirán hallar fácilmente el número que sigue a otro dado.
 En hexadecimal cada rueda tiene dieciséis símbolos (0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F), y cuando cambio de F a 0 hace cambiar la rueda que está a su izquierda. salvo que hay 16 símbolos en cada rueda en vez de diez, todo es igual al cuenta vueltas anterior.
-Asumiendo que el cuenta vueltas hexadecimal indica 3899, si las ruedas de las unidades avanza un símbolo, pasar· de 9 a A, sin hacer cambiar la rueda que est· a su izquierda, por lo que el n˙mero hexadecimal siguiente es 389A. Luego, cada vez que las unidades aumentan en uno, sucesivamente se ir·n formando 389B, 389C, 389D, 389E,389F. Con del siguiente cambio de la ruedade las unidades, Esta pasará de F a 0, con lo cual la rueda que Está a su izquierda cambiará de 9 a A, sin afectar a la rueda que está a su izquierda. Por lo tanto, el número que sigue es 389A0, y asÌ sucesivamente. 
-Suponiendo que el cuenta vueltas progrese hasta 3FFF, con el siguiente avance en un de la rueda de las unidades Está pasar· de F a 0, forzando que la rueda que está a su izquierda también cambie de F a 0, lo que a su vez también hace que su rueda vecina izquierda pase de F a 0, lo que a su vez hará que la rueda que está a su izquierda cambie de 3 a 4. En definitiva de 3FFF se pasa a 4000.
+Asumiendo que el cuenta vueltas hexadecimal indica 3899, si las ruedas de las unidades avanza un símbolo, pasará de 9 a A, sin hacer cambiar la rueda que está a su izquierda, por lo que el n˙mero hexadecimal siguiente es 389A. Luego, cada vez que las unidades aumentan en uno, sucesivamente se irán formando 389B, 389C, 389D, 389E,389F. Con del siguiente cambio de la ruedade las unidades, Esta pasará de F a 0, con lo cual la rueda que Está a su izquierda cambiará de 9 a A, sin afectar a la rueda que está a su izquierda. Por lo tanto, el número que sigue es 389A0, y asÌ sucesivamente. 
+Suponiendo que el cuenta vueltas progrese hasta 3FFF, con el siguiente avance en un de la rueda de las unidades Está pasará de F a 0, forzando que la rueda que está a su izquierda también cambie de F a 0, lo que a su vez también hace que su rueda vecina izquierda pase de F a 0, lo que a su vez hará que la rueda que está a su izquierda cambie de 3 a 4. En definitiva de 3FFF se pasa a 4000.
 
 Podemos imaginar un **cuenta vueltas binario** constituido por ruedas que sólo tienen dos símbolos: **0** y **1**, cada uno ocupando una mitad de cada rueda. cuando una rueda pasa de 1 a 0 obliga a la que está a su izquierda que gire mediante vuelta para que pase a 1 si estaba en 0, o que pase a 0 si estaba en 1.
-Suponiendo que esta cuenta vueltas indique 1010, si la rueda extrema derecha de las unidades avanza uno pasar· de 0 a 1, sin afectar a la rueda que está a su izquierda, por lo que el número binario que sigue será 1011. Cuando la rueda de las unidades vuelve a cambiar, esta vez de 1 a 0, hará que la rueda vecina izquierda que estaba en 1 pase a 0. Esto a su vez obliga a que la rueda vecina izquierda que estaba en 0 cambie a uno, lo cual no afectará a la rueda vecina izquierda de la misma. Entonces a 1011 sigue 1100, etc. En la fig. 1.4 puede verificarse con este método la generación de sucesión de binarios de 0000 al 1111.
+Suponiendo que esta cuenta vueltas indique 1010, si la rueda extrema derecha de las unidades avanza uno pasará de 0 a 1, sin afectar a la rueda que está a su izquierda, por lo que el número binario que sigue será 1011. Cuando la rueda de las unidades vuelve a cambiar, esta vez de 1 a 0, hará que la rueda vecina izquierda que estaba en 1 pase a 0. Esto a su vez obliga a que la rueda vecina izquierda que estaba en 0 cambie a uno, lo cual no afectará a la rueda vecina izquierda de la misma. Entonces a 1011 sigue 1100, etc. En la fig. 1.4 puede verificarse con este método la generación de sucesión de binarios de 0000 al 1111.
 
-### **¿Cuannto bits se necesitan por cada dígito decimal a representar?**
+### **¿Cuantos bits se necesitan por cada dígito decimal a representar?**
 ---
 
 El número decimal 109 de 3 dígitos, en binario es 11011001 de bits. Si consideramos que 109 es un poco mayor que el 99 de dos dígitos, resulta aproximadamente 7/2 = 3,5 bits por cada dígito decimal. 512d= 1000000000b o sea 10 bits para representar 3 dígitos decimales: 1073=3,3 bits por dígito decimal.
@@ -325,7 +325,7 @@ O sea que el método de simular que se pesa un objeto, cuyo peso se conoce en ba
 #### **Regla para pasar un número decimal a binario:** (no se requiere realizar dibujo alguno)
 
 **a.** Dado el número a convertir, se parte de la pesa binario que en base diez tiene un valor igual a dicho número, o que presenta el valor menor más próximo al mismo; y a partir de este valor se escriben en base diez los sucesivos valores decreciente de las pesas binarias hasta el valor uno, siendo cada valor la mitad del anterior.
-**b.** Se coloca un **uno** debajo del primero valor determinado en el paso anterior. A este valor decimal se le sumar· el valor decimal de cada peso binario que sigue a la derecha sin omitir ninguno hasta el peso uno. Si al sumar el valor de la pesa que sigue a la última que se analizó el resultado alcanzando iguala o es menor que el número decimal a convertir, e colocar· un uno debajo del valor de esa pesa; y si ese resultado supera dicho número se coloca un cero, para indicar que esa pesa no se usa para balancear.
+**b.** Se coloca un **uno** debajo del primero valor determinado en el paso anterior. A este valor decimal se le sumará el valor decimal de cada peso binario que sigue a la derecha sin omitir ninguno hasta el peso uno. Si al sumar el valor de la pesa que sigue a la última que se analizó el resultado alcanzando iguala o es menor que el número decimal a convertir, e colocará un uno debajo del valor de esa pesa; y si ese resultado supera dicho número se coloca un cero, para indicar que esa pesa no se usa para balancear.
 **c.** Los unos y ceros asÌ determinados de izquierda a derecha son los bits del número binario buscando.|
 :-|
 
@@ -334,8 +334,8 @@ a.-> 256 128 64 32 16 8 4 2 1 d
 b.->  1   0   0  0  1 1 1 0 0 b   c. 284d = 100011100d
 
 En el paso a. se comenzó con la pesa de valor 256, que es la menor en relación con 284, siendo que la de 512 lo supera.
-El paso b. comienza escribiendo un uno debajo de 256. Sumando el valor 128 que le sigue darÌa 256 + 128 = 384 > 284, por lo que se coloca 0 debajo del 128. Lo mismo ocurre si intentamos sumar al 256 ya sea 64 o 32, por lo que también escribimos un cero debajo del 64 y del 32, para indicar que no se han usado estas pesas. Con el peso 16. Con el peso 8 resulta 272 + 8 = 280<284 por lo que también se escribe un uno bajo del 8. Restan equilibrar 284 - 280 = 4, lo cual se consigue con la pesa de ese valor, escribiéndose un uno debajo del 4. Dado que se ha equilibrado el 284 con las pesas indicadas con un uno, no se usar·n las pesas de 2 y 1, colocándose un cero debajo de cada uno de esos valores.
-**verificación:** Siempre es factible determinar si el resultado de una conversión est· bien, realizando el pasaje inverso a base
+El paso b. comienza escribiendo un uno debajo de 256. Sumando el valor 128 que le sigue darÌa 256 + 128 = 384 > 284, por lo que se coloca 0 debajo del 128. Lo mismo ocurre si intentamos sumar al 256 ya sea 64 o 32, por lo que también escribimos un cero debajo del 64 y del 32, para indicar que no se han usado estas pesas. Con el peso 16. Con el peso 8 resulta 272 + 8 = 280<284 por lo que también se escribe un uno bajo del 8. Restan equilibrar 284 - 280 = 4, lo cual se consigue con la pesa de ese valor, escribiéndose un uno debajo del 4. Dado que se ha equilibrado el 284 con las pesas indicadas con un uno, no se usarán las pesas de 2 y 1, colocándose un cero debajo de cada uno de esos valores.
+**verificación:** Siempre es factible determinar si el resultado de una conversión está bien, realizando el pasaje inverso a base
 diez del número binario hallado, según la regla antes indicada:
 
  1    0    0   0   1  1  1  0  0 b = (1x256+1x16+1x8+1x4)d=284d   Se verifica que la conversión fue bien hecha.
@@ -401,7 +401,7 @@ Como se anticipó al traer el sistema hexadecimal, Este se usa para pasar de una
 1.A partir del bit extremo derecho del n˙mero binario, dividirlo en cuartetos, agregando ceros a la izquierda si se necesita.
 2.Asignar a cada cuarteto los pesos 8-4-2-1 en forma escrita o mentalmente.
 3.Sumar en base diez los pesos de cada cuarteto correspondientes a los bits de valor 1, o sea hallar su valor en base diez.
-4.El número resultante de cada suma así efectuada en cada cuarteto según el paso anterior, será el dígito hexadecimal correspondiente a ese cuarteto, siendo que si dicho número es del 0 al 9 será el mismo en hexa; y si el mismo es 10 el dígito hexadecimal será A, si es B, si es 12 ser· C, si es 13 ser· D, si es 14 ser· E, si es 15 será F.|
+4.El número resultante de cada suma así efectuada en cada cuarteto según el paso anterior, será el dígito hexadecimal correspondiente a ese cuarteto, siendo que si dicho número es del 0 al 9 será el mismo en hexa; y si el mismo es 10 el dígito hexadecimal será A, si es B, si es 12 será C, si es 13 será D, si es 14 será E, si es 15 será F.|
 :-|
 
 
@@ -538,7 +538,7 @@ Realizaremos la misma resta anterior sin pedir prestado, mediante **una sola sum
 
 **Regla** 
 
-1. El minuendo se sumar· sin modificación.
+1. El minuendo se sumará sin modificación.
 2. Se invierten cada uno de los bits del sustrayendo, y el n˙mero asÌ formado es el segundo operando.
 3. Se escribe un uno para ser sumado en la posición de las unidades.
 4. Sumar los tres n˙meros indicados en 1, 2, 3, y descartar el 1 que está fuera del formato de los n bits que se restan.
@@ -924,7 +924,7 @@ Es necesario verificar que en las direcciones A23E y A23F se escribió el result
 4. ¿Por qué no hay problemas si las instrucciones y los datos comparten una misma memoria?
 5. Durante la ejecución de un programa ¿cómo se localizan las instrucciones si ocupan distinta cantidad de celdas en memoria? u ¿cómo se localiza el dato que cada instrucción opera?
 6. ¿Hay algún problema si la dirección presente en una instrucción coincide con su código-op ó con el cod-op de otra instrucción?
-7. En las instrucciones tratado, ¿quién indica que el resultado debe ir a AX?
+7. En las instrucciones tratadas, ¿quién indica que el resultado debe ir a AX?
 
 Más adelante se trata la representación de los números **enteros y reales**, y al final de los temas también se dan ejercicios integradores, también para ser verificados mediante el Debug.
 
