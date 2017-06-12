@@ -28,12 +28,14 @@ Durante la obtención y ejecución de una instrucción, ocurren en definitiva la
 ^3^.O sea estarnos suponiendo un microprocesador como el 80286 que opera con un word de 16 bits.
 
 
+
 1. **Movimientos para direccionar y obtener el código de la instrucción en el registro RI** _(Igualmente para cualquier instruccion)_.
 ----
 **a.** La UC pone en **1** la línea L/E (lectura), y ordena enviar al registro RDI una copia de la dirección 0200 H= 0000 0010 0000 0000 *que indica el IP*. De este    modo dicho número, de 16 bits, llegará a través de 16 líneas de direccion del bus (una línea para cada bit). 
+
 **b.** La MP envía juntos los contenidos de la posición direccionada y de la siguiente (0200 y 0201), o sea en caso el número Al 00, que en binario sería 10100001 00000000. Estos 16 bits van por las 16 lineas de datos del bus, hacia el registro RDA^1^, y de éste al RI, Luego siguen la misma ruta los contenidos 50 y 03 de las direcciones 0202 y 0203, como se planteó más arriba. . En consecuencia, al cabo de estos movimientos, en RI existirá en binario la combinacion que en hexa A100503, que corresponde al código de máquina a la instrucción pedida (**I~1~**,en este caso).
 
-![imagen1](./img/f1-23.jpg) ![imagen2](./img/f1-24.jpg)
+   ![imagen1](./img/f1-23.jpg)                                                ![imagen2](./img/f1-24.jpg)
 
 ---
 >^1^ Es importante notar **que en una lectura de MP,los datos de las posiciones leídas permanecen intactos, y una copia de los mismos reemplaza alos que existían en el registro de destino, los cuales se pierden.** 
