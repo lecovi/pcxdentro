@@ -23,9 +23,9 @@ Para leer dos (o más) direcciones consecutivas basta dar el número correspondi
 Durante la obtención y ejecución de una instrucción, ocurren en definitiva las siguientes acciones y movimientos principales (figuras 1.23 a 1.26), con los objetivos que se indican, *que como se verá son comunes en general a todas las instrucciones*. Para las operaciones de lectura de la memoria principal (MP), debe tener presente el esquema de la figura 1.10. Comenzaremos con *I~1~* (figura 1.23).
 
 ---
->^1^.En Electricidad, si un fenómeno sucede X veces por segundo se dice que tiene una frecuencia de repetición de X Hertz (hercios),en honor a Hertz, descubridor de las ondas electromagnéticas. Un Hertz (Hz) es un ciclo por segundo; 1000 Hz son un kilohertz(Khz), 1000000 I-Iz son un megahertz(Mhz).
->^2^.En los microprocesadores actuales, para ganar tiempo, mientras se están ejecutando instrucciones pedidas anteriormente, se van leyendo de MP códigos de instrucciones a ser ejecutados localizados en posiciones consecutivas. Las Instrucciones pedidas con anticipación se guardan en una memoria interna del microprocesador. Esto se describe en la sección 1.14.
->^3^.O sea estarnos suponiendo un microprocesador como el 80286 que opera con un word de 16 bits.
+>>>^1^.En Electricidad, si un fenómeno sucede X veces por segundo se dice que tiene una frecuencia de repetición de X Hertz (hercios),en honor a Hertz, descubridor de las ondas electromagnéticas. Un Hertz (Hz) es un ciclo por segundo; 1000 Hz son un kilohertz(Khz), 1000000 I-Iz son un megahertz(Mhz).
+^2^.En los microprocesadores actuales, para ganar tiempo, mientras se están ejecutando instrucciones pedidas anteriormente, se van leyendo de MP códigos de instrucciones a ser ejecutados localizados en posiciones consecutivas. Las Instrucciones pedidas con anticipación se guardan en una memoria interna del microprocesador. Esto se describe en la sección 1.14.
+^3^.O sea estarnos suponiendo un microprocesador como el 80286 que opera con un word de 16 bits.
 
 
 1. **Movimientos para direccionar y obtener el código de la instrucción en el registro RI** _(Igualmente para cualquier instruccion)_.
