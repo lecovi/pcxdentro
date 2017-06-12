@@ -255,7 +255,7 @@ Los procesadores qu tienen dichas combinaciones almacenadas en una ROM de Contro
 Todo sucede como si la UC fuera como un robot preprogramado, para que con cada orden distinta que se le imparta (instrucción) responda mediante una serie de acciones específicas (ordenadas por las combinaciones que se generan en susíneas de salida), programadas en su interior por sus creadores.
 
 ![imagen1](./img/f1-34.png) 
-[imagen2](./img/f1-34a.png)
+![imagen2](.img/f1-34a.png)
 
 ----
 
