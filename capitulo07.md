@@ -40,7 +40,7 @@ Durante la obtención y ejecución de una instrucción, ocurren en definitiva la
    ![imagen1](./img/f1-23.jpg)                                                ![imagen2](./img/f1-24.jpg)
 
 ---
->^1^ Es importante notar **que en una lectura de MP,los datos de las posiciones leídas permanecen intactos, y una copia de los mismos reemplaza alos que existían en el registro de destino, los cuales se pierden.** 
+> <1> Es importante notar **que en una lectura de MP,los datos de las posiciones leídas permanecen intactos, y una copia de los mismos reemplaza alos que existían en el registro de destino, los cuales se pierden.** 
 **O sea que una lectura de MP implica una escritura en un registro de la UCP.**
 Esto es semejante en un calculador se pulsa la tecla RM, y una copia de lo que está memorizado pasa al visor, perdiéndose el número que éste contenía anteriormente. 
 ---
