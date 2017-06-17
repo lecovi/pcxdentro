@@ -1,79 +1,82 @@
 [^ Índice](README.md) | [Siguiente >](capitulo08.md)
 
 # **1.7 PAPEL DE LA UC Y DE LOS MHz DEL RELOJ EN LA EJECUCION DE LAS INSTRUCCIONES**
-#### **¿Cómo se ejecutan las instrucciones I~1~ a I~4~ mediante movimientos simples entre memoria y registros de la UCP ordenados por la UC?**
+#### **¿Cómo se ejecutan las instrucciones I1 a I4 mediante movimientos simples entre memoria y registros de la UCP ordenados por la UC?**
 ---
 *Con el fin de comprender mejor como opera la UC, veremos más en detalle la forma en que se ejecutan las instrucciones*, a partir del esquema de la figura 1.8, con el agregado de los registros de direcciones (RDI) y de datos (RDA), definidos en la sección 1.4 al tratar el acceso al azar.
-Como se vio en relación con la figura 1.15 cada **sentencia** (orden) de un programa de alto nivel (como R=P+P-T) es traducida por un programa compilador en una secuencia de **instrucciones** (órdenes mas simples, en nuestro ejemplo **I~1~,I~2~,I~3~ e I~4~**) que una UC puede ejecutar.
+Como se vio en relación con la figura 1.15 cada **sentencia** (orden) de un programa de alto nivel (como R=P+P-T) es traducida por un programa compilador en una secuencia de **instrucciones** (órdenes mas simples, en nuestro ejemplo **I1,I2,I3 e I4**) que una UC puede ejecutar.
 
----
+
 >**A su vez**, la ejecución de cada instrucción se divide en pasos aún más simples (4 en nuestro caso, figs 1.23 a 1.25). Las acciones que debe ordenar controlar la UC en cada uno de estos 4 pasos están determinadas por 4 combinaciones binarias llamadas **"microcódigos"** que van apareciendo una tras otra en las **líneas de control** con cada uno de los pulsos que constituyen los Mhz (figuras l.29 y 1.30). Estas líneas salen de la UC hacia la UAL, los registros y la memoria (fig. 1.31).La ejecución de una instrucción implica una secuencia de movimientos de transferencia de bytes entre memoria principal y registros de la UCP (o entre estos últimos), establecidos por la UC en un orden determinado, según el código de dicha instrucción. También puede ordenarse una operación en la UAL.
 ---
+
 *Cada segundo* puede ejecutarse algunos millones de instrucciones, para lo cual deben sucederse muchos *millones* de estos movimientos de pasaje de direcciones, códigos, datos y resultados, *al ritmo de millones de impulsos eléctricos por segundo* (**"megahertz"**, abreviados **MHz**) que le llegan a la UC, generados regularmente por un cristal piezo-eléctrico de cuarzo o **"reloj"** ("*clock*"). 
 Así se habla de microprocesadores (con reloj) de 100 MHz, 1 GHz, etc. En principio, a mayor número de MHz podrán suceder más de estos movimientos por segundo, con lo cual se podrán ejecutar mas instrucciones por segundo. Un Pentium actual de 1 GHz puede ejecutar más de mil millones de instrucciones por segundo (1000 MIPS), y en ciertos casos hasta 3000 MIPS.
-Describiremos *en un modelo simplificado*, el orden, origen y destino de estos movimientos, que deben llevarse a cabo durante la ejecución de una instrucción, para I~1~,I~2~,I~3~ e I~4~, y los agruparemos por etapas. Dichos movimientos el Debug no los puede mostrar, como tampoco muestra los registros RI, RDI y RDA.
+Describiremos *en un modelo simplificado*, el orden, origen y destino de estos movimientos, que deben llevarse a cabo durante la ejecución de una instrucción, para I1,I2,I3 e I4, y los agruparemos por etapas. Dichos movimientos el Debug no los puede mostrar, como tampoco muestra los registros RI, RDI y RDA.
 
----
+
 >Asi se comprenderá que la UC tiene como función primera dar órdenes de operaciones de lectura o escritura a la memoria y registros de la UCP, y ordenar qué operación debe hacer la UAL, o sea **controlar**, *en el sentido de dar órdenes*, a esos dispositivos. De ahí su nombre de "unidad de control".
 ----
 
-A fin de hacer más simple la explicación, supondremos que cuando la UC ordena leer la zona de instrucciones de memoria —a la cual apunta el valor de IP—*pide 4 bytes Consecutivos de código de instrucción^2^*. Para ello, si por ejemplo es IP = 0200, asumiremos que primero pide leer 0200 y 0201, y luego 0202 y 0203^3^. Los contenidos de estas posiciones llegan al **registro de instrucción RI** (figura 1.23).
+A fin de hacer más simple la explicación, supondremos que cuando la UC ordena leer la zona de instrucciones de memoria —a la cual apunta el valor de IP—*pide 4 bytes Consecutivos de código de instrucción*. Para ello, si por ejemplo es IP = 0200, asumiremos que primero pide leer 0200 y 0201, y luego 0202 y 0203. Los contenidos de estas posiciones llegan al **registro de instrucción RI** (figura 1.23).
 Para leer dos (o más) direcciones consecutivas basta dar el número correspondiente a la primera de ellas. 
 
-Durante la obtención y ejecución de una instrucción, ocurren en definitiva las siguientes acciones y movimientos principales (figuras 1.23 a 1.26), con los objetivos que se indican, *que como se verá son comunes en general a todas las instrucciones*. Para las operaciones de lectura de la memoria principal (MP), debe tener presente el esquema de la figura 1.10. Comenzaremos con *I~1~* (figura 1.23).
+Durante la obtención y ejecución de una instrucción, ocurren en definitiva las siguientes acciones y movimientos principales (figuras 1.23 a 1.26), con los objetivos que se indican, *que como se verá son comunes en general a todas las instrucciones*. Para las operaciones de lectura de la memoria principal (MP), debe tener presente el esquema de la figura 1.10. Comenzaremos con *I1* (figura 1.23).
 
----
->^1^.En Electricidad, si un fenómeno sucede X veces por segundo se dice que tiene una frecuencia de repetición de X Hertz (hercios),en honor a Hertz, descubridor de las ondas electromagnéticas. Un Hertz (Hz) es un ciclo por segundo; 1000 Hz son un kilohertz(Khz), 1000000 I-Iz son un megahertz(Mhz).
+----
+[^1]. En Electricidad, si un fenómeno sucede X veces por segundo se dice que tiene una frecuencia de repetición de X Hertz (hercios),en honor a Hertz, descubridor de las ondas electromagnéticas. Un Hertz (Hz) es un ciclo por segundo; 1000 Hz son un kilohertz(Khz), 1000000 I-Iz son un megahertz(Mhz).
 
->^2^.En los microprocesadores actuales, para ganar tiempo, mientras se están ejecutando instrucciones pedidas anteriormente, se van leyendo de MP códigos de instrucciones a ser ejecutados localizados en posiciones consecutivas. Las Instrucciones pedidas con anticipación se guardan en una memoria interna del microprocesador. Esto se describe en la sección 1.14.
+[^2]. En los microprocesadores actuales, para ganar tiempo, mientras se están ejecutando instrucciones pedidas anteriormente, se van leyendo de MP códigos de instrucciones a ser ejecutados localizados en posiciones consecutivas. Las Instrucciones pedidas con anticipación se guardan en una memoria interna del microprocesador. Esto se describe en la sección 1.14.
 
->^3^.O sea estarnos suponiendo un microprocesador como el 80286 que opera con un word de 16 bits.
----
+[^3]. O sea estarnos suponiendo un microprocesador como el 80286 que opera con un word de 16 bits.
+
 
 
 1. **Movimientos para direccionar y obtener el código de la instrucción en el registro RI** _(Igualmente para cualquier instruccion)_.
 ----
 **a.** La UC pone en **1** la línea L/E (lectura), y ordena enviar al registro RDI una copia de la dirección 0200 H= 0000 0010 0000 0000 *que indica el IP*. De este    modo dicho número, de 16 bits, llegará a través de 16 líneas de direccion del bus (una línea para cada bit). 
 
-**b.** La MP envía juntos los contenidos de la posición direccionada y de la siguiente (0200 y 0201), o sea en caso el número Al 00, que en binario sería 10100001 00000000. Estos 16 bits van por las 16 lineas de datos del bus, hacia el registro RDA^1^, y de éste al RI, Luego siguen la misma ruta los contenidos 50 y 03 de las direcciones 0202 y 0203, como se planteó más arriba. . En consecuencia, al cabo de estos movimientos, en RI existirá en binario la combinacion que en hexa A100503, que corresponde al código de máquina a la instrucción pedida (**I~1~**,en este caso).
+**b.** La MP envía juntos los contenidos de la posición direccionada y de la siguiente (0200 y 0201), o sea en caso el número Al 00, que en binario sería 10100001 00000000. Estos 16 bits van por las 16 lineas de datos del bus, hacia el registro RDA, y de éste al RI, Luego siguen la misma ruta los contenidos 50 y 03 de las direcciones 0202 y 0203, como se planteó más arriba. . En consecuencia, al cabo de estos movimientos, en RI existirá en binario la combinacion que en hexa A100503, que corresponde al código de máquina a la instrucción pedida (**I1**,en este caso).
 
    ![imagen1](./img/f1-23.jpg)                                                ![imagen2](./img/f1-24.jpg)
 
 ---
-> <1> Es importante notar **que en una lectura de MP,los datos de las posiciones leídas permanecen intactos, y una copia de los mismos reemplaza alos que existían en el registro de destino, los cuales se pierden.** 
+> [^1] Es importante notar **que en una lectura de MP,los datos de las posiciones leídas permanecen intactos, y una copia de los mismos reemplaza alos que existían en el registro de destino, los cuales se pierden.** 
 **O sea que una lectura de MP implica una escritura en un registro de la UCP.**
 Esto es semejante en un calculador se pulsa la tecla RM, y una copia de lo que está memorizado pasa al visor, perdiéndose el número que éste contenía anteriormente. 
 ---
 2. **Decodificación** (Determina los próximos movimientos a realizar por la UC para ejecutar la instrucción que está en RI y *ocurre para todas las instrucciones*).
-Cuando un código de máquina (en este caso A1005003) llega al registro RI, el códgio de operación (en este caso **A1**) es **"decodificado"**^2^por la UC. Esto es, el código es detectado por circuitos de la UC, y *su combinación particular de unos y ceros desencadena una secuencia de acciones que ya han sido separadas para esa combinación cuando se diseño el precesador, a saber:*
+Cuando un código de máquina (en este caso A1005003) llega al registro RI, el códgio de operación (en este caso **A1**) es **"decodificado"**por la UC. Esto es, el código es detectado por circuitos de la UC, y *su combinación particular de unos y ceros desencadena una secuencia de acciones que ya han sido separadas para esa combinación cuando se diseño el precesador, a saber:*
 
 3. **Movimientos para direccionar y leer un operando** (dato a operar), **cuyo destino es el registro RDA** (fig 1.24)             
 **a.** La UC pone **1** la línea L/E (lectura), y ordena enviar al registro RDI una copia de la dirección formada por los dos bytes del código de máquina que siguen al código de operación (en este caso 0050),pero traspuestos (o sea 5000), con lo cual dicho número llega a MP a través de las líneas de dirección del bus.
 **b.** La MP envía juntos los contenidos de la posición direccionada y de la siguiente (5000 y 5001), o sea en este caso el dato 1020H. Los 16 bits del mismo llegan por las líneas de datos del registro RDA.
 
 4. **Movimientos y acciones para cumplimentar la operación que ordena la instrucción:** 
-**I~1~** ordena transferir desde MP hacia AX un dato. Puesto que éste ya se encuentra en RDA, solo resta el movimiento de pasar dicho dato del RDA al registro AX (figura 1.24), donde queda almacenado. De esta forma se ha ejecutado lo ordenado por **I~1~**.
+**I1** ordena transferir desde MP hacia AX un dato. Puesto que éste ya se encuentra en RDA, solo resta el movimiento de pasar dicho dato del RDA al registro AX (figura 1.24), donde queda almacenado. De esta forma se ha ejecutado lo ordenado por **I1**.
 
 5. **Movimientos y acciones para que IP contenga la dirección de la próxima instrucción a ejecutar:** 
-En la UAL se debe sumar al contenido del registro IP, la cantidad de bytes que ocupa la instrucción ejecutada (en este caso 3), y reemplazar el valor anterior (0200) por el resultado de la suma (0203)^1^.
+En la UAL se debe sumar al contenido del registro IP, la cantidad de bytes que ocupa la instrucción ejecutada (en este caso 3), y reemplazar el valor anterior (0200) por el resultado de la suma (0203).
 
-La ejecución de **I~2~** (que ordena sumar al registro AX el dato que está en 5000H) empieza con los pasos **1a.** y **1b.** de la figura 1.23 (iguales para *todas* las instrucciones). En **1a.** será 0203 la dirección que apunta IP; y en **1b.** al registro RI llegara 0306 0050 que es el código de **I~2~**. Además, **I~2~** tiene en común con **I~1~** el movimiento **3a.** y la dirección en este caso es también 5000H. En el movimiento **3b.** (figura1.25) el dato (en este ejemplo otra vez 1020H) obtenido de la lecutra de la dirección 5000H llega al registro RDA.
+La ejecución de **I2** (que ordena sumar al registro AX el dato que está en 5000H) empieza con los pasos **1a.** y **1b.** de la figura 1.23 (iguales para *todas* las instrucciones). En **1a.** será 0203 la dirección que apunta IP; y en **1b.** al registro RI llegara 0306 0050 que es el código de **I2**. Además, **I2** tiene en común con **I1** el movimiento **3a.** y la dirección en este caso es también 5000H. En el movimiento **3b.** (figura1.25) el dato (en este ejemplo otra vez 1020H) obtenido de la lecutra de la dirección 5000H llega al registro RDA.
 La operación ordenada en el paso **4** ahora es sumar el operando (1020H) -que está en RDA- al dato contenido en AX (1020H). El resultado de la suma (2040H) debe guardarse en AX reemplazando el valor anterior 1020H, que se pierde (igual que una calculadora cuando se suma). 
-El paso **5** consistirá en cambiar el valor de IP, de modo que apunte a la dirección **I~3~**, para lo cual la UC debe sumar 4 (pues **I~2~** ocupa 4 posiciones de memoria) al valor 0203, de forma que IP indique 0207H.
+El paso **5** consistirá en cambiar el valor de IP, de modo que apunte a la dirección **I3**, para lo cual la UC debe sumar 4 (pues **I2** ocupa 4 posiciones de memoria) al valor 0203, de forma que IP indique 0207H.
 
-**I~3~** se ejecuta con los mismos movimientos que **I~2~** con la única diferencia que la UC ordena la resta a la UAL2.
+**I3** se ejecuta con los mismos movimientos que **I2** con la única diferencia que la UC ordena la resta a la UAL2.
 Puede verificarse que mediante ellos se llega a los resultados hallados con el Debug (figura 1.21). 
-Para la instrucción **I~4~** (que ordena guardar en 5010H el contenido de AX), luego del movimiento **1b.** (figura 1.23) se tendrá en RI su código A31050.
+Para la instrucción **I4** (que ordena guardar en 5010H el contenido de AX), luego del movimiento **1b.** (figura 1.23) se tendrá en RI su código A31050.
 En el movimiento **3a.** -como en **I~1~**- se ordena enviar al registro RDI una copia de la dirección formada por los dos bytes del código de máquina que siguen al código de operación (en este caso 1050), pero traspuestos (o sea 5010H), con lo cual dicho número llega a MP a través de las 16 líneas de dirección del bus. (fig 1.26).
 En el paso **3b.** el dato (0000H) que se debe enviar a MP para cumplimentar la operación, pasará al RDA. 
 Puesto que la operación ordenada en esencia es una escritura de memoria, el paso **4.** consiste simplemente en que la UC pone en **0** la línea L/E (escritura), con lo cual enviará hacia MP, por las líneas de datos, una copia del contenido de RDA (en este caso 0000H). Este se escribirá en las posiciones 5010 y 5011 3. En el paso **5** el IP se actualiza en 020E (no dibujado).
----
->^1^Esta acción circuital no es visualizable en la figura 1.23. Supondremos que cuando la UC lee el primer byte del código (**A1**) de una instrucción detecta cuantos bytes la componen y qué representa cada uno. Por lo tanto la UC así "sabe" que 03 no forma parte del código de la instrucción. Recordar que ésta ordenaba enviar hacia AX una copia del número contenido en la dirección 5000 (y en la 5001)
-^2^ En los pasos 3b de las instrucciones **I~2~** e **I~3~** tiene lugar una lectura de memoria seguida de una operación aritmética.
 
-^3^ En general, *en una operación de escritura en MP (o en cualquier registro), se destruye el contenido que tenía antes la posición escrita, la cual pasa a almacenar el nuevo valor escrito. Los datos leídos en el registro de origen, cuya copia fue escrita en MP (destino), permanecen intactos.* Asimismo, *una escritura de MP supone una lectura de un registro de la UCP.*|
-:-|
+
 ---
+>[^1]Esta acción circuital no es visualizable en la figura 1.23. Supondremos que cuando la UC lee el primer byte del código (**A1**) de una instrucción detecta cuantos bytes la componen y qué representa cada uno. Por lo tanto la UC así "sabe" que 03 no forma parte del código de la instrucción. Recordar que ésta ordenaba enviar hacia AX una copia del número contenido en la dirección 5000 (y en la 5001)
+
+>[^2] En los pasos 3b de las instrucciones **I2** e **I3** tiene lugar una lectura de memoria seguida de una operación aritmética.
+
+>[^3] En general, *en una operación de escritura en MP (o en cualquier registro), se destruye el contenido que tenía antes la posición escrita, la cual pasa a almacenar el nuevo valor escrito. Los datos leídos en el registro de origen, cuya copia fue escrita en MP (destino), permanecen intactos.* Asimismo, *una escritura de MP supone una lectura de un registro de la UCP.*
+
 
 ![imagen1](./img/f1-25.png) ![imagen2](./img/f1-26.png)
 
@@ -82,14 +85,14 @@ Puesto que la operación ordenada en esencia es una escritura de memoria, el pas
 ---
 Si recapitulamos (figuras 1.23 a 1.26) cómo se ejecutaron las instrucciones en el esquema de UC	supuesto, resulta que la estructura de la UCP está pensada para que repita *permanentemente* la siguiente secuencia de pasos, con las intruciciones del programa a ejecutar que está en memoria principal (MP):
 
-**1. Obtener** (direccionar) **la instrucción a ejecutar de la memoria principal^1^:**
-+ El IP indica la direción de MP donde comienza el código de máquina^2^ de la instrucción a ejecutar, el caul luego de ser leído de MP llega al registro RI.
+**1. Obtener** (direccionar) **la instrucción a ejecutar de la memoria principal:**
++ El IP indica la direción de MP donde comienza el código de máquina de la instrucción a ejecutar, el caul luego de ser leído de MP llega al registro RI.
 
 **2. Decodificar:** 
 + El código de operación indica: la operacion a realizar, cómo encontrar un dato a operar, y la cantidad de bytes que tiene la instrucción, para que la UC lleven a cabo la secuencia de movimientos preparada para ejecutar dicho coódigo.
 ---
->^1^ En inglés **"fetch"**.
-^2^ Por ejemplo en la instrccion **I~1~** el *código de máquina* era **A10050** (3 bytes), siendo su *código de operación* **A1**, y los 2 bytes restantes **0050** permiten formar la dirección 5000 donde está el dato a operar. **I~2~** es una instrucción cuyo código de máquina es de 4 butes, y su código de operación es de 2 bytes. En general los bytes que siguen al código de operación permiten determinar la dirección de MP o el registro dónde está el dato a operar, o dónde escribir un resultado.
+>[^1] En inglés **"fetch"**.
+>[^2] Por ejemplo en la instrccion **I1** el *código de máquina* era **A10050** (3 bytes), siendo su *código de operación* **A1**, y los 2 bytes restantes **0050** permiten formar la dirección 5000 donde está el dato a operar. **I2** es una instrucción cuyo código de máquina es de 4 butes, y su código de operación es de 2 bytes. En general los bytes que siguen al código de operación permiten determinar la dirección de MP o el registro dónde está el dato a operar, o dónde escribir un resultado.
 ---
 **3. Obtener un dato a operar:**
 + 3a. Si el dato está en MP, con una dirección que resulta del código de máquina de la instrucción, se direcciona la MP para obtener un dato a operar (“operando”).
@@ -109,18 +112,21 @@ Las etapas o pasos citados —sintetizados en la figura 1.27— describen, al ig
  ---
 En memoria principal existen almacenadas combinaciones de unos y ceros, números binarios que pueden representar códigos de instrucciones, datos o direcciones. El procesador "no sabe" con cuál de estos tipos de información está tratando, pero el orden, la secuencia repetitiva que realiza —descripta en la respuesta anterior— ha sido perfectamente planeada para que no existan problemas de interpretación al respecto.
 Este orden empieza cuando se enciende un computador, pues lo primero que pide la UCP de la MP es un código de máquina, el que corresponde a la primera instrucción del primer programa a ejecutar'. La dirección de dicha instrucción está preestablecida, y pertenece a la porción ROM de MP, por lo que al encenderse el equipo el número de dicha dirección siempre debe formarse en el IP (y en el registro CS^2^). Luego se suceden en orden los 4 pasos descriptos en la respuesta de la pregunta anterior. De esta forma, lo primero que recibe la UCP de MP es el código de máquina de Una instrucción, que irá al RI.
-*Por lo tanto, un computador está pensando que la UCP comience a operar leyendo de MP un número que debe ir al registro de instrucción (RI), por lo que dicho número será interpretado como un código de una instrucción.*|
-:-|
+*Por lo tanto, un computador está pensando que la UCP comience a operar leyendo de MP un número que debe ir al registro de instrucción (RI), por lo que dicho número será interpretado como un código de una instrucción.*
+
 
 Conforme se estableció antes, luego de decodificar el código de una instrucción (paso 2), la UCP está pen¬sada para que forme la dirección de MP donde está un dato a operar. Entonces (paso 3a), lo *siguiente que la UCP lee de MP* (o de un registro de la UCP si el código lo ordena) es *un número que es un dato*
-Este dato si bien llega al RDA, no va al RI, como el código de operación, sino hacia .un registro de la UCP (como el AX ejemplificado, o es conducido a la UAL' para ser operado). También puede ocurrir que un número se escriba en esa dirección de MP (como en la ejecución de **I~4~**).
+Este dato si bien llega al RDA, no va al RI, como el código de operación, sino hacia .un registro de la UCP (como el AX ejemplificado, o es conducido a la UAL' para ser operado). También puede ocurrir que un número se escriba en esa dirección de MP (como en la ejecución de **I4**).
 Después de sumar al IP la cantidad de bytes que tenía la instrucción ejecutada, IP contendrá la dirección de la próxima instrucción a ser ejecutada, con lo cual vuelve a empezar otro cielo, leyendo de MP un número que es el código de dicha instrucción, y como tal es interpretado dado que va en RI en reemplazo del código anterior, y así de seguido.
 El orden, establecido supone que *las instrucciones, deben estar escritas en posiciones sucesivas de memoria*, y que  datos a operar por dichas instrucciones están en otra zona de memoria.
 Acorde con estas "reglas de juego", si las instrucciones han sido escritas en posiciones sucesivas de memoria y su código es el correcto, no habrá problemas en lo concerniente a cómo la máquina "interpreta" cada combinación binaria que pide de memoria. Esto es así por que el orden establece que lo primero que llega un código, el cual permite localizar otro número que será un dato, y luego nuevamente lo próximo que llega será un código, etc.
 En caso que la UC decodifique en el R1 un código que no reconoce, está previsto que la UC pase a ejecutar subrutina, que de ser necesario, por ejemplo haga aparecer en pantalla un aviso de error insalvable.
+
+
 ---
->^1^Como ya se describió, este programa en la porción ROM de MP, dado que el primer programa a ejecutar debe estar siempre en memoria, aunque se apague el equipo, para poder traer del disco los programas del sistema operativo que se pierden en la porción RAM de  memoria al apagar el computador. Al ser ejecutado comienza una secuencia de pasos que permiten traer trae del disco a MP otro programa, que cuando es ejecutado a su vez trae del **disco** a MP programas del sistema  operativo.
-^2^ En un 80X86, el contenido del registro de segmento CS multiplicado por 16 siempre se suma a IP para formar cualquier dirección.
+>[^1]Como ya se describió, este programa en la porción ROM de MP, dado que el primer programa a ejecutar debe estar siempre en memoria, aunque se apague el equipo, para poder traer del disco los programas del sistema operativo que se pierden en la porción RAM de  memoria al apagar el computador. Al ser ejecutado comienza una secuencia de pasos que permiten traer trae del disco a MP otro programa, que cuando es ejecutado a su vez trae del **disco** a MP programas del sistema  operativo.
+
+>[^2] En un 80X86, el contenido del registro de segmento CS multiplicado por 16 siempre se suma a IP para formar cualquier dirección.
 ---
 
 #### **¿Qué analogía didáctica puede establecerse para visualizar la actividad básica de organizar movimientos y operaciones que realiza la UC ?**
