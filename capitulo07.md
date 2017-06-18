@@ -11,7 +11,7 @@ Como se vio en relación con la figura 1.15 cada **sentencia** (orden) de un pro
 :-|
 
 
-*Cada segundo* puede ejecutarse algunos millones de instrucciones, para lo cual deben sucederse muchos *millones* de estos movimientos de pasaje de direcciones, códigos, datos y resultados, *al ritmo de millones de impulsos eléctricos por segundo* (**"megahertz"**, abreviados **MHz**[1]) que le llegan a la UC, generados regularmente por un cristal piezo-eléctrico de cuarzo o **"reloj"** ("*clock*"). 
+*Cada segundo* puede ejecutarse algunos millones de instrucciones, para lo cual deben sucederse muchos *millones* de estos movimientos de pasaje de direcciones, códigos, datos y resultados, *al ritmo de millones de impulsos eléctricos por segundo* (**"megahertz"**, abreviados **MHz**¹) que le llegan a la UC, generados regularmente por un cristal piezo-eléctrico de cuarzo o **"reloj"** ("*clock*"). 
 Así se habla de microprocesadores (con reloj) de 100 MHz, 1 GHz, etc. En principio, a mayor número de MHz podrán suceder más de estos movimientos por segundo, con lo cual se podrán ejecutar mas instrucciones por segundo. Un Pentium actual de 1 GHz puede ejecutar más de mil millones de instrucciones por segundo (1000 MIPS), y en ciertos casos hasta 3000 MIPS.
 Describiremos *en un modelo simplificado*, el orden, origen y destino de estos movimientos, que deben llevarse a cabo durante la ejecución de una instrucción, para I1,I2,I3 e I4, y los agruparemos por etapas. Dichos movimientos el Debug no los puede mostrar, como tampoco muestra los registros RI, RDI y RDA.
 
@@ -20,17 +20,17 @@ Asi se comprenderá que la UC tiene como función primera dar órdenes de operac
 :-|
 
 
-A fin de hacer más simple la explicación, supondremos que cuando la UC ordena leer la zona de instrucciones de memoria —a la cual apunta el valor de IP—*pide 4 bytes Consecutivos de código de instrucción* [2]. Para ello, si por ejemplo es IP = 0200, asumiremos que primero pide leer 0200 y 0201, y luego 0202 y 0203 [3]. Los contenidos de estas posiciones llegan al **registro de instrucción RI** (figura 1.23).
+A fin de hacer más simple la explicación, supondremos que cuando la UC ordena leer la zona de instrucciones de memoria —a la cual apunta el valor de IP—*pide 4 bytes Consecutivos de código de instrucción*². Para ello, si por ejemplo es IP = 0200, asumiremos que primero pide leer 0200 y 0201, y luego 0202 y 0203³. Los contenidos de estas posiciones llegan al **registro de instrucción RI** (figura 1.23).
 Para leer dos (o más) direcciones consecutivas basta dar el número correspondiente a la primera de ellas. 
 
 Durante la obtención y ejecución de una instrucción, ocurren en definitiva las siguientes acciones y movimientos principales (figuras 1.23 a 1.26), con los objetivos que se indican, *que como se verá son comunes en general a todas las instrucciones*. Para las operaciones de lectura de la memoria principal (MP), debe tener presente el esquema de la figura 1.10. Comenzaremos con *I1* (figura 1.23).
 
 ----
->[1]. En Electricidad, si un fenómeno sucede X veces por segundo se dice que tiene una frecuencia de repetición de X Hertz (hercios),en honor a Hertz, descubridor de las ondas electromagnéticas. Un Hertz (Hz) es un ciclo por segundo; 1000 Hz son un kilohertz(Khz), 1000000 I-Iz son un megahertz(Mhz).
+>¹ En Electricidad, si un fenómeno sucede X veces por segundo se dice que tiene una frecuencia de repetición de X Hertz (hercios),en honor a Hertz, descubridor de las ondas electromagnéticas. Un Hertz (Hz) es un ciclo por segundo; 1000 Hz son un kilohertz(Khz), 1000000 I-Iz son un megahertz(Mhz).
 
->[2]. En los microprocesadores actuales, para ganar tiempo, mientras se están ejecutando instrucciones pedidas anteriormente, se van leyendo de MP códigos de instrucciones a ser ejecutados localizados en posiciones consecutivas. Las Instrucciones pedidas con anticipación se guardan en una memoria interna del microprocesador. Esto se describe en la sección 1.14.
+>² En los microprocesadores actuales, para ganar tiempo, mientras se están ejecutando instrucciones pedidas anteriormente, se van leyendo de MP códigos de instrucciones a ser ejecutados localizados en posiciones consecutivas. Las Instrucciones pedidas con anticipación se guardan en una memoria interna del microprocesador. Esto se describe en la sección 1.14.
 
->[3]. O sea estarnos suponiendo un microprocesador como el 80286 que opera con un word de 16 bits.
+>³. O sea estarnos suponiendo un microprocesador como el 80286 que opera con un word de 16 bits.
 
 
 
@@ -39,18 +39,18 @@ Durante la obtención y ejecución de una instrucción, ocurren en definitiva la
 ----
 **a.** La UC pone en **1** la línea L/E (lectura), y ordena enviar al registro RDI una copia de la dirección 0200 H= 0000 0010 0000 0000 *que indica el IP*. De este    modo dicho número, de 16 bits, llegará a través de 16 líneas de direccion del bus (una línea para cada bit). 
 
-**b.** La MP envía juntos los contenidos de la posición direccionada y de la siguiente (0200 y 0201), o sea en caso el número Al 00, que en binario sería 10100001 00000000. Estos 16 bits van por las 16 lineas de datos del bus, hacia el registro RDA[1], y de éste al RI, Luego siguen la misma ruta los contenidos 50 y 03 de las direcciones 0202 y 0203, como se planteó más arriba. . En consecuencia, al cabo de estos movimientos, en RI existirá en binario la combinacion que en hexa A100503, que corresponde al código de máquina a la instrucción pedida (**I1**,en este caso).
+**b.** La MP envía juntos los contenidos de la posición direccionada y de la siguiente (0200 y 0201), o sea en caso el número Al 00, que en binario sería 10100001 00000000. Estos 16 bits van por las 16 lineas de datos del bus, hacia el registro RDA¹, y de éste al RI, Luego siguen la misma ruta los contenidos 50 y 03 de las direcciones 0202 y 0203, como se planteó más arriba. . En consecuencia, al cabo de estos movimientos, en RI existirá en binario la combinacion que en hexa A100503, que corresponde al código de máquina a la instrucción pedida (**I1**,en este caso).
 
    ![imagen1](./img/f1-23.jpg)                                                ![imagen2](./img/f1-24.jpg)
 
 ---
-> [1] Es importante notar **que en una lectura de MP,los datos de las posiciones leídas permanecen intactos, y una copia de los mismos reemplaza alos que existían en el registro de destino, los cuales se pierden.** 
+> ¹ Es importante notar **que en una lectura de MP,los datos de las posiciones leídas permanecen intactos, y una copia de los mismos reemplaza alos que existían en el registro de destino, los cuales se pierden.** 
 **O sea que una lectura de MP implica una escritura en un registro de la UCP.**
 Esto es semejante en un calculador se pulsa la tecla RM, y una copia de lo que está memorizado pasa al visor, perdiéndose el número que éste contenía anteriormente. 
 
 
 2. **Decodificación** (Determina los próximos movimientos a realizar por la UC para ejecutar la instrucción que está en RI y *ocurre para todas las instrucciones*).
-Cuando un código de máquina (en este caso A1005003) llega al registro RI, el códgio de operación (en este caso **A1**) es **"decodificado"**[1] por la UC. Esto es, el código es detectado por circuitos de la UC, y *su combinación particular de unos y ceros desencadena una secuencia de acciones que ya han sido separadas para esa combinación cuando se diseño el precesador, a saber:*
+Cuando un código de máquina (en este caso A1005003) llega al registro RI, el códgio de operación (en este caso **A1**) es **"decodificado"**¹ por la UC. Esto es, el código es detectado por circuitos de la UC, y *su combinación particular de unos y ceros desencadena una secuencia de acciones que ya han sido separadas para esa combinación cuando se diseño el precesador, a saber:*
 
 3. **Movimientos para direccionar y leer un operando** (dato a operar), **cuyo destino es el registro RDA** (fig 1.24)             
 **a.** La UC pone **1** la línea L/E (lectura), y ordena enviar al registro RDI una copia de la dirección formada por los dos bytes del código de máquina que siguen al código de operación (en este caso 0050),pero traspuestos (o sea 5000), con lo cual dicho número llega a MP a través de las líneas de dirección del bus.
@@ -66,7 +66,7 @@ La ejecución de **I2** (que ordena sumar al registro AX el dato que está en 50
 La operación ordenada en el paso **4** ahora es sumar el operando (1020H) -que está en RDA- al dato contenido en AX (1020H). El resultado de la suma (2040H) debe guardarse en AX reemplazando el valor anterior 1020H, que se pierde (igual que una calculadora cuando se suma). 
 El paso **5** consistirá en cambiar el valor de IP, de modo que apunte a la dirección **I3**, para lo cual la UC debe sumar 4 (pues **I2** ocupa 4 posiciones de memoria) al valor 0203, de forma que IP indique 0207H.
 
-**I3** se ejecuta con los mismos movimientos que **I2** con la única diferencia que la UC ordena la resta a la UAL2 [2].
+**I3** se ejecuta con los mismos movimientos que **I2** con la única diferencia que la UC ordena la resta a la UAL2 ².
 Puede verificarse que mediante ellos se llega a los resultados hallados con el Debug (figura 1.21). 
 Para la instrucción **I4** (que ordena guardar en 5010H el contenido de AX), luego del movimiento **1b.** (figura 1.23) se tendrá en RI su código A31050.
 En el movimiento **3a.** -como en **I1**- se ordena enviar al registro RDI una copia de la dirección formada por los dos bytes del código de máquina que siguen al código de operación (en este caso 1050), pero traspuestos (o sea 5010H), con lo cual dicho número llega a MP a través de las 16 líneas de dirección del bus. (fig 1.26).
@@ -75,11 +75,11 @@ Puesto que la operación ordenada en esencia es una escritura de memoria, el pas
 
 
 ---
->[1]Esta acción circuital no es visualizable en la figura 1.23. Supondremos que cuando la UC lee el primer byte del código (**A1**) de una instrucción detecta cuantos bytes la componen y qué representa cada uno. Por lo tanto la UC así "sabe" que 03 no forma parte del código de la instrucción. Recordar que ésta ordenaba enviar hacia AX una copia del número contenido en la dirección 5000 (y en la 5001)
+>¹ Esta acción circuital no es visualizable en la figura 1.23. Supondremos que cuando la UC lee el primer byte del código (**A1**) de una instrucción detecta cuantos bytes la componen y qué representa cada uno. Por lo tanto la UC así "sabe" que 03 no forma parte del código de la instrucción. Recordar que ésta ordenaba enviar hacia AX una copia del número contenido en la dirección 5000 (y en la 5001)
 
->[2] En los pasos 3b de las instrucciones **I2** e **I3** tiene lugar una lectura de memoria seguida de una operación aritmética.
+>² En los pasos 3b de las instrucciones **I2** e **I3** tiene lugar una lectura de memoria seguida de una operación aritmética.
 
->[3] En general, *en una operación de escritura en MP (o en cualquier registro), se destruye el contenido que tenía antes la posición escrita, la cual pasa a almacenar el nuevo valor escrito. Los datos leídos en el registro de origen, cuya copia fue escrita en MP (destino), permanecen intactos.* Asimismo, *una escritura de MP supone una lectura de un registro de la UCP.*
+>³ En general, *en una operación de escritura en MP (o en cualquier registro), se destruye el contenido que tenía antes la posición escrita, la cual pasa a almacenar el nuevo valor escrito. Los datos leídos en el registro de origen, cuya copia fue escrita en MP (destino), permanecen intactos.* Asimismo, *una escritura de MP supone una lectura de un registro de la UCP.*
 
 
 ![imagen1](./img/f1-25.png) ![imagen2](./img/f1-26.png)
@@ -89,8 +89,8 @@ Puesto que la operación ordenada en esencia es una escritura de memoria, el pas
 ---
 Si recapitulamos (figuras 1.23 a 1.26) cómo se ejecutaron las instrucciones en el esquema de UC	supuesto, resulta que la estructura de la UCP está pensada para que repita *permanentemente* la siguiente secuencia de pasos, con las intruciciones del programa a ejecutar que está en memoria principal (MP):
 
-**1. Obtener** (direccionar) **la instrucción a ejecutar de la memoria principal[1]**:
-+ El IP indica la direción de MP donde comienza el código de máquina [2] de la instrucción a ejecutar, el caul luego de ser leído de MP llega al registro RI.
+**1. Obtener** (direccionar) **la instrucción a ejecutar de la memoria principal¹**:
++ El IP indica la direción de MP donde comienza el código de máquina² de la instrucción a ejecutar, el caul luego de ser leído de MP llega al registro RI.
 
 **2. Decodificar:** 
 + El código de operación indica: la operacion a realizar, cómo encontrar un dato a operar, y la cantidad de bytes que tiene la instrucción, para que la UC lleven a cabo la secuencia de movimientos preparada para ejecutar dicho coódigo.
@@ -117,7 +117,7 @@ Las etapas o pasos citados —sintetizados en la figura 1.27— describen, al ig
 #### **¿Cómo hace la UC para no equivocarse con tantos números contenidos en memoria que pueden ser instrucciones, datos o direcciones?**
  ---
 En memoria principal existen almacenadas combinaciones de unos y ceros, números binarios que pueden representar códigos de instrucciones, datos o direcciones. El procesador "no sabe" con cuál de estos tipos de información está tratando, pero el orden, la secuencia repetitiva que realiza —descripta en la respuesta anterior— ha sido perfectamente planeada para que no existan problemas de interpretación al respecto.
-Este orden empieza cuando se enciende un computador, pues lo primero que pide la UCP de la MP es un código de máquina, el que corresponde a la primera instrucción del primer programa a ejecutar'. La dirección de dicha instrucción está preestablecida, y pertenece a la porción ROM de MP, por lo que al encenderse el equipo el número de dicha dirección siempre debe formarse en el IP (y en el registro CS [2]). Luego se suceden en orden los 4 pasos descriptos en la respuesta de la pregunta anterior. De esta forma, lo primero que recibe la UCP de MP es el código de máquina de Una instrucción, que irá al RI.
+Este orden empieza cuando se enciende un computador, pues lo primero que pide la UCP de la MP es un código de máquina, el que corresponde a la primera instrucción del primer programa a ejecutar'. La dirección de dicha instrucción está preestablecida, y pertenece a la porción ROM de MP, por lo que al encenderse el equipo el número de dicha dirección siempre debe formarse en el IP (y en el registro CS ²). Luego se suceden en orden los 4 pasos descriptos en la respuesta de la pregunta anterior. De esta forma, lo primero que recibe la UCP de MP es el código de máquina de Una instrucción, que irá al RI.
 
 *Por lo tanto, un computador está pensando que la UCP comience a operar leyendo de MP un número que debe ir al registro de instrucción (RI), por lo que dicho número será interpretado como un código de una instrucción.*|
 :-|
@@ -131,9 +131,9 @@ En caso que la UC decodifique en el R1 un código que no reconoce, está previst
 
 
 ---
->[1]Como ya se describió, este programa en la porción ROM de MP, dado que el primer programa a ejecutar debe estar siempre en memoria, aunque se apague el equipo, para poder traer del disco los programas del sistema operativo que se pierden en la porción RAM de  memoria al apagar el computador. Al ser ejecutado comienza una secuencia de pasos que permiten traer trae del disco a MP otro programa, que cuando es ejecutado a su vez trae del **disco** a MP programas del sistema  operativo.
+>¹ Como ya se describió, este programa en la porción ROM de MP, dado que el primer programa a ejecutar debe estar siempre en memoria, aunque se apague el equipo, para poder traer del disco los programas del sistema operativo que se pierden en la porción RAM de  memoria al apagar el computador. Al ser ejecutado comienza una secuencia de pasos que permiten traer trae del disco a MP otro programa, que cuando es ejecutado a su vez trae del **disco** a MP programas del sistema  operativo.
 
->[2] En un 80X86, el contenido del registro de segmento CS multiplicado por 16 siempre se suma a IP para formar cualquier dirección.
+>² En un 80X86, el contenido del registro de segmento CS multiplicado por 16 siempre se suma a IP para formar cualquier dirección.
 
 
 #### **¿Qué analogía didáctica puede establecerse para visualizar la actividad básica de organizar movimientos y operaciones que realiza la UC ?**
@@ -143,18 +143,18 @@ Desde el centro de control se comandaría, por ejemplo, que un tren que está es
 
 La función de la UC de encaminar datos hacia un registro de destino, puede apreciarse en este modelo "ferroviario", en el. cambio de vía que debe realizarse, para que un tren que viene desde el galpón de estacionamiento —por la única vía de comunicación con la estación- vaya hacia el andén de destino.
 
-Dentro del microprocesador de la UC permanentemente- mendiante llaves electrónicas (transistores) que comanda — está abriendo y cerrando caminos electrónicos (buses) internos[1], para habilitar en cada movimiento previsto el camino que permita *encaminar* datos del registro de origen   al registro de destino, deshabilitando los restantes caminos. Como se describirá, el control de estos movimientos lo realiza la UC mediante líneas que salen de ella hacia los buses internos, registros y memoria (cable de lectura/escritura), al ritmo de los pulsos que genera el "clock”.|
+Dentro del microprocesador de la UC permanentemente- mendiante llaves electrónicas (transistores) que comanda — está abriendo y cerrando caminos electrónicos (buses) internos¹, para habilitar en cada movimiento previsto el camino que permita *encaminar* datos del registro de origen   al registro de destino, deshabilitando los restantes caminos. Como se describirá, el control de estos movimientos lo realiza la UC mediante líneas que salen de ella hacia los buses internos, registros y memoria (cable de lectura/escritura), al ritmo de los pulsos que genera el "clock”.|
 :-|
 
 Esta analogía también permite visualizar que el bus que comunica, memoria con el microprocesador sólo permite un envío por vez, en un sentido u otro. También la vía principal de la figura 1.28. sólo permite que circule por ella un solo tren por vez, sea de un  andén a un lugar de la playa o en sentido inverso. 
-Este modelo que pone de relieve la función de la UC de abrir y cerrar caminos eléctricos mediante líneas de control que salen de ella, puede también servir para aclarar ciertas asociaciones erróneas en torno a la palabra "control" que caracteriza a la UC[2].	
+Este modelo que pone de relieve la función de la UC de abrir y cerrar caminos eléctricos mediante líneas de control que salen de ella, puede también servir para aclarar ciertas asociaciones erróneas en torno a la palabra "control" que caracteriza a la UC².	
 
 ![imagen1](./img/f1-28.jpg)
 
 ----
->[1]      En Inglés *“data parths”*.
+>¹      En Inglés *“data parths”*.
 
->[2]      Si bien la semejanza realizada vale en cuanto a las movimientos ordenados, es importante notar una diferencia sustancial en relación con los procesos de datos, Según se vio, por ejemplo si se lee la memoria, una *copia* del dato direccionado es la que llega al registro de destino. A diferencia, un tren "desaparece" del lugar donde estaba estacionado cuando va hacia algún destino.
+>²      Si bien la semejanza realizada vale en cuanto a las movimientos ordenados, es importante notar una diferencia sustancial en relación con los procesos de datos, Según se vio, por ejemplo si se lee la memoria, una *copia* del dato direccionado es la que llega al registro de destino. A diferencia, un tren "desaparece" del lugar donde estaba estacionado cuando va hacia algún destino.
 
 
 En primer lugar, en las figuras citadas resulta que **ni datos ni instrucciones entran a la UC,** sino que van a registros, encargándose la UC de que ello ocurra habilitando en cada caso los caminos correspondientes. 
@@ -183,7 +183,7 @@ Entonces, hablar de megahertz es lo mismo o megahercios que  hablar de millones 
 :-|
 
 Son comunes los microprocesadores con reloj de 100 MHz a más de 1 Ghz. El reloj está incorporado al micro-procesador.
-En general, un procesador será más rápido si funciona a más MHz[2].
+En general, un procesador será más rápido si funciona a más MHz².
 
 Como se planteó, estos pulsos marcan, sincronizan, los instantes en que comienzan los movimientos que tienen lugar durante la ejecución de cada instrucción. Vale decir, que un movimiento empieza al comienzo de un pulso y tiene tiempo de consumarse hasta que el inicio del pulso siguiente, cuando comienza otro movimiento.|
 :-|
@@ -196,9 +196,9 @@ Resulta asi que, en general,una instruciòn requiere para su ejecucion unos puls
 
 
 ---
->[1] Al encender un computador la ejecución de un programa de diagnóstico que está en RDM lleva a cabo una serie de verificaciones en el Hardware, en relación con el correcto funcionamiento de la UAL, y la memoria, entre otros, y la configuración  del sistema entre otros.
+>¹ Al encender un computador la ejecución de un programa de diagnóstico que está en RDM lleva a cabo una serie de verificaciones en el Hardware, en relación con el correcto funcionamiento de la UAL, y la memoria, entre otros, y la configuración  del sistema entre otros.
 
->[2] La frecuencia de los pulsos reloj no sirve para comparar la performance de procesadores *distintos*.
+>² La frecuencia de los pulsos reloj no sirve para comparar la performance de procesadores *distintos*.
 
 
 
@@ -243,10 +243,10 @@ Cada vez que se repite un determinado movimiento —como el **1a** ó el **1b**�
 ---
 Esta pregunta equivale a plantear *de dónde sale cada combinación de unos y ceros que aparecen con cada pulso reloj en las líneas de salida de la UC.*
 
-Según se describió (fig. 1.27) la ejecución de cada instrucción se divide en **pasos** aún más simples (4 en nuestro caso, pero que son más en instrucciones complejas). Las acciones que debe ordenar/controlar la UC en cada uno de estos 4 pasos están determinadas por 4 combinaciones binarias llamadas **"microcódigos" (µcod)** que van apareciendo una tras otra con cada .pulso reloj (Clock =**Ck**) en las **líneas de control (LC)**. Estas salen de la UC con destino a la UAL, los registros de la UCP, y laa me'Moria (fig. 1.31). También van hacia los ports.Con cada **Ck** el valor (1 ó 0) de cada **LC** que sale de la UC determina los movimientos (como ser de **IP** a **RDI**) que deben tener lugar, y si interviene la UAL, qué operación debe hacer. El valor de cada **LC** puede cambiar con cada **Ck**. Así, para 500 Mhz (500 millones pulsos/seg) las **LC** cambian 500 millones de veces por segundo, o sea que se generan en ellas 500 millones de **µcod/**seg.)**Este funcionamiento es común a todos los procesadores** *, sean CISC o RISC (sección 1.14).|
+Según se describió (fig. 1.27) la ejecución de cada instrucción se divide en **pasos** aún más simples (4 en nuestro caso, pero que son más en instrucciones complejas). Las acciones que debe ordenar/controlar la UC en cada uno de estos 4 pasos están determinadas por 4 combinaciones binarias llamadas **"microcódigos" (µcod)** que van apareciendo una tras otra con cada .pulso reloj (Clock =**Ck**) en las **líneas de control (LC)**. Estas salen de la UC con destino a la UAL, los registros de la UCP, y laa me'Moria (fig. 1.31). También van hacia los ports.Con cada **Ck** el valor (1 ó 0) de cada **LC** que sale de la UC determina los movimientos (como ser de **IP** a **RDI**) que deben tener lugar, y si interviene la UAL, qué operación debe hacer. El valor de cada **LC** puede cambiar con cada **Ck**. Así, para 500 Mhz (500 millones pulsos/seg) las **LC** cambian 500 millones de veces por segundo, o sea que se generan en ellas 500 millones de µcod/ seg.)Este funcionamiento es común a todos los procesadores, sean CISC o RISC (sección 1.14).|
 :-|
 
-En un CISC las salidas de la UC, o sea las **LC**, son salidas de una ROM denominada ROM de Control[1], que contiene escritas en su interior todas las combinaciones binarias que pueden aparecer en las **LC** para determinar qué debe hacer la UC en cada paso de la ejecución de una instrucción. Ello implica que en la **RC** reside la "inteligencia" de la UC, que obviamente fue originada por quienes crearon la UCP.
+En un CISC las salidas de la UC, o sea las **LC**, son salidas de una ROM denominada ROM de Control¹, que contiene escritas en su interior todas las combinaciones binarias que pueden aparecer en las **LC** para determinar qué debe hacer la UC en cada paso de la ejecución de una instrucción. Ello implica que en la **RC** reside la "inteligencia" de la UC, que obviamente fue originada por quienes crearon la UCP.
 En general de la UC salen *n* **LC** (como ser *n*= 100), por lo que cada **µcod** será de *n* bits (un bit por cada **LC**), y está guardado (grabado) en una sola celda de *n* bits de la **RC**. O sea que en la **RC** las celdas no son de 8 bits, sino de *n* bits (figura 1.34).
 En la figura 1.31 se supone que durante un cierto Ck los valores de las 7 LC supuestas que salen de la UC son 1000101, y en la fig. 1.32 se asume que con el Ck siguiente dichos valores son 0001011. Ambos valores en la figura 1.33 aparecen guardados en 2 celdas sucesivas de 7 bits de una **RC**. Como en cualquier ROM, cuando se accede a una celda una copia de su contenido (**µcod**) pasa a sus líneas de salida, que son las **LC** de la UC. Esto sucede con cada **Ck**. 
 Con xxxx se indican otros **µcod** en la **RC**, que como todos los **µcod** constan de unos y ceros. Cuando el **µcod** 1000101 está en las **LC** permite realizar los movimientos de la figura 1.31.
@@ -258,7 +258,7 @@ En las celdas de la **RC** de una UCP CISC se guardan los **µcod** para pedir y
 
 
 ---
->[1] Tambien llamado **ROM de microcodigo** o **de microinstrucciones**, inmodificable y forma parte del chip del procesador. **Esta ROM no tiene nada que ver con la ROM de la memoria principal**, que contiene los programas de arranque y el BIOS (Basic Input Output System)en una PC, **ni tampoco tiene que ver con el sistema operativo elegido para un computador**. Esta concepcion circuital se empleó en procesadores y microprocesadores CISC de distintos fabricantes, inclusive hasta el Pentium 1, prevaleciendo luego la concepción RISC. 
+>¹ Tambien llamado **ROM de microcodigo** o **de microinstrucciones**, inmodificable y forma parte del chip del procesador. **Esta ROM no tiene nada que ver con la ROM de la memoria principal**, que contiene los programas de arranque y el BIOS (Basic Input Output System)en una PC, **ni tampoco tiene que ver con el sistema operativo elegido para un computador**. Esta concepcion circuital se empleó en procesadores y microprocesadores CISC de distintos fabricantes, inclusive hasta el Pentium 1, prevaleciendo luego la concepción RISC. 
 
 
 Puesto que una **RC** es una memoria random -cuyas celdas guardan tantos bits como **LC** existan- *cada celda de* **RC** *se localiza por su dirección*.**Cada ucod proveerá la dirección del siguiente, salvo la dirección del tercer (µcod3)**,que se determina **en la decodificación** a partir del cod-op del a isntrucción que llegó al **RI**. Como se tratará,*dado que en la **RC** existen miles de **µcod** para ejecutar todo el repertorio de instrucciones de una UCP, la localización de los sucesivos **µcodigos** para ejecutar la instrucción que llegó al RI y luego pedir la siguiente, se realiza sempre a partir de la loccalización del **µcod3**, merced al cod-op de dicha instrucción.* |
