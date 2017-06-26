@@ -1,4 +1,4 @@
-[^ Índice](README.md) | [Siguiente >](capitulo04.md)
+﻿[^ Índice](README.md) | [Siguiente >](capitulo04.md)
 
 ----
 
@@ -35,22 +35,21 @@ A los fines didácticos de mantener los cuatro bloques citados en el orden dibuj
 
 En líneas muy generales, en las figuras 1.6 y 1.7 se supone lo que sigue. Un disco de la unidad de disco rígido provee un  programa, cuyas instrucciones pasarán a través de buses hacia la memoria. Los datos llegarán también a través de buses a la memoria, provenientes del teclado.
 
-![Figura 1.5](./img/f1-5.jpg)
-
 Luego, dichas instrucciones son ejecutadas, una por vez. A tal fin primero cada una por un bus llega a un  registro de  instrucción (Rl) de la Unidad Central de Procesamiento (Procesador), donde permanece mientras se ejecuta, para  que la Unidad de Control interprete qué operación ordena ella.
 
 A continuación, a través del mismo bus, el dato a operar por dicha instrucción llega desde memoria a un registro acumulador AX del procesador, antes de ser operado (conforme a la operación ordenada) en la Unidad Aritmética, a fin de obtener un resultado. Este puede sustituir en el registro AX al dato ya operado, y luego pasar a memoria -nuevamente a través del bus citado si una instrucción así lo ordena.
 
 Si por ejemplo se quiere enviar dicho resultado al exterior para ser visto en pantalla, ó para ser guardado en el disco rígido o en un disquete, ello se consigue mediante la ejecución de instrucciones que así lo ordenen.
 
-![Figura 1.6](./img/f1-6.jpg)
-
 En la figura 1.6 se ha reemplazado al idóneo de la figura 1.2 encargado de obtener de la memoria en el orden establecido cada instrucción y ejecutarla por un  circuito denominado  **Unidad de Control**,**(UC)**, capaz de realizar sus mismas acciones básicas, pero millones de veces más veloz. Dichas acciones formaban parte de una secuencia siempre repetitiva:
 
-- obtener de la memoria la próxirila instrucción que corresponde ejecutar,
-- localizar los datos a operar (en la memoria principal, o en un registro como AX u otro, según se ordene)
-- ordenarle al circuito de la Unidad Aritmética  que realice con dichos datos la operación indicada,
-- guardar el resultado en un registro acumulador o en memoria principal
+•  obtener de la memoria la próxirila instrucción que corresponde ejecutar,
+
+•  localizar los datos a operar (en la memoria principal, o en un registro como AX u otro, según se ordene)
+
+•  ordenarle al circuito de la Unidad Aritmética  que realice con dichos datos la operación indicada,
+
+•  guardar el resultado en un registro acumulador o en memoria principal
 
 Por lo tanto:
 
@@ -70,7 +69,7 @@ Conforme al  proceso de  la  figura 1.2, no debe perderse nunca de vista  que el
 
 La palabra &quot;Lógica&quot; de las siglas UAL puede llevar a equívocos, en el sentido de suponer inteligencia. Como se ejemplifica en 1.8, las operaciones &quot;lógicas&quot; de la UAL son las operaciones AND, OR, negación, etc.
 
-Se denomina **Unidad Central de Proceso** ( **UCP** o **CPU** en inglés) al conjunto formado por:  la Unidad de Control  la Unidad Aritmético-Lógica  los registros (como el AX, RI y otros) usados durante la ejecución de cada instrucción. 
+Se denomina **Unidad Central de Proceso** ( **UCP** o **CPU** en inglés) al conjunto formado por:•  la Unidad de Control•  la Unidad Aritmético-Lógica•  los registros (como el AX, RI y otros) usados durante la ejecución de cada instrucción. 
 
 La UCP es el bloque donde se lleva a cabo la ejecución de las instrucciones. Hacia ella se dirigen las instrucciones que serán ejecutadas (una vez que la UC decodifique su código), y los datos para ser operados por la UAL a la par que de la misma salen resultados generados por la UAL.
 
@@ -130,8 +129,6 @@ Las **líneas de datos** , en cada lectura de MP conducen de ésta hacia la UCP 
 Un bus presente en las PC es el bus **PCI** (Peripheral Component Interconnect) creado por Intel, al cual a través de zócalos (figura 1.5)se conectan plaquetas para conexión de periféricos, y de otros buses. Este bus también emplea las tres clases de líneas citadas. No está vinculado directamente al procesador central.
 
 En la sección 1.13 se detalla este bus, el **USB** y el **SCSI** , y en la figura 1.80 se da un mapa de cómo se comunican entre sí (como sugieren las figs 1.6 y 1.7) a través de chips que hacen de &quot;puente&quot; entre distintos buses. **Las señales eléctricas digitales se transmi en por las líneas de un bus  como se indica en la fig 1.48**
-
-![Figura 1.7](./img/f1-7.jpg)
 
 Las figuras 1.7 y 1.6 son en esencia similares, salvo la ubicación relativa de la UCP (más acorde  a la figura1.3), y que  los periféricos de entrada o salida (según indica el sentido de las flechas) aparecen espacialmente en  un  mismo nivel  de proceso,  aunque  como se aclaró, por ejemplo una unidad de disco cuando actúa como periférico de entrada no puede  simultáneamente operar para salida, y viceversa.
 
