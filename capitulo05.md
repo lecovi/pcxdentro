@@ -1,3 +1,7 @@
+[^ Índice](README.md) | [Siguiente >](capitulo06.md)
+
+----
+
 # El Software, los datos y su codificación
 
 ### *¿Qué es el software o "logical"?*
@@ -205,3 +209,7 @@ Como se verá, cuando una instrucción se ejecuta, para que se lleve a cabo el s
 > [16] En hexa al 0209 le sigue el 020A, y no el 021 O como sería en decimal,. Esto es acorde con que en la tabla de la figura 1.4, al 9 le sigue A. Esto se trata en detalle en el Apéndice A1.
 
 > [17] Esta instrucción en una calculadora es equivalente a pulsar **M+** (suponiendo que **MC** fue pulsada previamente). Así en ésta para efectuar **A + B** y memorizar, primero hay que llevar **A** al visor y luego sumarle **B**, y tercero memorizar con **M+** el resultado (pudiendo ser necesario pulsar antes **CM**).
+
+----
+
+[^ Índice](README.md) | [Siguiente >](capitulo06.md)
