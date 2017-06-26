@@ -29,6 +29,7 @@ La fig. 1.79.c ilustra estas líneas en un bus ISA que interconecta una UCP 8088
 
 ![imagen 1.79.c](/img/f1-79c.jpg) 
 
+
 Las líneas de dirección y datos se indican como caminos grisados. Se supone que el 8088 envía una dirección (que llega a todos los dispositivos) para seleccionar una celda de memoria con orden de lectura (línea de control L/E=1). Sólo responde la memoria enviando un byte por las líneas de datos. Es factible que un mismo conjunto de líneas primero se use para direccionar y luego para transmitir.  
 Las *líneas de control* transmiten señales SI/NO para: peticiones (por ejemplo la línea IRQ solicita interrupción), órdenes (por ejemplo línea L/E para leer/escribir), avisos, confirmaciones y tipo de información enviada. Así controlan el acceso y la ocupación de las líneas de dirección y datos, y de hecho *indican cuando son válidos los valores* presentes en esas líneas.  
 Si el bus es *sincrónico* (como el ISA o el PCI) una de las líneas de control designada "clock" o Mhez recibe pulsos regularmente espaciados en el tiempo, generados por un oscilador, los cuales marcan los instantes en que se pueden activar o desactivar líneas de control, o enviar direcciones o datos.   
