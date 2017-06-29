@@ -24,8 +24,6 @@ A fin de hacer más simple la explicación, supondremos que cuando la UC ordena 
 Para leer dos (o más) direcciones consecutivas basta dar el número correspondiente a la primera de ellas. 
 
 Durante la obtención y ejecución de una instrucción, ocurren en definitiva las siguientes acciones y movimientos principales (figuras 1.23 a 1.26), con los objetivos que se indican, *que como se verá son comunes en general a todas las instrucciones*. Para las operaciones de lectura de la memoria principal (MP), debe tener presente el esquema de la figura 1.10. Comenzaremos con *I1* (figura 1.23).
-
-
 >¹ En Electricidad, si un fenómeno sucede X veces por segundo se dice que tiene una frecuencia de repetición de X Hertz (hercios),en honor a Hertz, descubridor de las ondas electromagnéticas. Un Hertz (Hz) es un ciclo por segundo; 1000 Hz son un kilohertz(Khz), 1000000 I-Iz son un megahertz(Mhz).
 >
 >² En los microprocesadores actuales, para ganar tiempo, mientras se están ejecutando instrucciones pedidas anteriormente, se van leyendo de MP códigos de instrucciones a ser ejecutados localizados en posiciones consecutivas. Las Instrucciones pedidas con anticipación se guardan en una memoria interna del microprocesador. Esto se describe en la sección 1.14.
@@ -78,6 +76,7 @@ Puesto que la operación ordenada en esencia es una escritura de memoria, el pas
 
 ---
 >¹ Esta acción circuital no es visualizable en la figura 1.23. Supondremos que cuando la UC lee el primer byte del código (**A1**) de una instrucción detecta cuantos bytes la componen y qué representa cada uno. Por lo tanto la UC así "sabe" que 03 no forma parte del código de la instrucción. Recordar que ésta ordenaba enviar hacia AX una copia del número contenido en la dirección 5000 (y en la 5001)
+
 >
 >² En los pasos 3b de las instrucciones **I2** e **I3** tiene lugar una lectura de memoria seguida de una operación aritmética.
 
@@ -87,7 +86,7 @@ Puesto que la operación ordenada en esencia es una escritura de memoria, el pas
 ![imagen1](./img/f1-25.png) ![imagen2](./img/f1-26.png)
 
 
-## **¿Qué secuencia de pasos ordena la UC para ejecutar cada instrucción?**
+#### **¿Qué secuencia de pasos ordena la UC para ejecutar cada instrucción?**
 ---
 Si recapitulamos (figuras 1.23 a 1.26) cómo se ejecutaron las instrucciones en el esquema de UC	supuesto, resulta que la estructura de la UCP está pensada para que repita *permanentemente* la siguiente secuencia de pasos, con las intruciciones del programa a ejecutar que está en memoria principal (MP):
 
@@ -114,6 +113,7 @@ Las etapas o pasos citados —sintetizados en la figura 1.27— describen, al ig
 
 
 ![imagen1](./img/f1-27.jpg)
+
 
 
 ## **¿Cómo hace la UC para no equivocarse con tantos números contenidos en memoria que pueden ser instrucciones, datos o direcciones?**
@@ -237,6 +237,8 @@ Por ejemplo, si durante un pulso reloj la línea que en el movimiento **1b** hab
 
 Por consiguiente,  con cada pulso reloj avanza un movimiento o paso la ejecución de una instrucción, y cambia la combinación de unos y ceros presente en las líneas que salen de la UC, a fin de que puedan llevarse a cabo dicho movimiento.|
 :-|
+
+Cada vez que se repite un determinado movimiento —como el **1a** ó el **1b**— se repite también en las salidas de la UC la combinación de unos y ceros que determina (controla) dichos movimientos.
 
 Cada vez que se repite un determinado movimiento —como el **1a** ó el **1b**— se repite también en las salidas de la UC la combinación de unos y ceros que determina (controla) dichos movimientos.
 
